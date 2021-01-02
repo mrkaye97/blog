@@ -20,7 +20,7 @@ jobs:
           devtools::install_github("rstudio/blogdown", dependencies = TRUE)
           devtools::install_github('rstudio/rmarkdown', dependencies = TRUE)
           blogdown::install_hugo()
-shell: Rscript {0}
+        shell: Rscript {0}
       - name: Deploy
         run: |
           rmarkdown::render_site()
