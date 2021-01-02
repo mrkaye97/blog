@@ -1,4 +1,4 @@
-baseURL = "https://mrkaye97.github.io"
+baseURL = "https://mrkaye97.github.io/blog"
 title = "Blog"
 publishDir = "docs"
 theme = "hugo-theme-fuji"
@@ -137,11 +137,4 @@ paginate = 10
     name = "GitHub"
     url = "https://github.com/amzrk2"
     weight = 1
-  [[menu.link]]
-    name = "Twitter"
-    url = "https://twitter.com/amzrk2"
-    weight = 2
-  [[menu.link]]
-    name = "bilibili"
-    url = "https://space.bilibili.com/19767474"
-    weight = 3
+
