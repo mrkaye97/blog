@@ -1,5 +1,5 @@
 baseURL = "https://mrkaye97.github.io"
-title = "Hugo Theme Fuji"
+title = "Blog"
 publishDir = "docs"
 theme = "hugo-theme-fuji"
 hasCJKLanguage = true
@@ -31,11 +31,10 @@ paginate = 10
   post = "/:section/:filename/" # Custom post links, e.g. "/:year/:month/:title/"
 
 [params]
-  author = "DSRKafuU" # You can also set author in post front matter individually
-  subTitle = "A minimal Hugo theme."
+  author = "Matt Kaye" # You can also set author in post front matter individually
 
   # Source URL of the website, will appear in the footer
-  sourceURL = "https://github.com/itsme/my_blog"
+  sourceURL = "https://github.com/mrkaye97/blog"
 
   # Use CloudFlare Workers to accelerate the Google Analytics
   # If you are using this please comment the googleAnalytics above
