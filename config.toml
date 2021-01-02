@@ -1,7 +1,7 @@
-baseURL = "https://example.com"
+baseURL = "https://mrkaye97.github.io"
 title = "Hugo Theme Fuji"
-
-theme = "fuji"
+publishDir = "docs"
+theme = "hugo-theme-fuji"
 hasCJKLanguage = true
 enableEmoji = true
 enableRobotsTXT = true
