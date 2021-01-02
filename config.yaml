@@ -1,0 +1,82 @@
+baseURL: https://mrkaye97.github.io
+publishDir: "docs"
+title: Hugo Theme Fuji
+theme: hugo-theme-fuji
+hasCJKLanguage: yes
+enableEmoji: yes
+enableRobotsTXT: yes
+disableKinds: taxonomy
+ignoreErrors: error-disable-taxonomy
+languageCode: en
+defaultContentLanguage: en
+summaryLength: 100
+paginate: 10
+outputFormats:
+  SearchIndex:
+    isPlainText: yes
+    mediaType: application/json
+    notAlternative: yes
+    path: /search/
+outputs:
+  home:
+    - HTML
+    - RSS
+    - SearchIndex
+permalinks:
+  post: /:section/:filename/
+params:
+  author: DSRKafuU
+  copyrightStartYear: '2020'
+  description: A minimal Hugo theme with nice theme color.
+  lazyPlaceholder: /assets/lazyload/dsrca_loading_480x270.svg
+  lazyPlaceholderCol: /assets/lazyload/dsrca_loading_480x540.svg
+  lazyPlaceholderRow: /assets/lazyload/dsrca_loading_960x270.svg
+  license: CC BY-NC-SA 4.0
+  licenseLink: http://creativecommons.org/licenses/by-nc-sa/4.0/
+  mainSections: post
+  og: /img/og.png
+  showLicense: yes
+  showLicenseInFooter: no
+  showReadTime: no
+  showToc: yes
+  showWordCounter: yes
+  sourceURL: https://github.com/itsme/my_blog
+  subTitle: A minimal Hugo theme.
+markup:
+  goldmark:
+    renderer:
+      unsafe: yes
+  highlight:
+    codeFences: no
+  tableOfContents:
+    endLevel: 3
+    startLevel: 2
+taxonomies:
+  tag: tags
+menu:
+  link:
+    - name: GitHub
+      url: https://github.com/amzrk2
+      weight: 1
+    - name: Twitter
+      url: https://twitter.com/amzrk2
+      weight: 2
+    - name: bilibili
+      url: https://space.bilibili.com/19767474
+      weight: 3
+  nav:
+    - name: Home
+      url: /
+      weight: 1
+    - name: Archives
+      url: /archives/
+      weight: 2
+    - name: About
+      url: /about/
+      weight: 3
+    - name: Search
+      url: /search/
+      weight: 4
+    - name: RSS
+      url: /index.xml
+      weight: 5
