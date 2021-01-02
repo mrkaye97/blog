@@ -1,9 +1,0 @@
----
-title: rmdtest
-author: ~
-date: '2021-01-02'
-slug: rmdtest
-categories: []
-tags: []
----
-
