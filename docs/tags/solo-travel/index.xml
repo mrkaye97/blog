@@ -1,24 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog</title>
-    <link>https://mrkaye97.github.io/blog/</link>
-    <description>Recent content on Blog</description>
+    <title>solo travel on Blog</title>
+    <link>https://mrkaye97.github.io/blog/tags/solo-travel/</link>
+    <description>Recent content in solo travel on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 20 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://mrkaye97.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>About Hugo</title>
-      <link>https://mrkaye97.github.io/blog/about/</link>
-      <pubDate>Sat, 11 Apr 2020 19:15:32 +0800</pubDate>
-      
-      <guid>https://mrkaye97.github.io/blog/about/</guid>
-      <description>Written in Go, Hugo is an open source static site generator available under the Apache Licence 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
-Hugo makes use of a variety of open source projects including:
- https://github.com/yuin/goldmark https://github.com/alecthomas/chroma https://github.com/muesli/smartcrop https://github.com/spf13/cobra https://github.com/spf13/viper  Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.</description>
-    </item>
-    
+    <lastBuildDate>Thu, 20 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://mrkaye97.github.io/blog/tags/solo-travel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>First Days -- ZRH and Vienna</title>
       <link>https://mrkaye97.github.io/blog/post/2021-01-02-first-days-zrh-and-vienna/</link>
