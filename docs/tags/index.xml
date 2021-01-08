@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on My blog</title>
-    <link>https://mrkaye97.github.io/docs/tags/</link>
+    <link>https://mrkaye97.github.io/blog/tags/</link>
     <description>Recent content in Tags on My blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 07 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrkaye97.github.io/docs/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrkaye97.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>data science</title>
-      <link>https://mrkaye97.github.io/docs/tags/data-science/</link>
+      <link>https://mrkaye97.github.io/blog/tags/data-science/</link>
       <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://mrkaye97.github.io/docs/tags/data-science/</guid>
+      <guid>https://mrkaye97.github.io/blog/tags/data-science/</guid>
       <description></description>
     </item>
     
     <item>
       <title>host family</title>
-      <link>https://mrkaye97.github.io/docs/tags/host-family/</link>
+      <link>https://mrkaye97.github.io/blog/tags/host-family/</link>
       <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://mrkaye97.github.io/docs/tags/host-family/</guid>
+      <guid>https://mrkaye97.github.io/blog/tags/host-family/</guid>
       <description></description>
     </item>
     
     <item>
       <title>stockholm</title>
-      <link>https://mrkaye97.github.io/docs/tags/stockholm/</link>
+      <link>https://mrkaye97.github.io/blog/tags/stockholm/</link>
       <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://mrkaye97.github.io/docs/tags/stockholm/</guid>
+      <guid>https://mrkaye97.github.io/blog/tags/stockholm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>study abroad</title>
-      <link>https://mrkaye97.github.io/docs/tags/study-abroad/</link>
+      <link>https://mrkaye97.github.io/blog/tags/study-abroad/</link>
       <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://mrkaye97.github.io/docs/tags/study-abroad/</guid>
+      <guid>https://mrkaye97.github.io/blog/tags/study-abroad/</guid>
       <description></description>
     </item>
     
     <item>
       <title>europe</title>
-      <link>https://mrkaye97.github.io/docs/tags/europe/</link>
+      <link>https://mrkaye97.github.io/blog/tags/europe/</link>
       <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://mrkaye97.github.io/docs/tags/europe/</guid>
+      <guid>https://mrkaye97.github.io/blog/tags/europe/</guid>
       <description></description>
     </item>
     
     <item>
       <title>travel</title>
-      <link>https://mrkaye97.github.io/docs/tags/travel/</link>
+      <link>https://mrkaye97.github.io/blog/tags/travel/</link>
       <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://mrkaye97.github.io/docs/tags/travel/</guid>
+      <guid>https://mrkaye97.github.io/blog/tags/travel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>solo</title>
-      <link>https://mrkaye97.github.io/docs/tags/solo/</link>
+      <link>https://mrkaye97.github.io/blog/tags/solo/</link>
       <pubDate>Thu, 03 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://mrkaye97.github.io/docs/tags/solo/</guid>
+      <guid>https://mrkaye97.github.io/blog/tags/solo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>solo travel</title>
-      <link>https://mrkaye97.github.io/docs/tags/solo-travel/</link>
+      <link>https://mrkaye97.github.io/blog/tags/solo-travel/</link>
       <pubDate>Thu, 03 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://mrkaye97.github.io/docs/tags/solo-travel/</guid>
+      <guid>https://mrkaye97.github.io/blog/tags/solo-travel/</guid>
       <description></description>
     </item>
     

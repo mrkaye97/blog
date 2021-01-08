@@ -1,189 +1,189 @@
-<?xml-stylesheet type="text/xsl" href="https://mrkaye97.github.io/docs/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="https://mrkaye97.github.io/blog/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/categories/</loc>
+    <loc>https://mrkaye97.github.io/blog/categories/</loc>
     <lastmod>2021-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/tags/data-science/</loc>
+    <loc>https://mrkaye97.github.io/blog/tags/data-science/</loc>
     <lastmod>2021-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/categories/data-science/</loc>
+    <loc>https://mrkaye97.github.io/blog/categories/data-science/</loc>
     <lastmod>2021-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/</loc>
+    <loc>https://mrkaye97.github.io/blog/</loc>
     <lastmod>2021-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/post/our-2021-big-data-bowl-submission/</loc>
+    <loc>https://mrkaye97.github.io/blog/post/our-2021-big-data-bowl-submission/</loc>
     <lastmod>2021-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/post/</loc>
+    <loc>https://mrkaye97.github.io/blog/post/</loc>
     <lastmod>2021-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/categories/sports-analytics/</loc>
+    <loc>https://mrkaye97.github.io/blog/categories/sports-analytics/</loc>
     <lastmod>2021-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/tags/</loc>
+    <loc>https://mrkaye97.github.io/blog/tags/</loc>
     <lastmod>2021-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/about/</loc>
+    <loc>https://mrkaye97.github.io/blog/about/</loc>
     <lastmod>2020-04-11T19:15:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/tags/host-family/</loc>
+    <loc>https://mrkaye97.github.io/blog/tags/host-family/</loc>
     <lastmod>2019-12-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/post/host-family-q-a/</loc>
+    <loc>https://mrkaye97.github.io/blog/post/host-family-q-a/</loc>
     <lastmod>2019-12-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/tags/stockholm/</loc>
+    <loc>https://mrkaye97.github.io/blog/tags/stockholm/</loc>
     <lastmod>2019-12-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/tags/study-abroad/</loc>
+    <loc>https://mrkaye97.github.io/blog/tags/study-abroad/</loc>
     <lastmod>2019-12-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/categories/study-abroad/</loc>
+    <loc>https://mrkaye97.github.io/blog/categories/study-abroad/</loc>
     <lastmod>2019-12-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/tags/europe/</loc>
+    <loc>https://mrkaye97.github.io/blog/tags/europe/</loc>
     <lastmod>2019-09-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/post/first-weeks-in-stockholm/</loc>
+    <loc>https://mrkaye97.github.io/blog/post/first-weeks-in-stockholm/</loc>
     <lastmod>2019-09-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/tags/travel/</loc>
+    <loc>https://mrkaye97.github.io/blog/tags/travel/</loc>
     <lastmod>2019-09-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/post/last-days/</loc>
+    <loc>https://mrkaye97.github.io/blog/post/last-days/</loc>
     <lastmod>2019-01-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/tags/solo/</loc>
+    <loc>https://mrkaye97.github.io/blog/tags/solo/</loc>
     <lastmod>2019-01-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/tags/solo-travel/</loc>
+    <loc>https://mrkaye97.github.io/blog/tags/solo-travel/</loc>
     <lastmod>2019-01-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/categories/travel/</loc>
+    <loc>https://mrkaye97.github.io/blog/categories/travel/</loc>
     <lastmod>2019-01-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/post/krakow-and-budapest/</loc>
+    <loc>https://mrkaye97.github.io/blog/post/krakow-and-budapest/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/post/prague-olomouc-and-auschwitz/</loc>
+    <loc>https://mrkaye97.github.io/blog/post/prague-olomouc-and-auschwitz/</loc>
     <lastmod>2018-12-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/post/first-days-zrh-and-vienna/</loc>
+    <loc>https://mrkaye97.github.io/blog/post/first-days-zrh-and-vienna/</loc>
     <lastmod>2018-12-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/post/solo-trip-to-europe-in-december-2018/</loc>
+    <loc>https://mrkaye97.github.io/blog/post/solo-trip-to-europe-in-december-2018/</loc>
     <lastmod>2018-11-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/archives/</loc>
+    <loc>https://mrkaye97.github.io/blog/archives/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/docs/search/</loc>
+    <loc>https://mrkaye97.github.io/blog/search/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

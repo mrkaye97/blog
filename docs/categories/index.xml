@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on My blog</title>
-    <link>https://mrkaye97.github.io/docs/categories/</link>
+    <link>https://mrkaye97.github.io/blog/categories/</link>
     <description>Recent content in Categories on My blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 07 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrkaye97.github.io/docs/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrkaye97.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>data science</title>
-      <link>https://mrkaye97.github.io/docs/categories/data-science/</link>
+      <link>https://mrkaye97.github.io/blog/categories/data-science/</link>
       <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://mrkaye97.github.io/docs/categories/data-science/</guid>
+      <guid>https://mrkaye97.github.io/blog/categories/data-science/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sports analytics</title>
-      <link>https://mrkaye97.github.io/docs/categories/sports-analytics/</link>
+      <link>https://mrkaye97.github.io/blog/categories/sports-analytics/</link>
       <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://mrkaye97.github.io/docs/categories/sports-analytics/</guid>
+      <guid>https://mrkaye97.github.io/blog/categories/sports-analytics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>study abroad</title>
-      <link>https://mrkaye97.github.io/docs/categories/study-abroad/</link>
+      <link>https://mrkaye97.github.io/blog/categories/study-abroad/</link>
       <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://mrkaye97.github.io/docs/categories/study-abroad/</guid>
+      <guid>https://mrkaye97.github.io/blog/categories/study-abroad/</guid>
       <description></description>
     </item>
     
     <item>
       <title>travel</title>
-      <link>https://mrkaye97.github.io/docs/categories/travel/</link>
+      <link>https://mrkaye97.github.io/blog/categories/travel/</link>
       <pubDate>Thu, 03 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://mrkaye97.github.io/docs/categories/travel/</guid>
+      <guid>https://mrkaye97.github.io/blog/categories/travel/</guid>
       <description></description>
     </item>
     
