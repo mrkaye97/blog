@@ -1,406 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta name="HandheldFriendly" content="True" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>My blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.80.0" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-
-<link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/apple-touch-icon.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon-16x16.png" />
-<link rel="manifest" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/site.webmanifest" />
-<link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/safari-pinned-tab.svg" color="#8aa2d3" />
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon.ico" />
-<meta name="theme-color" content="#ffffff" />
-
-
-<title>Blog</title>
-
-
-<meta name="author" content="Matt Kaye" />
+<meta name="author" content="olOwOlo" /><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
-<meta property="og:title" content="Blog" />
-<meta name="twitter:title" content="Blog" />
+
+
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
+
+
+<link rel="canonical" href="https://mrkaye97.github.io/docs/" />
+  <link href="https://mrkaye97.github.io/docs/index.xml" rel="alternate" type="application/rss+xml" title="My blog" />
+  <link href="https://mrkaye97.github.io/docs/index.xml" rel="feed" type="application/rss+xml" title="My blog" />
+<link rel="apple-touch-icon" sizes="180x180" href="/docs/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/docs/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/docs/favicon-16x16.png">
+<link rel="manifest" href="/docs/manifest.json">
+<link rel="mask-icon" href="/docs/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/docs/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="My blog" />
+<meta property="og:description" content="Hugo theme even example site." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://mrkaye97.github.io/blog/" /><meta property="og:image" content="https://mrkaye97.github.io/img/og.png" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://mrkaye97.github.io/img/og.png" /><meta property="og:updated_time" content="2021-01-07T00:00:00+00:00" />
+<meta property="og:url" content="https://mrkaye97.github.io/docs/" />
+<meta property="og:updated_time" content="2021-01-07T00:00:00+00:00" />
+<meta itemprop="name" content="My blog">
+<meta itemprop="description" content="Hugo theme even example site.">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="My blog"/>
+<meta name="twitter:description" content="Hugo theme even example site."/>
 
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
 
-<style>
-    @media (prefers-color-scheme: dark) {
-        body[data-theme='auto'] img {
-            filter: brightness(60%);
-        }
-    }
-
-    body[data-theme='dark'] img {
-        filter: brightness(60%);
-    }
-</style>
-
-
-
-<link rel="stylesheet" href="https://mrkaye97.github.io/blog/assets/css/fuji.min.css" />
-
-
-
-
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
 
 </head>
-
-<body data-theme="auto">
-    <script data-cfasync="false">
-  
-  var fujiThemeData = localStorage.getItem('fuji_data-theme');
-  
-  if (!fujiThemeData) {
-    localStorage.setItem('fuji_data-theme', 'auto');
-  } else {
-    
-    if (fujiThemeData !== 'auto') {
-      document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
-    }
-  }
-</script>
-
-    <header>
-    <div class="container-lg clearfix">
-        <div class="col-12 header">
-            <a class="title-main" href="https://mrkaye97.github.io/blog">Blog</a>
-            
-        </div>
-    </div>
-</header>
-
-    <main>
-        <div class="container-lg clearfix">
-            
-            <div class="col-12 col-md-9 float-left content">
-                
-
-
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://mrkaye97.github.io/blog/post/2021-01-07-our-2021-big-data-bowl-submission/">Our 2021 Big Data Bowl Submission</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-01-07</span><span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;1880 words</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/blog/tags/data-science">data science</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        Introduction Our project aims to measure the ability of defensive backs at performing different aspects of their defensive duties: deterring targets (either by reputation or through good positioning), closing down receivers, and breaking up passes. We do this by fitting four models, two for predicting the probability that a receiver will be targeted on a given play and two for predicting the probability that a pass will be caught, which we then use to aggregate the contributions of defensive backs over the course of the season.
-Modeling Framework We opted to use XGBoost for all of our models. At a high level, we chose a tree booster for its ability to find complex interactions between predictors, something we anticipated would be necessary for this project.
-    </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://mrkaye97.github.io/blog/post/2019-12-01-host-family-q-a/">Host Family Q&amp;A</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2019-12-01</span><span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;811 words</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/blog/tags/host-family">host family</a>&nbsp;<a href="/blog/tags/stockholm">stockholm</a>&nbsp;<a href="/blog/tags/study-abroad">study abroad</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        This is a blog post Q&amp;A I wrote for the Swedish Program blog. You can find the original post here.
-Housing is a big part of your study abroad experience. At The Swedish Program, we offer students the choice of an apartment or host family, both of which provide opportunities for cultural integration. It can be tough to decide which option is right for you, so we asked Fall 2019 student Matt Kaye (Carleton College ‘19) to describe his experience living with a host family.
-Tell us about your host family. I lived with the Grahm family in Bromma (about 30 minutes west of SSE by metro).
-    </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://mrkaye97.github.io/blog/post/2019-9-9-first-weeks-in-stockholm/">First Weeks in Stockholm</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2019-09-09</span><span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;330 words</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/blog/tags/travel">travel</a>&nbsp;<a href="/blog/tags/study-abroad">study abroad</a>&nbsp;<a href="/blog/tags/europe">europe</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        I&rsquo;m now finishing up my third week in Stockholm &ndash; time flies. Week 1 was mostly orientation: learning a little bit of Swedish, meeting the other group members, starting to find our way around the city, etc. We trekked out to Sandhamn, an island in the Archipelago, for the first weekend. Really beautiful spot. Weeks 2 and 3 were the start of classes &ndash; 3 program classes and 1 SSE class. Overall, so far, so good.
-A few of the biggest highlights so far:
- Meeting my host family. They&rsquo;re great! Very welcoming and we&rsquo;ve been getting along super well. Dinner parties.
-    </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://mrkaye97.github.io/blog/post/2019-1-3-last-days/">Last Days</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2019-01-03</span><span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;992 words</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/blog/tags/travel">travel</a>&nbsp;<a href="/blog/tags/solo">solo</a>&nbsp;<a href="/blog/tags/solo-travel">solo travel</a>&nbsp;<a href="/blog/tags/europe">europe</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        How fast eighteen days can go by is unbelievable. This trip has been really awesome for me: I&rsquo;ve seen new parts of the world and experienced new cultures, got to meet really cool people from all over the globe, and gained important knowledge for future solo travels. But first, Vienna and Salzburg.
-I spent yesterday roaming around Vienna and then heading over to Schonbrunn Palace, the old seat of the Austrian Empire. The palace and gardens were impressive &ndash; comparable to Versailles. The audio-guided tour of the inside was a little underwhelming, but I did learn that Schonbrunn played host to a meeting between Kennedy and Kruschev.
-    </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://mrkaye97.github.io/blog/post/2019-1-1-krakow-and-budapest/">Krakow and Budapest</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2019-01-01</span><span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;1263 words</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/blog/tags/travel">travel</a>&nbsp;<a href="/blog/tags/solo">solo</a>&nbsp;<a href="/blog/tags/solo-travel">solo travel</a>&nbsp;<a href="/blog/tags/europe">europe</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        Another week has already gone by! It&rsquo;s amazing how fast the time goes &ndash; I&rsquo;ll be back at school this time next week. It was a snowy Christmas in Krakow, and pretty much the whole city was closed down. Wawel Castle was a highlight &ndash; a really old castle with great views out over the city. Kazimierz, the Jewish Quarter, home of a circuit of old synagogues that survived the War, was also interesting. Our walking tour guide said that Kazimierz was populated with criminals after the War and was the seedy area of the city at the time, but has since become Krakow&rsquo;s nightlife hub, playing gist to hundreds of bars and restaurants.
-    </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://mrkaye97.github.io/blog/post/2021-01-02-prague-olomouc-and-auschwitz/">Prague, Olomouc, and Auschwitz</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2018-12-24</span><span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;646 words</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/blog/tags/travel">travel</a>&nbsp;<a href="/blog/tags/solo">solo</a>&nbsp;<a href="/blog/tags/solo-travel">solo travel</a>&nbsp;<a href="/blog/tags/europe">europe</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        I have 20 minutes before my bus from Auschwitz to Krakow leaves, so I figured I have time to write another post!
-I took a train from Vienna to Prague a few days ago to meet up with a friend who was doing abroad there. I slept through most of the ride, so I don&rsquo;t have much to say on that other than that the Czech countryside &ndash; or the parts of it that I saw, at least &ndash; were very pretty. Rolling hills, light dusting of snow, lots of trees and streams, etc. I roamed around for a little bit in Prague before meeting up with my friend.
-    </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://mrkaye97.github.io/blog/post/2021-01-02-first-days-zrh-and-vienna/">First Days -- ZRH and Vienna</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2018-12-20</span><span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;338 words</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/blog/tags/solo">solo</a>&nbsp;<a href="/blog/tags/travel">travel</a>&nbsp;<a href="/blog/tags/solo-travel">solo travel</a>&nbsp;<a href="/blog/tags/europe">europe</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        It&rsquo;s 5:43AM in Vienna, and I can&rsquo;t sleep. Jet lag. So far, so good on my trip. The flight here went surprisingly well &ndash; I woke up and was about an hour from landing in Zurich, which was unexpected and much appreciated. Flying in and out of ZRH was just about all I could ask for in a connection. The views of the Alps and snow-dusted cities and towns from the air are unbelievable. ZRH lived up to its (Swiss) reputation: clean, well-organized, easy to navigate, and overall very efficient. One weird thing about the flight in, though: we didn&rsquo;t fill out immigration cards on the flight in to Zurich from JFK.
-    </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://mrkaye97.github.io/blog/post/2021-01-02-solo-trip-to-europe-in-december-2018/">Solo Trip to Europe in December, 2018</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2018-11-25</span><span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;296 words</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/blog/tags/travel">travel</a>&nbsp;<a href="/blog/tags/solo">solo</a>&nbsp;<a href="/blog/tags/solo-travel">solo travel</a>&nbsp;<a href="/blog/tags/europe">europe</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        I&rsquo;m going to Europe in a few weeks! I&rsquo;m flying into Vienna, and then am heading to Prague, Olomouc, Krakow, Budapest, and Salzburg. I&rsquo;ll be staying in hostels all along the way, and could not be more excited. This is my first real solo trip (something I&rsquo;ve been wanting to do for a while), so it should be a great experience. I&rsquo;m going to try to post updates along the way of what I&rsquo;m seeing and doing, but I&rsquo;m not totally sure whether or not I will bring my computer. If not, I&rsquo;m definitely going to write a trip update when I get back stateside.
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-            </div>
-            <aside class="col-12 col-md-3 float-left sidebar">
-    
-    <div class="sidebar-item sidebar-pages">
-        <h3>Pages</h3>
-        <ul>
-            
-            <li>
-                <a href="/blog/">Home</a>
-            </li>
-            
-            <li>
-                <a href="/blog/archives/">Archives</a>
-            </li>
-            
-            <li>
-                <a href="/blog/search/">Search</a>
-            </li>
-            
-        </ul>
-    </div>
-    
-    <div class="sidebar-item sidebar-links">
-        <h3>Links</h3>
-        <ul>
-            
-            <li>
-                <a href="https://github.com/mrkaye97" target="_blank"><span>GitHub</span></a>
-            </li>
-            
-        </ul>
-    </div>
-    
-    <div class="sidebar-item sidebar-tags">
-        <h3>Tags</h3>
-        <div>
-            
-            <span>
-                <a href="/blog/tags/data-science/">data science</a>
-            </span>
-            
-            <span>
-                <a href="/blog/tags/europe/">europe</a>
-            </span>
-            
-            <span>
-                <a href="/blog/tags/host-family/">host family</a>
-            </span>
-            
-            <span>
-                <a href="/blog/tags/solo/">solo</a>
-            </span>
-            
-            <span>
-                <a href="/blog/tags/solo-travel/">solo travel</a>
-            </span>
-            
-            <span>
-                <a href="/blog/tags/stockholm/">stockholm</a>
-            </span>
-            
-            <span>
-                <a href="/blog/tags/study-abroad/">study abroad</a>
-            </span>
-            
-            <span>
-                <a href="/blog/tags/travel/">travel</a>
-            </span>
-            
-        </div>
-    </div>
-    
-    
-    
-</aside>
-        </div>
-        <div class="btn">
-    <div class="btn-menu" id="btn-menu">
-        <i class="iconfont icon-grid-sharp"></i>
-    </div>
-    <div class="btn-toggle-mode">
-        <i class="iconfont icon-contrast-sharp"></i>
-    </div>
-    <div class="btn-scroll-top">
-        <i class="iconfont icon-chevron-up-circle-sharp"></i>
-    </div>
-</div>
-<aside class="sidebar-mobile" style="display: none;">
-  <div class="sidebar-wrapper">
-    
-    <div class="sidebar-item sidebar-pages">
-        <h3>Pages</h3>
-        <ul>
-            
-            <li>
-                <a href="/blog/">Home</a>
-            </li>
-            
-            <li>
-                <a href="/blog/archives/">Archives</a>
-            </li>
-            
-            <li>
-                <a href="/blog/search/">Search</a>
-            </li>
-            
-        </ul>
-    </div>
-    
-    <div class="sidebar-item sidebar-links">
-        <h3>Links</h3>
-        <ul>
-            
-            <li>
-                <a href="https://github.com/mrkaye97" target="_blank"><span>GitHub</span></a>
-            </li>
-            
-        </ul>
-    </div>
-    
-    <div class="sidebar-item sidebar-tags">
-        <h3>Tags</h3>
-        <div>
-            
-            <span>
-                <a href="/blog/tags/data-science/">data science</a>
-            </span>
-            
-            <span>
-                <a href="/blog/tags/europe/">europe</a>
-            </span>
-            
-            <span>
-                <a href="/blog/tags/host-family/">host family</a>
-            </span>
-            
-            <span>
-                <a href="/blog/tags/solo/">solo</a>
-            </span>
-            
-            <span>
-                <a href="/blog/tags/solo-travel/">solo travel</a>
-            </span>
-            
-            <span>
-                <a href="/blog/tags/stockholm/">stockholm</a>
-            </span>
-            
-            <span>
-                <a href="/blog/tags/study-abroad/">study abroad</a>
-            </span>
-            
-            <span>
-                <a href="/blog/tags/travel/">travel</a>
-            </span>
-            
-        </div>
-    </div>
-    
-    
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/docs/" class="logo">Blog</a>
   </div>
-</aside>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/docs/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/docs/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/docs/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/docs/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/docs/" class="logo">Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/docs/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/docs/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/docs/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/docs/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/docs/post/our-2021-big-data-bowl-submission/">Our 2021 Big Data Bowl Submission</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-01-07 </span>
+      <div class="post-category">
+          <a href="/docs/categories/data-science/"> data science </a>
+          <a href="/docs/categories/sports-analytics/"> sports analytics </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Introduction Our project aims to measure the ability of defensive backs at performing different aspects of their defensive duties: deterring targets (either by reputation or through good positioning), closing down receivers, and breaking up passes. We do this by fitting four models, two for predicting the probability that a receiver will be targeted on a given play and two for predicting the probability that a pass will be caught, which we then use to aggregate the contributions of defensive backs over the course of the season.
+    </div>
+    <div class="read-more">
+      <a href="/docs/post/our-2021-big-data-bowl-submission/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/docs/post/host-family-q-a/">Host Family Q&amp;A</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-12-01 </span>
+      <div class="post-category">
+          <a href="/docs/categories/study-abroad/"> study abroad </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      This is a blog post Q&amp;A I wrote for the Swedish Program blog. You can find the original post here.
+Housing is a big part of your study abroad experience. At The Swedish Program, we offer students the choice of an apartment or host family, both of which provide opportunities for cultural integration. It can be tough to decide which option is right for you, so we asked Fall 2019 student Matt Kaye (Carleton College ‘19) to describe his experience living with a host family.
+    </div>
+    <div class="read-more">
+      <a href="/docs/post/host-family-q-a/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/docs/post/first-weeks-in-stockholm/">First Weeks in Stockholm</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-09-09 </span>
+      <div class="post-category">
+          <a href="/docs/categories/study-abroad/"> study abroad </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      I&rsquo;m now finishing up my third week in Stockholm &ndash; time flies. Week 1 was mostly orientation: learning a little bit of Swedish, meeting the other group members, starting to find our way around the city, etc. We trekked out to Sandhamn, an island in the Archipelago, for the first weekend. Really beautiful spot. Weeks 2 and 3 were the start of classes &ndash; 3 program classes and 1 SSE class.
+    </div>
+    <div class="read-more">
+      <a href="/docs/post/first-weeks-in-stockholm/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/docs/post/last-days/">Last Days</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-01-03 </span>
+      <div class="post-category">
+          <a href="/docs/categories/travel/"> travel </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      How fast eighteen days can go by is unbelievable. This trip has been really awesome for me: I&rsquo;ve seen new parts of the world and experienced new cultures, got to meet really cool people from all over the globe, and gained important knowledge for future solo travels. But first, Vienna and Salzburg.
+I spent yesterday roaming around Vienna and then heading over to Schonbrunn Palace, the old seat of the Austrian Empire.
+    </div>
+    <div class="read-more">
+      <a href="/docs/post/last-days/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/docs/post/krakow-and-budapest/">Krakow and Budapest</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-01-01 </span>
+      <div class="post-category">
+          <a href="/docs/categories/travel/"> travel </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Another week has already gone by! It&rsquo;s amazing how fast the time goes &ndash; I&rsquo;ll be back at school this time next week. It was a snowy Christmas in Krakow, and pretty much the whole city was closed down. Wawel Castle was a highlight &ndash; a really old castle with great views out over the city. Kazimierz, the Jewish Quarter, home of a circuit of old synagogues that survived the War, was also interesting.
+    </div>
+    <div class="read-more">
+      <a href="/docs/post/krakow-and-budapest/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    </section>
+  
+  <nav class="pagination">
+    
+    <a class="next" href="/docs/page/2/">
+        <span class="next-text">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+  </nav>
+        </div>
+        
+
+      </div>
     </main>
 
-    <footer>
-    <div class="container-lg clearfix">
-        <div class="col-12 footer">
-            
-            <span>&copy; 2020-2021
-                <a href="https://mrkaye97.github.io/blog">Matt Kaye</a>
-                 | <a href="https://github.com/mrkaye97/blog">Source code</a> 
-                | Powered by <a href="https://github.com/amzrk2/hugo-theme-fuji/"
-                   target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
-                                                    target="_blank">Hugo</a> 
-            </span>
-        </div>
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mrkaye97@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/mrkaye97" class="iconfont icon-github" title="github"></a>
+  <a href="https://mrkaye97.github.io/docs/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
     </div>
-</footer>
-
-    
-<script defer src="https://cdn.jsdelivr.net/combine/npm/medium-zoom@1.0.6,npm/lazysizes@5.2.2"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/components/prism-core.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js"></script>
-
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
 
 
-<script defer src="/blog/assets/js/fuji.min.js"></script>
+
+<script type="text/javascript" src="/docs/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
 
 
 </body>
-
 </html>

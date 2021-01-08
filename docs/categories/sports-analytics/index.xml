@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sports analytics on My blog</title>
+    <link>https://mrkaye97.github.io/docs/categories/sports-analytics/</link>
+    <description>Recent content in sports analytics on My blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 07 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrkaye97.github.io/docs/categories/sports-analytics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Our 2021 Big Data Bowl Submission</title>
+      <link>https://mrkaye97.github.io/docs/post/our-2021-big-data-bowl-submission/</link>
+      <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrkaye97.github.io/docs/post/our-2021-big-data-bowl-submission/</guid>
+      <description>Introduction Our project aims to measure the ability of defensive backs at performing different aspects of their defensive duties: deterring targets (either by reputation or through good positioning), closing down receivers, and breaking up passes. We do this by fitting four models, two for predicting the probability that a receiver will be targeted on a given play and two for predicting the probability that a pass will be caught, which we then use to aggregate the contributions of defensive backs over the course of the season.</description>
+    </item>
+    
+  </channel>
+</rss>

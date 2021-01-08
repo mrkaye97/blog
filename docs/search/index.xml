@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Search on Blog</title>
-    <link>https://mrkaye97.github.io/blog/search/</link>
-    <description>Recent content in Search on Blog</description>
+    <title>Search on My blog</title>
+    <link>https://mrkaye97.github.io/docs/search/</link>
+    <description>Recent content in Search on My blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://mrkaye97.github.io/blog/search/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://mrkaye97.github.io/docs/search/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

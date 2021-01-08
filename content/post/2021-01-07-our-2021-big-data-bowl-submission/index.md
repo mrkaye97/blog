@@ -1,10 +1,6 @@
 ---
 title: Our 2021 Big Data Bowl Submission
-author: 
-  - Hugh McCreery
-  - John Edwards
-  - Matt Kaye
-  - Owen McGrattan
+author: Matt Kaye
 date: '2021-01-07'
 slug: our-2021-big-data-bowl-submission
 categories: ['data science', 'sports analytics']
