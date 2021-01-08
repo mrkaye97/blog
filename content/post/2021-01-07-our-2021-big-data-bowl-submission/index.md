@@ -1,17 +1,14 @@
 ---
-title: Our 2021 NFL Big Data Bowl Submission
+title: Our 2021 Big Data Bowl Submission
 author: 
-  - Matt Kaye
   - Hugh McCreery
   - John Edwards
+  - Matt Kaye
   - Owen McGrattan
 date: '2021-01-07'
-slug: our-2021-nfl-big-data-bowl-submission
-categories:
-  - data science
-tags:
-  - data science
-  - sports analytics
+slug: our-2021-big-data-bowl-submission
+categories: ['data science', 'sports analytics']
+tags: ['data science']
 ---
 
 ## Introduction
