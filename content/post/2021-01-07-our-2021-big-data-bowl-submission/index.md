@@ -5,6 +5,25 @@ date: '2021-01-07'
 slug: our-2021-big-data-bowl-submission
 categories: ['data science', 'sports analytics']
 tags: ['data science']
+keywords: []
+description: ''
+comment: no
+toc: no
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: yes
+mathjaxEnableSingleDollar: yes
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
 ---
 
 ## Introduction
