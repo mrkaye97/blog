@@ -182,6 +182,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 
   [params.social]                                         # 社交链接
     g-github = "https://github.com/mrkaye97"
+    l-linkedin = "https://www.linkedin.com/in/kayem20/"
 
 # See https://gohugo.io/about/hugo-and-gdpr/
 [privacy]
