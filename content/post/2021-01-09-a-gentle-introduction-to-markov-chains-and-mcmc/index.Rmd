@@ -146,9 +146,9 @@ Here's the algorithm your friends propose:
 
 1. Pick a random island to start on.
 2. On each day, randomly select a new island to go to (the **proposal island**).
-3. 
-  + If the proposal island has more people than the current island, go to the proposal island.
-  + If it has fewer people, then flip a coin with probability equal to the proposal island's population divided by the current island's. If the coin comes up heads, go to the proposal island.
+3. Do one of the following:
+    i. If the proposal island has more people than the current island, go to the proposal island.
+    ii. If it has fewer people, then flip a coin with probability equal to the proposal island's population divided by the current island's. If the coin comes up heads, go to the proposal island.
 4. Do it again a bunch of times.
 
 So, how does this algorithm perform? Let's try it out!
