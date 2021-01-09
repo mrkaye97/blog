@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bayesian on Musings</title>
+    <link>https://mrkaye97.github.io/blog/tags/bayesian/</link>
+    <description>Recent content in bayesian on Musings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 09 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrkaye97.github.io/blog/tags/bayesian/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Gentle Introduction to Markov Chains and MCMC</title>
+      <link>https://mrkaye97.github.io/blog/post/2021-01-09-a-gentle-introduction-to-markov-chains-and-mcmc/</link>
+      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrkaye97.github.io/blog/post/2021-01-09-a-gentle-introduction-to-markov-chains-and-mcmc/</guid>
+      <description>Introduction Every other friday at work, we have a meeting called All Hands, during the first half of which a member of the team gives a presentation. The presentation is split up into two pieces: A personal presentation – your favorite food, TV shows, books, etc. – and a mini-lesson, which can be about any topic of interest that’s unrelated to work. Yesterday it was my turn, and I gave my mini-lesson on Markov Chains and Markov Chain Monte Carlo.</description>
+    </item>
+    
+  </channel>
+</rss>
