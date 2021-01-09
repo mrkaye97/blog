@@ -33,7 +33,7 @@ sequenceDiagrams:
 ---
 
 ```{r, include = F}
-knitr::opts_chunk$set(echo = T, message = F, warning = F)
+knitr::opts_chunk$set(echo = T, message = F, warning = F, fig.path = "static/rmarkdown-libs", fig.align = 'center')
 suppressPackageStartupMessages(library(tidyverse))
 ```
 
