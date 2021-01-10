@@ -120,7 +120,7 @@ run_rwmh <- function(n_iters = 1000, island_populations = 1:4) {
   ## randomly choose an island to start on
   locations[1] <- sample(island_populations, 1)
 
-  for (i in 1:n_iters) {
+  for (i in 1:(n_iters-1)) {
     
     ## propose a new island to go to
     proposal_island <- sample(setdiff(island_populations, locations[i]), 1) 
