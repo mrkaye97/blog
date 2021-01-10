@@ -10,6 +10,8 @@ tags:
   - solo
   - solo travel
   - europe
+toc: no
+autoCollapseToc: no
 ---
 
 

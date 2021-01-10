@@ -5,6 +5,8 @@ date: '2018-11-25'
 slug: solo-trip-to-europe-in-december-2018
 categories: [travel]
 tags: [travel, solo, solo travel, europe]
+toc: no
+autoCollapseToc: no
 ---
 
 I'm going to Europe in a few weeks! I'm flying into Vienna, and then am heading to Prague, Olomouc, Krakow, Budapest, and Salzburg. I'll be staying in hostels all along the way, and could not be more excited. This is my first real solo trip (something I've been wanting to do for a while), so it should be a great experience. I'm going to try to post updates along the way of what I'm seeing and doing, but I'm not totally sure whether or not I will bring my computer. If not, I'm definitely going to write a trip update when I get back stateside.

@@ -9,6 +9,8 @@ tags:
   - travel
   - study abroad
   - europe
+toc: no
+autoCollapseToc: no
 ---
 
 

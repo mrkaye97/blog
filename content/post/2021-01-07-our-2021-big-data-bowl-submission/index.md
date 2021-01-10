@@ -8,7 +8,7 @@ tags: ['data science']
 keywords: []
 description: ''
 comment: no
-toc: no
+toc: yes
 autoCollapseToc: no
 postMetaInFooter: no
 hiddenFromHomePage: no

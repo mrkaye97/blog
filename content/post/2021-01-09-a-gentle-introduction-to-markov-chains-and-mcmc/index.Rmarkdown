@@ -14,8 +14,6 @@ lastmod: '2021-01-09T15:20:59-05:00'
 keywords: []
 description: ''
 comment: no
-toc: no
-autoCollapseToc: no
 postMetaInFooter: no
 hiddenFromHomePage: no
 contentCopyright: no
@@ -30,16 +28,23 @@ flowchartDiagrams:
 sequenceDiagrams:
   enable: no
   options: ''
+output: 
+output:
+  blogdown::html_page:
+    toc: true
+toc: yes
+autoCollapseToc: no
 ---
+
+## Introduction 
+
 
 ```{r, include = F}
 knitr::opts_chunk$set(echo = T, message = F, warning = F, fig.path = "static/rmarkdown-libs", fig.align = 'center')
 suppressPackageStartupMessages(library(tidyverse))
 ```
 
-## Introduction 
-
-Every other friday at work, we have a meeting called All Hands, during the first half of which a member of the team gives a presentation. The presentation is split up into two pieces: A personal presentation -- your favorite food, TV shows, books, etc. -- and a mini-lesson, which can be about any topic of interest that's unrelated to work. Yesterday it was my turn, and I gave my mini-lesson on Markov Chains and Markov Chain Monte Carlo. This post memorializes what I covered.
+Every other Friday at work, we have a meeting called All Hands, during the first half of which a member of the team gives a presentation. The presentation is split up into two pieces: A personal presentation -- your favorite food, TV shows, books, etc. -- and a mini-lesson, which can be about any topic of interest that's unrelated to work. Yesterday it was my turn, and I gave my mini-lesson on Markov Chains and Markov Chain Monte Carlo. This post memorializes what I covered.
 
 ## Markov Chains
 

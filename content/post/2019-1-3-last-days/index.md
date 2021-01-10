@@ -10,6 +10,8 @@ tags:
   - solo
   - solo travel
   - europe
+toc: no
+autoCollapseToc: no
 ---
 
 How fast eighteen days can go by is unbelievable. This trip has been really awesome for me: I've seen new parts of the world and experienced new cultures, got to meet really cool people from all over the globe, and gained important knowledge for future solo travels. But first, Vienna and Salzburg.

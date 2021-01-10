@@ -5,6 +5,8 @@ date: '2018-12-20'
 slug: first-days-zrh-and-vienna
 categories: [travel]
 tags: [solo, travel, solo travel, europe]
+toc: no
+autoCollapseToc: no
 ---
 
 It's 5:43AM in Vienna, and I can't sleep. Jet lag. So far, so good on my trip. The flight here went surprisingly well -- I woke up and was about an hour from landing in Zurich, which was unexpected and much appreciated. Flying in and out of ZRH was just about all I could ask for in a connection. The views of the Alps and snow-dusted cities and towns from the air are unbelievable. ZRH lived up to its (Swiss) reputation: clean, well-organized, easy to navigate, and overall very efficient. One weird thing about the flight in, though: we didn't fill out immigration cards on the flight in to Zurich from JFK. Maybe that is normal in Switzerland? 
