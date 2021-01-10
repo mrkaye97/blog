@@ -28,15 +28,12 @@ flowchartDiagrams:
 sequenceDiagrams:
   enable: no
   options: ''
-output: 
 output:
   blogdown::html_page:
     toc: true
-toc: yes
-autoCollapseToc: no
 ---
 
-## Introduction 
+# Introduction 
 
 
 ```{r, include = F}
@@ -46,7 +43,7 @@ suppressPackageStartupMessages(library(tidyverse))
 
 Every other Friday at work, we have a meeting called All Hands, during the first half of which a member of the team gives a presentation. The presentation is split up into two pieces: A personal presentation -- your favorite food, TV shows, books, etc. -- and a mini-lesson, which can be about any topic of interest that's unrelated to work. Yesterday it was my turn, and I gave my mini-lesson on Markov Chains and Markov Chain Monte Carlo. This post memorializes what I covered.
 
-## Markov Chains
+# Markov Chains
 
 First, what is a Markov Chain? It's easiest to break it down into it's component parts. A **Markov Chain** is a *chain*, or sequence of events, that follow the Markov Property. So, then, what's the Markov Property? It's actually quite intutive: The **Markov Property** says that the next state in a sequence (chain) is only dependent on the current state. Statisticians would call this "memorylessness," and we can write out the property in its true mathematical form below, where $X$ is a random variable and $x_{t}$ is the probability distribution that $X$ takes on at time $t$.
 
@@ -108,7 +105,7 @@ So, what's going on here? It basically looks how we'd expect. At any given time 
 
 Cool, so now we have an idea of what a Markov Chain is and how a random walk is an example of one. Now, why do we care? What kinds of problems can we solve with Markov Chains? It turns out that one thing we can use them to do is to calculate intractable integrals. What does this mean? Well, remembering back to a calculus class once upon a time, we know if we have some function $f(x) = 2x$, we can integrate that function by following a one of a couple of rules. In this case, that rule is to raise the coefficient in front of the $x$ to turn it into a power, such that the new exponent equals the old one plus one, and the new coefficient equals the old one divided by the new exponent. For $f(x)$, we find $F(x) = \int f(x) = x^{2} + c$, where $c$ is a constant. However, in many applications, such as Bayesian statistics, we run into functions of hundreds or thousands of parameters that are intractable to integrate. In other words, even really, really powerful calculators can't integrate them: there are just too many parameters. So, we're stuck. How do we integrate a function that even a super powerful calculator can't? In steps Markov Chain Monte Carlo, coming to the rescue. 
 
-## Markov Chain Monte Carlo
+# Markov Chain Monte Carlo
 
 It turns out that we can use Markov Chains to approximate the integral in cases where we can't calculate it directly. This is an incredible powerful discovery, and one that we've only been able to really take advantage of in the past twenty or so years, as computing power has grown exponentially. So, how do we actually do it? Let's frame it as a simple problem that's isomorphic to the actual problem at hand.
 
@@ -200,7 +197,7 @@ No problem! Even with the extra islands, the mean error margin is still zero, an
 
 This algorithm is called the Metropolis-Hastings Algorithm, and it's one of many in the class of Markov Chain Monte Carlo algorithms. Some others are the Gibbs Sampler and Hamiltonian Monte Carlo, both of which are frequently used in Bayesian statistics for estimating the parameters of regression models with hundreds of thousands of parameters. In short, these algorithms allow us to solve problems that were literally impossible to solve only two decades ago or so, which is an amazing feat! 
 
-## Recap
+# Recap
 
 * Markov Chains are not that scary! They're just a memoryless sequence of events, meaning that where you came from doesn't impact where you go next.
 * Markov Chain Monte Carlo algorithms like the Metropolis-Hastings can be quite simple, and let us solve impossibly hard problems.
