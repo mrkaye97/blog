@@ -45,6 +45,6 @@ Given that I had lived with a host family before, I wasn’t very nervous. I thi
 
 Definitely just being a part of the family. It’s been really awesome getting to know them and leaving will be hard. I’ve felt really at home here, especially the last few months after getting settled in.
 
-### What’s your advice to future students who are considering choosing a host family?
+### What is your advice to future students who are considering choosing a host family?
 
 Obviously, do it. It completely changes the experience that you’ll have here. Like I said before, I’m eternally grateful for all of the great opportunities that I’ve had because of having chosen to live with a host family.
