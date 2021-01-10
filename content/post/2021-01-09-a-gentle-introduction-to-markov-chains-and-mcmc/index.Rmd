@@ -28,9 +28,7 @@ flowchartDiagrams:
 sequenceDiagrams:
   enable: no
   options: ''
-output:
-  blogdown::html_page:
-    toc: true
+toc: no
 ---
 
 # Introduction 
