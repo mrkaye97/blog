@@ -169,7 +169,7 @@ some_islands <- run_rwmh(n_iters = 10000) %>%
   group_by(island) %>%
   summarize(days_spent = n(), .groups = 'drop') %>%
   mutate(day_proportion = days_spent / sum(days_spent),
-         error_margin = day_proportion - island / sum(island))
+         error_margin = day_proportion / (island / sum(island)) - 1)
 
 mean_error_margin <- mean(some_islands$error_margin)
 sd_error_margin <- sd(some_islands$error_margin)
@@ -184,14 +184,29 @@ more_islands <- run_rwmh(n_iters = 10000, island_populations = 1:100) %>%
   group_by(island) %>%
   summarize(days_spent = n(), .groups = 'drop') %>%
   mutate(day_proportion = days_spent / sum(days_spent),
-         error_margin = day_proportion - island / sum(island))
+         error_margin = day_proportion / (island / sum(island)) - 1)
 
 mean_error_margin <- mean(more_islands$error_margin)
 sd_error_margin <- sd(more_islands$error_margin)
 more_islands
 ```
 
-No problem! Even with the extra islands, the mean error margin is still zero, and the standard deviation of the error margins is `r round(sd_error_margin, digits = 5)`, which is miniscule. It's true that a more complex system (i.e. more islands) would mean that we need more iterations to converge in probability to the proportions we're shooting for, but the algorithm will still work with enough time.
+No problem! Even with the extra islands, the mean error margin is still zero, and the standard deviation of the error margins is `r round(sd_error_margin, digits = 5)`, which is also small, but not as small as the simpler system. It's true that a more complex system (i.e. more islands) would mean that we need more iterations to converge in probability to the proportions we're shooting for, but the algorithm will still work with enough time. Let's try running it one more time on the complex system, but this time with a million iterations.
+
+```{r}
+more_iters <- run_rwmh(n_iters = 1000000, island_populations = 1:100) %>%
+  tibble(island = .) %>%
+  group_by(island) %>%
+  summarize(days_spent = n(), .groups = 'drop') %>%
+  mutate(day_proportion = days_spent / sum(days_spent),
+         error_margin = day_proportion / (island / sum(island)) - 1)
+
+mean_error_margin <- mean(more_iters$error_margin)
+sd_error_margin <- sd(more_iters$error_margin)
+more_iters
+```
+
+Looks like that did the trick! The standard deviation of the error margins fell to `r round(sd_error_margin, digits = 5)`, just as we expected.
 
 This algorithm is called the Metropolis-Hastings Algorithm, and it's one of many in the class of Markov Chain Monte Carlo algorithms. Some others are the Gibbs Sampler and Hamiltonian Monte Carlo, both of which are frequently used in Bayesian statistics for estimating the parameters of regression models with hundreds of thousands of parameters. In short, these algorithms allow us to solve problems that were literally impossible to solve only two decades ago or so, which is an amazing feat! 
 
