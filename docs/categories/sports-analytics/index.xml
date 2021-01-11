@@ -13,7 +13,7 @@
       <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://mrkaye97.github.io/blog/post/our-2021-big-data-bowl-submission/</guid>
-      <description>Introduction Our project aims to measure the ability of defensive backs at performing different aspects of their defensive duties: deterring targets (either by reputation or through good positioning), closing down receivers, and breaking up passes. We do this by fitting four models, two for predicting the probability that a receiver will be targeted on a given play and two for predicting the probability that a pass will be caught, which we then use to aggregate the contributions of defensive backs over the course of the season.</description>
+      <description>Meta This post is my team&amp;rsquo;s 2021 NFL Big Data Bowl submission. My team was made up of me, Hugh McCreery (Baltimore Orioles), John Edwards (Seattle Mariners), and Owen McGrattan (DS student at Berkeley). I&amp;rsquo;m proud of what we&amp;rsquo;ve put forth here, and hopefully you find it interesting. At the end (after the Appendix), I&amp;rsquo;ve added some overall thoughs on things we were curious about or feel like we could have done better, as well as what we view as the biggest strengths and weaknesses of our submission.</description>
     </item>
     
   </channel>

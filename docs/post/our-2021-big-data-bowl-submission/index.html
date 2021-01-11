@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Matt Kaye" /><meta name="description" content="Introduction Our project aims to measure the ability of defensive backs at performing different aspects of their defensive duties: deterring targets (either by reputation or through good positioning), closing down receivers, and breaking up passes. We do this by fitting four models, two for predicting the probability that a receiver will be targeted on a given play and two for predicting the probability that a pass will be caught, which we then use to aggregate the contributions of defensive backs over the course of the season." />
+<meta name="author" content="Matt Kaye" /><meta name="description" content="Meta This post is my team&amp;rsquo;s 2021 NFL Big Data Bowl submission. My team was made up of me, Hugh McCreery (Baltimore Orioles), John Edwards (Seattle Mariners), and Owen McGrattan (DS student at Berkeley). I&amp;rsquo;m proud of what we&amp;rsquo;ve put forth here, and hopefully you find it interesting. At the end (after the Appendix), I&amp;rsquo;ve added some overall thoughs on things we were curious about or feel like we could have done better, as well as what we view as the biggest strengths and weaknesses of our submission." />
 
 
 
@@ -40,23 +40,23 @@
 
 
 <meta property="og:title" content="Our 2021 Big Data Bowl Submission" />
-<meta property="og:description" content="Introduction Our project aims to measure the ability of defensive backs at performing different aspects of their defensive duties: deterring targets (either by reputation or through good positioning), closing down receivers, and breaking up passes. We do this by fitting four models, two for predicting the probability that a receiver will be targeted on a given play and two for predicting the probability that a pass will be caught, which we then use to aggregate the contributions of defensive backs over the course of the season." />
+<meta property="og:description" content="Meta This post is my team&rsquo;s 2021 NFL Big Data Bowl submission. My team was made up of me, Hugh McCreery (Baltimore Orioles), John Edwards (Seattle Mariners), and Owen McGrattan (DS student at Berkeley). I&rsquo;m proud of what we&rsquo;ve put forth here, and hopefully you find it interesting. At the end (after the Appendix), I&rsquo;ve added some overall thoughs on things we were curious about or feel like we could have done better, as well as what we view as the biggest strengths and weaknesses of our submission." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mrkaye97.github.io/blog/post/our-2021-big-data-bowl-submission/" />
 <meta property="article:published_time" content="2021-01-07T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-01-07T00:00:00+00:00" />
 <meta itemprop="name" content="Our 2021 Big Data Bowl Submission">
-<meta itemprop="description" content="Introduction Our project aims to measure the ability of defensive backs at performing different aspects of their defensive duties: deterring targets (either by reputation or through good positioning), closing down receivers, and breaking up passes. We do this by fitting four models, two for predicting the probability that a receiver will be targeted on a given play and two for predicting the probability that a pass will be caught, which we then use to aggregate the contributions of defensive backs over the course of the season.">
+<meta itemprop="description" content="Meta This post is my team&rsquo;s 2021 NFL Big Data Bowl submission. My team was made up of me, Hugh McCreery (Baltimore Orioles), John Edwards (Seattle Mariners), and Owen McGrattan (DS student at Berkeley). I&rsquo;m proud of what we&rsquo;ve put forth here, and hopefully you find it interesting. At the end (after the Appendix), I&rsquo;ve added some overall thoughs on things we were curious about or feel like we could have done better, as well as what we view as the biggest strengths and weaknesses of our submission.">
 <meta itemprop="datePublished" content="2021-01-07T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-07T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1880">
+<meta itemprop="wordCount" content="2893">
 
 
 
 <meta itemprop="keywords" content="data science," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Our 2021 Big Data Bowl Submission"/>
-<meta name="twitter:description" content="Introduction Our project aims to measure the ability of defensive backs at performing different aspects of their defensive duties: deterring targets (either by reputation or through good positioning), closing down receivers, and breaking up passes. We do this by fitting four models, two for predicting the probability that a receiver will be targeted on a given play and two for predicting the probability that a pass will be caught, which we then use to aggregate the contributions of defensive backs over the course of the season."/>
+<meta name="twitter:description" content="Meta This post is my team&rsquo;s 2021 NFL Big Data Bowl submission. My team was made up of me, Hugh McCreery (Baltimore Orioles), John Edwards (Seattle Mariners), and Owen McGrattan (DS student at Berkeley). I&rsquo;m proud of what we&rsquo;ve put forth here, and hopefully you find it interesting. At the end (after the Appendix), I&rsquo;ve added some overall thoughs on things we were curious about or feel like we could have done better, as well as what we view as the biggest strengths and weaknesses of our submission."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -127,8 +127,8 @@
             <a href="/blog/categories/data-science/"> data science </a>
             <a href="/blog/categories/sports-analytics/"> sports analytics </a>
             </div>
-          <span class="more-meta"> 1880 words </span>
-          <span class="more-meta"> 9 mins read </span>
+          <span class="more-meta"> 2893 words </span>
+          <span class="more-meta"> 14 mins read </span>
         
       </div>
     </header>
@@ -140,6 +140,7 @@
   <ul>
     <li>
       <ul>
+        <li><a href="#meta">Meta</a></li>
         <li><a href="#introduction">Introduction</a></li>
         <li><a href="#modeling-framework">Modeling Framework</a></li>
         <li><a href="#catch-probability">Catch Probability</a></li>
@@ -147,6 +148,13 @@
         <li><a href="#results">Results</a></li>
         <li><a href="#further-work">Further Work</a></li>
         <li><a href="#appendix">Appendix</a></li>
+        <li><a href="#thoughts">Thoughts</a>
+          <ul>
+            <li><a href="#strengths">Strengths</a></li>
+            <li><a href="#weaknesses--potential-improvements">Weaknesses + Potential Improvements</a></li>
+            <li><a href="#general-thoughts">General Thoughts</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -154,7 +162,9 @@
   </div>
 </div>
     <div class="post-content">
-      <h2 id="introduction">Introduction</h2>
+      <h2 id="meta">Meta</h2>
+<p>This post is my team&rsquo;s 2021 NFL Big Data Bowl submission. My team was made up of me, Hugh McCreery (Baltimore Orioles), John Edwards (Seattle Mariners), and Owen McGrattan (DS student at Berkeley). I&rsquo;m proud of what we&rsquo;ve put forth here, and hopefully you find it interesting. At the end (after the Appendix), I&rsquo;ve added some overall thoughs on things we were curious about or feel like we could have done better, as well as what we view as the biggest strengths and weaknesses of our submission. Enjoy!</p>
+<h2 id="introduction">Introduction</h2>
 <p>Our project aims to measure the ability of defensive backs at performing different aspects of their defensive duties: deterring targets (either by reputation or through good positioning), closing down receivers, and breaking up passes. We do this by fitting four models, two for predicting the probability that a receiver will be targeted on a given play and two for predicting the probability that a pass will be caught, which we then use to aggregate the contributions of defensive backs over the course of the season.</p>
 <h2 id="modeling-framework">Modeling Framework</h2>
 <p>We opted to use XGBoost for all of our models. At a high level, we chose a tree booster for its ability to find complex interactions between predictors, something we anticipated would be necessary for this project. Tree boosting also allows for null values to be present, which helped us divvy up credit in the catch probability models (more on this later). Finally, tree boosting is a relatively simple, easy to tune algorithm that generally performs extremely well, as was the case for us.</p>
@@ -186,6 +196,23 @@
 <p>All of our code is hosted in two Github repos: <a href="https://github.com/hjmbigdatabowl/bdb2021">hjmbigdatabowl/bdb2021</a>, which hosts our modeling code, and <a href="https://github.com/hjmbigdatabowl/bdb2021-shiny">hjmbigdatabowl/bdb2021-shiny</a>, which hosts the Shiny app.</p>
 <p>There is extensive documentation for our code on our <a href="https://hjmbigdatabowl.github.io/bdb2021/reference/">pkgdown site</a>.</p>
 <p>The Shiny app can be found <a href="https://bdb-2021.herokuapp.com/">here</a>, which lets you explore our models, results, and player ratings.</p>
+<h2 id="thoughts">Thoughts</h2>
+<p>First, a disclaimer for everything that follows: I&rsquo;m extremely proud of what we submitted, and the work that we did. We spent hundreds of hours working on this project over the course of about three months, which is an enormous undertaking for four people with other full-time commitments. Especially in the final weeks, I was spending well over ten hours a week working on this project, and probably closer to fifteen or twenty. All of that said, in the grand sceme of things, the 300 hours or so collective hours that we spent conceiving of and working on this project is nowhere near the amount of time and effort that could be poured into a project that a data science team of four was working on full-time for three months. Given more time, I believe there are significant ways in which we could have improved our final product.</p>
+<h3 id="strengths">Strengths</h3>
+<ol>
+<li><strong>Communcation and interpretability of the results.</strong> At the end of the day, when you work in a front office (as Hugh, John, and I know), you need coaches to believe what you&rsquo;re telling them, and building a product that they can understand and explain is a major step in that direction. Overly complex or convoluted methodology will only get your work ignored, and I think that we did a particularly good job of building a product that is actually interpretable and useful.</li>
+<li><strong>Building a model that actually evaluates something useful.</strong> At the end of the day, I&rsquo;m happy with the statistics we chose to put forward. In my view, barring special events like fumbles forced, tackling, and interceptions (all valuable things that should be worked on further to expand this project), the way that we evaluate defensive back performance by looking at what we view as the four major components &ndash; deterring passes by reputation, deterring passes with good positioning and coverage, closing down receivers, and breaking up passes &ndash; are the four most important skills for defensive backs in the NFL.</li>
+<li><strong>Divvying up credit in a clever way.</strong> I also think that the way we opted to divvy up the credit among the defenders in the two catch probability models was particularly clever, and not something that most teams would do. As we laid out in our submission, it doesn&rsquo;t make sense to divvy credit evenly or give all credit to the nearest defender to the target, and I think that the approach that we took was both novel and easily defensible.</li>
+</ol>
+<h3 id="weaknesses--potential-improvements">Weaknesses + Potential Improvements</h3>
+<ol>
+<li>Clearly, weighing each of the four components of defense that we measured equally is the wrong way to go. A better strategy would be to try to correlate them with defensive EPA or a similar stat, and use the correlation coefficients / R-Squared values / MSEs / etc. to weigh the four components based on how strongly they predict EPA. The problem, though, is that we don&rsquo;t have defensive EPA, which means we&rsquo;d need to model it. In addition, it&rsquo;s unclear how to model a <em>counterfactual</em>. What I mean by that is that for a statistic like deterrence, we need to measure the EPA caused by a defender <em>not</em> being thrown at, which is an inherently difficult thing to model. So difficult so, in fact, that I believe that the first NFL team to come up with a good way of doing this will have a Moneyball-esque leg up against the competition until other teams catch up (Ravens analysts, I&rsquo;m looking at you).</li>
+<li>There are other aspects of defensive performance that we&rsquo;re not measuring. Two obviously important categories are turnovers generated and YAC prevented. Both of these are hugely valuable for preventing points, and both are models that we didn&rsquo;t have time to build.</li>
+<li>Stability testing. We&rsquo;re probably interested in how stable our metrics are across seasons. For example, does Stephon Gilmore being a 96 overall this year actually predict his rating next year at all? Since we only have one season of data, the answer is that we don&rsquo;t know. This type of stability testing would be useful for predicting future performance, though.</li>
+</ol>
+<h3 id="general-thoughts">General Thoughts</h3>
+<p>Again, I&rsquo;m proud of what we&rsquo;ve done here. In particular, spot checking some of the numbers has been fascinating. There&rsquo;s often very little correlation between metrics, which seems good, and often the correlations can be negative. The way to think about this, as my teammate Hugh eloquently put it, is that we should think about the negative correlations as being similar to $ISO$ vs. $K%$ in the MLB: A player who is fantastic in coverage and thus often deters throws necessarily will have fewer opportunities to break up passes, meaning he will see a lower score for closing, breakups, or both. We see this type of behavior with Gilmore, Peterson, Sherman, and more. It&rsquo;s also been interesting to find that our models think the same corners are really good as the eye test does, which is an encouraging sign. Interestingly, though, some of our top-ranked defensive backs are players who don&rsquo;t tend to make top lists, and some of our lowest ranked ones (like Jason McCourty and Jalen Ramsey), do. This is reminiscent of the attitude changes about certain MLB players in the early 2010s as we began developing more advanced statistics to measure performance (i.e. Derek Jeter&rsquo;s defense being terrible and Michael Bourn being sneakily good).</p>
+<p>And with that, I&rsquo;ve wrapped up my addendum to our submission. Feel free to reach out with any questions. My contact info is on my blog, my Github, my LinkedIn, etc. Thanks for reading!</p>
 
     </div>
 

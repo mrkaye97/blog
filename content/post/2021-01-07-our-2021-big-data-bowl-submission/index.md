@@ -26,6 +26,10 @@ sequenceDiagrams:
   options: ''
 ---
 
+## Meta
+
+This post is my team's 2021 NFL Big Data Bowl submission. My team was made up of me, Hugh McCreery (Baltimore Orioles), John Edwards (Seattle Mariners), and Owen McGrattan (DS student at Berkeley). I'm proud of what we've put forth here, and hopefully you find it interesting. At the end (after the Appendix), I've added some overall thoughs on things we were curious about or feel like we could have done better, as well as what we view as the biggest strengths and weaknesses of our submission. Enjoy!
+
 ## Introduction
 
 Our project aims to measure the ability of defensive backs at performing different aspects of their defensive duties: deterring targets (either by reputation or through good positioning), closing down receivers, and breaking up passes. We do this by fitting four models, two for predicting the probability that a receiver will be targeted on a given play and two for predicting the probability that a pass will be caught, which we then use to aggregate the contributions of defensive backs over the course of the season.
@@ -87,4 +91,27 @@ All of our code is hosted in two Github repos: [hjmbigdatabowl/bdb2021](https://
 There is extensive documentation for our code on our [pkgdown site](https://hjmbigdatabowl.github.io/bdb2021/reference/).
 
 The Shiny app can be found [here](https://bdb-2021.herokuapp.com/), which lets you explore our models, results, and player ratings.
+
+## Thoughts
+
+First, a disclaimer for everything that follows: I'm extremely proud of what we submitted, and the work that we did. We spent hundreds of hours working on this project over the course of about three months, which is an enormous undertaking for four people with other full-time commitments. Especially in the final weeks, I was spending well over ten hours a week working on this project, and probably closer to fifteen or twenty. All of that said, in the grand sceme of things, the 300 hours or so collective hours that we spent conceiving of and working on this project is nowhere near the amount of time and effort that could be poured into a project that a data science team of four was working on full-time for three months. Given more time, I believe there are significant ways in which we could have improved our final product.
+
+### Strengths 
+
+1. **Communcation and interpretability of the results.** At the end of the day, when you work in a front office (as Hugh, John, and I know), you need coaches to believe what you're telling them, and building a product that they can understand and explain is a major step in that direction. Overly complex or convoluted methodology will only get your work ignored, and I think that we did a particularly good job of building a product that is actually interpretable and useful.
+2. **Building a model that actually evaluates something useful.** At the end of the day, I'm happy with the statistics we chose to put forward. In my view, barring special events like fumbles forced, tackling, and interceptions (all valuable things that should be worked on further to expand this project), the way that we evaluate defensive back performance by looking at what we view as the four major components -- deterring passes by reputation, deterring passes with good positioning and coverage, closing down receivers, and breaking up passes -- are the four most important skills for defensive backs in the NFL. 
+3. **Divvying up credit in a clever way.** I also think that the way we opted to divvy up the credit among the defenders in the two catch probability models was particularly clever, and not something that most teams would do. As we laid out in our submission, it doesn't make sense to divvy credit evenly or give all credit to the nearest defender to the target, and I think that the approach that we took was both novel and easily defensible.
+
+
+### Weaknesses + Potential Improvements
+
+1. Clearly, weighing each of the four components of defense that we measured equally is the wrong way to go. A better strategy would be to try to correlate them with defensive EPA or a similar stat, and use the correlation coefficients / R-Squared values / MSEs / etc. to weigh the four components based on how strongly they predict EPA. The problem, though, is that we don't have defensive EPA, which means we'd need to model it. In addition, it's unclear how to model a *counterfactual*. What I mean by that is that for a statistic like deterrence, we need to measure the EPA caused by a defender *not* being thrown at, which is an inherently difficult thing to model. So difficult so, in fact, that I believe that the first NFL team to come up with a good way of doing this will have a Moneyball-esque leg up against the competition until other teams catch up (Ravens analysts, I'm looking at you). 
+2. There are other aspects of defensive performance that we're not measuring. Two obviously important categories are turnovers generated and YAC prevented. Both of these are hugely valuable for preventing points, and both are models that we didn't have time to build.
+3. Stability testing. We're probably interested in how stable our metrics are across seasons. For example, does Stephon Gilmore being a 96 overall this year actually predict his rating next year at all? Since we only have one season of data, the answer is that we don't know. This type of stability testing would be useful for predicting future performance, though. 
+
+### General Thoughts
+
+Again, I'm proud of what we've done here. In particular, spot checking some of the numbers has been fascinating. There's often very little correlation between metrics, which seems good, and often the correlations can be negative. The way to think about this, as my teammate Hugh eloquently put it, is that we should think about the negative correlations as being similar to $ISO$ vs. $K%$ in the MLB: A player who is fantastic in coverage and thus often deters throws necessarily will have fewer opportunities to break up passes, meaning he will see a lower score for closing, breakups, or both. We see this type of behavior with Gilmore, Peterson, Sherman, and more. It's also been interesting to find that our models think the same corners are really good as the eye test does, which is an encouraging sign. Interestingly, though, some of our top-ranked defensive backs are players who don't tend to make top lists, and some of our lowest ranked ones (like Jason McCourty and Jalen Ramsey), do. This is reminiscent of the attitude changes about certain MLB players in the early 2010s as we began developing more advanced statistics to measure performance (i.e. Derek Jeter's defense being terrible and Michael Bourn being sneakily good). 
+
+And with that, I've wrapped up my addendum to our submission. Feel free to reach out with any questions. My contact info is on my blog, my Github, my LinkedIn, etc. Thanks for reading!
 
