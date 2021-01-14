@@ -20,9 +20,9 @@ postMetaInFooter: no
 hiddenFromHomePage: no
 contentCopyright: no
 reward: no
-mathjax: no
-mathjaxEnableSingleDollar: no
-mathjaxEnableAutoNumber: no
+mathjax: yes
+mathjaxEnableSingleDollar: yes
+mathjaxEnableAutoNumber: yes
 hideHeaderAndFooter: no
 flowchartDiagrams:
   enable: no
@@ -45,6 +45,7 @@ Every other Friday at work, we have a meeting called All Hands, during the first
 First, what is a Markov Chain? It's easiest to break it down into it's component parts. A **Markov Chain** is a *chain*, or sequence of events, that follow the Markov Property. So, then, what's the Markov Property? It's actually quite intutive: The **Markov Property** says that the next state in a sequence (chain) is only dependent on the current state. Statisticians would call this "memorylessness," and we can write out the property in its true mathematical form below, where `\(X\)` is a random variable and `\(x_{t}\)` is the probability distribution that `\(X\)` takes on at time `\(t\)`.
 
 `$$p(x_{t+1} | x_{t}, x_{t-1}, x_{t-2}, .. x_{0}) = p(x_{t+1} | x_{t})$$`
+
 In plain English, all this definition is saying is that if you are following the Markov Property, then where you go next is only determined by where you are now, and how you got to where you are has no impact. At the end of my talk, one of my coworkers commented that this property is actually quite beautiful in a real-world sense, and I feel the same way. It certainly could have been the example of a guiding principle that I choose to follow that I used in my personal presentation.
 
 So, now that we know what a Markov Chain is, let's walk through an example. The most commonly seen type of Markov Chain is called a *random walk*. Simply, a **random walk** is a Markov Chain where the next state is just determined by the current state plus some random noise. I've coded up an example below:
@@ -74,16 +75,16 @@ randomly_walk <- function(.ix = c(), n_steps = 100) {
 ## # A tibble: 100 x 1
 ##    position
 ##       <dbl>
-##  1    0    
-##  2    1.23 
-##  3    2.80 
-##  4    2.93 
-##  5    1.99 
-##  6    1.20 
-##  7    0.814
-##  8    0.771
-##  9   -0.199
-## 10    0.854
+##  1   0     
+##  2   0.0704
+##  3  -0.764 
+##  4  -3.67  
+##  5  -3.18  
+##  6  -2.74  
+##  7  -3.34  
+##  8  -2.79  
+##  9  -3.14  
+## 10  -3.95  
 ## # … with 90 more rows
 ```
 
@@ -190,10 +191,10 @@ run_rwmh(n_iters = 10) %>%
 ## # A tibble: 4 x 3
 ##   island days_spent day_proportion
 ##    <dbl>      <int>          <dbl>
-## 1      1          3            0.3
+## 1      1          1            0.1
 ## 2      2          2            0.2
-## 3      3          2            0.2
-## 4      4          3            0.3
+## 3      3          6            0.6
+## 4      4          1            0.1
 ```
 
 Unsurprisingly, with only `\(10\)` iterations the algorithm does not perform particularly well. But what about if we give it a lot more time? Let's try `\(10,000\)` iterations.
@@ -216,13 +217,13 @@ some_islands
 ## # A tibble: 4 x 4
 ##   island days_spent day_proportion error_margin
 ##    <dbl>      <int>          <dbl>        <dbl>
-## 1      1       1011          0.101       0.0110
-## 2      2       2000          0.2         0     
-## 3      3       3042          0.304       0.014 
-## 4      4       3947          0.395      -0.0133
+## 1      1        966         0.0966     -0.034  
+## 2      2       1960         0.196      -0.02   
+## 3      3       3004         0.300       0.00133
+## 4      4       4070         0.407       0.0175
 ```
 
-Much better! After `\(10,000\)` iterations, we're spending almost the exact proportion of time on each island that we want to be, as evidenced by the tiny error margins. In addition, the standard deviation of the error margins is 0.01236, which is tiny. That's awesome! But what about if the system is more complex? Like, what if we had 100 islands?
+Much better! After `\(10,000\)` iterations, we're spending almost the exact proportion of time on each island that we want to be, as evidenced by the tiny error margins. In addition, the standard deviation of the error margins is 0.02277, which is tiny. That's awesome! But what about if the system is more complex? Like, what if we had 100 islands?
 
 
 ```r
@@ -242,20 +243,20 @@ more_islands
 ## # A tibble: 100 x 4
 ##    island days_spent day_proportion error_margin
 ##     <dbl>      <int>          <dbl>        <dbl>
-##  1      1          2       0.0002         0.01  
-##  2      2          1       0.0001        -0.748 
-##  3      3          6       0.000600       0.01  
-##  4      4          8       0.0008         0.01  
-##  5      5         12       0.00120        0.212 
-##  6      6         11       0.0011        -0.0742
-##  7      7         13       0.0013        -0.0621
-##  8      8         17       0.0017         0.0731
-##  9      9         16       0.0016        -0.102 
-## 10     10         22       0.0022         0.111 
+##  1      1          3       0.000300       0.515 
+##  2      2          5       0.0005         0.262 
+##  3      3          1       0.0001        -0.832 
+##  4      4         10       0.001          0.262 
+##  5      5          7       0.0007        -0.293 
+##  6      6         13       0.0013         0.0942
+##  7      7         12       0.00120       -0.134 
+##  8      8         15       0.0015        -0.0531
+##  9      9         18       0.0018         0.01  
+## 10     10         21       0.0021         0.0605
 ## # … with 90 more rows
 ```
 
-No problem! Even with the extra islands, the mean error margin is still zero, and the standard deviation of the error margins is 0.15575, which is also small, but not as small as the simpler system. It's true that a more complex system (i.e. more islands) would mean that we need more iterations to converge in probability to the proportions we're shooting for, but the algorithm will still work with enough time. Let's try running it one more time on the complex system, but this time with a million iterations.
+No problem! Even with the extra islands, the mean error margin is still zero, and the standard deviation of the error margins is 0.16398, which is also small, but not as small as the simpler system. It's true that a more complex system (i.e. more islands) would mean that we need more iterations to converge in probability to the proportions we're shooting for, but the algorithm will still work with enough time. Let's try running it one more time on the complex system, but this time with a million iterations.
 
 
 ```r
@@ -275,20 +276,20 @@ more_iters
 ## # A tibble: 100 x 4
 ##    island days_spent day_proportion error_margin
 ##     <dbl>      <int>          <dbl>        <dbl>
-##  1      1        207       0.000207       0.0453
-##  2      2        354       0.000354      -0.106 
-##  3      3        604       0.000604       0.0167
-##  4      4        724       0.000724      -0.0859
-##  5      5       1031       0.00103        0.0413
-##  6      6       1154       0.00115       -0.0287
-##  7      7       1319       0.00132       -0.0484
-##  8      8       1506       0.00151       -0.0493
-##  9      9       1737       0.00174       -0.0253
-## 10     10       1921       0.00192       -0.0299
+##  1      1        237       0.000237      0.197  
+##  2      2        368       0.000368     -0.0708 
+##  3      3        591       0.000591     -0.00515
+##  4      4        742       0.000742     -0.0632 
+##  5      5        958       0.000958     -0.0324 
+##  6      6       1209       0.00121       0.0176 
+##  7      7       1372       0.00137      -0.0102 
+##  8      8       1506       0.00151      -0.0493 
+##  9      9       1797       0.00180       0.00832
+## 10     10       2036       0.00204       0.0282 
 ## # … with 90 more rows
 ```
 
-Looks like that did the trick! The standard deviation of the error margins fell to 0.02235, just as we expected.
+Looks like that did the trick! The standard deviation of the error margins fell to 0.02582, just as we expected.
 
 This algorithm is called the Metropolis-Hastings Algorithm, and it's one of many in the class of Markov Chain Monte Carlo algorithms. Some others are the Gibbs Sampler and Hamiltonian Monte Carlo, both of which are frequently used in Bayesian statistics for estimating the parameters of regression models with hundreds of thousands of parameters. In short, these algorithms allow us to solve problems that were literally impossible to solve only two decades ago or so, which is an amazing feat! 
 

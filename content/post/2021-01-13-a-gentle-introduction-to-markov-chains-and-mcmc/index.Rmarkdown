@@ -20,9 +20,9 @@ postMetaInFooter: no
 hiddenFromHomePage: no
 contentCopyright: no
 reward: no
-mathjax: no
-mathjaxEnableSingleDollar: no
-mathjaxEnableAutoNumber: no
+mathjax: yes
+mathjaxEnableSingleDollar: yes
+mathjaxEnableAutoNumber: yes
 hideHeaderAndFooter: no
 flowchartDiagrams:
   enable: no
@@ -48,6 +48,7 @@ Every other Friday at work, we have a meeting called All Hands, during the first
 First, what is a Markov Chain? It's easiest to break it down into it's component parts. A **Markov Chain** is a *chain*, or sequence of events, that follow the Markov Property. So, then, what's the Markov Property? It's actually quite intutive: The **Markov Property** says that the next state in a sequence (chain) is only dependent on the current state. Statisticians would call this "memorylessness," and we can write out the property in its true mathematical form below, where $X$ is a random variable and $x_{t}$ is the probability distribution that $X$ takes on at time $t$.
 
 $$p(x_{t+1} | x_{t}, x_{t-1}, x_{t-2}, .. x_{0}) = p(x_{t+1} | x_{t})$$
+
 In plain English, all this definition is saying is that if you are following the Markov Property, then where you go next is only determined by where you are now, and how you got to where you are has no impact. At the end of my talk, one of my coworkers commented that this property is actually quite beautiful in a real-world sense, and I feel the same way. It certainly could have been the example of a guiding principle that I choose to follow that I used in my personal presentation.
 
 So, now that we know what a Markov Chain is, let's walk through an example. The most commonly seen type of Markov Chain is called a *random walk*. Simply, a **random walk** is a Markov Chain where the next state is just determined by the current state plus some random noise. I've coded up an example below:
