@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Musings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 10 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrkaye97.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrkaye97.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Gentle Introduction to Markov Chains and MCMC</title>
+      <link>https://mrkaye97.github.io/blog/post/2021-01-13-a-gentle-introduction-to-markov-chains-and-mcmc/</link>
+      <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrkaye97.github.io/blog/post/2021-01-13-a-gentle-introduction-to-markov-chains-and-mcmc/</guid>
+      <description>Introduction Every other Friday at work, we have a meeting called All Hands, during the first half of which a member of the team gives a presentation. The presentation is split up into two pieces: A personal presentation &amp;ndash; your favorite food, TV shows, books, etc. &amp;ndash; and a mini-lesson, which can be about any topic of interest that&amp;rsquo;s unrelated to work. Yesterday it was my turn, and I gave my mini-lesson on Markov Chains and Markov Chain Monte Carlo.</description>
+    </item>
+    
     <item>
       <title>What I&#39;ve Been Drinking in Quarantine (Plus a Cocktail Lesson)</title>
       <link>https://mrkaye97.github.io/blog/post/2021-01-10-what-i-ve-been-drinking-in-quarantine/</link>
@@ -15,15 +24,6 @@
       <guid>https://mrkaye97.github.io/blog/post/2021-01-10-what-i-ve-been-drinking-in-quarantine/</guid>
       <description>Introduction The past ten-or-so months of limited activity due to Covid-19 have been a slog for everyone, to say the least. I&amp;rsquo;ve been fortunate to have avoided the worst of it, having spent much of the past ten months living in rural northwestern Connecticut.
 Many of us have had lots of time to explore hobbies over this time, and something that has gained lots of popularity &amp;ndash; editor&amp;rsquo;s note: unsurprisingly &amp;ndash; is drinking!</description>
-    </item>
-    
-    <item>
-      <title>A Gentle Introduction to Markov Chains and MCMC</title>
-      <link>https://mrkaye97.github.io/blog/post/2021-01-09-a-gentle-introduction-to-markov-chains-and-mcmc/</link>
-      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://mrkaye97.github.io/blog/post/2021-01-09-a-gentle-introduction-to-markov-chains-and-mcmc/</guid>
-      <description>Introduction Every other Friday at work, we have a meeting called All Hands, during the first half of which a member of the team gives a presentation. The presentation is split up into two pieces: A personal presentation – your favorite food, TV shows, books, etc. – and a mini-lesson, which can be about any topic of interest that’s unrelated to work. Yesterday it was my turn, and I gave my mini-lesson on Markov Chains and Markov Chain Monte Carlo.</description>
     </item>
     
     <item>
@@ -43,15 +43,6 @@ Many of us have had lots of time to explore hobbies over this time, and somethin
       <guid>https://mrkaye97.github.io/blog/post/host-family-q-a/</guid>
       <description>This is a blog post Q&amp;amp;A I wrote for the Swedish Program blog. You can find the original post here.
 Housing is a big part of your study abroad experience. At The Swedish Program, we offer students the choice of an apartment or host family, both of which provide opportunities for cultural integration. It can be tough to decide which option is right for you, so we asked Fall 2019 student Matt Kaye (Carleton College ‘19) to describe his experience living with a host family.</description>
-    </item>
-    
-    <item>
-      <title>First Weeks in Stockholm</title>
-      <link>https://mrkaye97.github.io/blog/post/first-weeks-in-stockholm/</link>
-      <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://mrkaye97.github.io/blog/post/first-weeks-in-stockholm/</guid>
-      <description>I&amp;rsquo;m now finishing up my third week in Stockholm &amp;ndash; time flies. Week 1 was mostly orientation: learning a little bit of Swedish, meeting the other group members, starting to find our way around the city, etc. We trekked out to Sandhamn, an island in the Archipelago, for the first weekend. Really beautiful spot. Weeks 2 and 3 were the start of classes &amp;ndash; 3 program classes and 1 SSE class.</description>
     </item>
     
     <item>

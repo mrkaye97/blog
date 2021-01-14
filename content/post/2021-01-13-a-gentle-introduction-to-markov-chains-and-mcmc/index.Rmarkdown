@@ -1,7 +1,7 @@
 ---
 title: A Gentle Introduction to Markov Chains and MCMC
 author: Matt Kaye
-date: '2021-01-09'
+date: '2021-01-13'
 slug: []
 categories:
   - data science
@@ -10,16 +10,18 @@ tags:
   - statistics
   - bayesian
   - algorithms
-lastmod: '2021-01-09T15:20:59-05:00'
+lastmod: '2021-01-13T18:53:40-07:00'
 keywords: []
 description: ''
 comment: no
+toc: yes
+autoCollapseToc: yes
 postMetaInFooter: no
 hiddenFromHomePage: no
 contentCopyright: no
 reward: no
-mathjax: yes
-mathjaxEnableSingleDollar: yes
+mathjax: no
+mathjaxEnableSingleDollar: no
 mathjaxEnableAutoNumber: no
 hideHeaderAndFooter: no
 flowchartDiagrams:
@@ -28,8 +30,8 @@ flowchartDiagrams:
 sequenceDiagrams:
   enable: no
   options: ''
-toc: no
 ---
+
 
 # Introduction 
 
@@ -214,6 +216,4 @@ This algorithm is called the Metropolis-Hastings Algorithm, and it's one of many
 
 * Markov Chains are not that scary! They're just a memoryless sequence of events, meaning that where you came from doesn't impact where you go next.
 * Markov Chain Monte Carlo algorithms like the Metropolis-Hastings can be quite simple, and let us solve impossibly hard problems.
-
-
 

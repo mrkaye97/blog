@@ -6,7 +6,43 @@
     <description>Recent content in Tags on Musings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 10 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrkaye97.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrkaye97.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>algorithms</title>
+      <link>https://mrkaye97.github.io/blog/tags/algorithms/</link>
+      <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrkaye97.github.io/blog/tags/algorithms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bayesian</title>
+      <link>https://mrkaye97.github.io/blog/tags/bayesian/</link>
+      <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrkaye97.github.io/blog/tags/bayesian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data science</title>
+      <link>https://mrkaye97.github.io/blog/tags/data-science/</link>
+      <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrkaye97.github.io/blog/tags/data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>statistics</title>
+      <link>https://mrkaye97.github.io/blog/tags/statistics/</link>
+      <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrkaye97.github.io/blog/tags/statistics/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>amaro</title>
       <link>https://mrkaye97.github.io/blog/tags/amaro/</link>
@@ -44,42 +80,6 @@
     </item>
     
     <item>
-      <title>algorithms</title>
-      <link>https://mrkaye97.github.io/blog/tags/algorithms/</link>
-      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://mrkaye97.github.io/blog/tags/algorithms/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>bayesian</title>
-      <link>https://mrkaye97.github.io/blog/tags/bayesian/</link>
-      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://mrkaye97.github.io/blog/tags/bayesian/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data science</title>
-      <link>https://mrkaye97.github.io/blog/tags/data-science/</link>
-      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://mrkaye97.github.io/blog/tags/data-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>statistics</title>
-      <link>https://mrkaye97.github.io/blog/tags/statistics/</link>
-      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://mrkaye97.github.io/blog/tags/statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>host family</title>
       <link>https://mrkaye97.github.io/blog/tags/host-family/</link>
       <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
@@ -109,18 +109,9 @@
     <item>
       <title>europe</title>
       <link>https://mrkaye97.github.io/blog/tags/europe/</link>
-      <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 03 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://mrkaye97.github.io/blog/tags/europe/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>travel</title>
-      <link>https://mrkaye97.github.io/blog/tags/travel/</link>
-      <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://mrkaye97.github.io/blog/tags/travel/</guid>
       <description></description>
     </item>
     
@@ -130,6 +121,15 @@
       <pubDate>Thu, 03 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://mrkaye97.github.io/blog/tags/solo-travel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>travel</title>
+      <link>https://mrkaye97.github.io/blog/tags/travel/</link>
+      <pubDate>Thu, 03 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrkaye97.github.io/blog/tags/travel/</guid>
       <description></description>
     </item>
     
