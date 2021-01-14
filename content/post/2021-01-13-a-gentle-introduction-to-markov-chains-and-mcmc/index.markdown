@@ -42,9 +42,11 @@ Every other Friday at work, we have a meeting called All Hands, during the first
 
 # Markov Chains
 
-First, what is a Markov Chain? It's easiest to break it down into it's component parts. A **Markov Chain** is a *chain*, or sequence of events, that follow the Markov Property. So, then, what's the Markov Property? It's actually quite intutive: The **Markov Property** says that the next state in a sequence (chain) is only dependent on the current state. Statisticians would call this "memorylessness," and we can write out the property in its true mathematical form below, where `\(X\)` is a random variable and `\(x_{t}\)` is the probability distribution that `\(X\)` takes on at time `\(t\)`.
+First, what is a Markov Chain? It's easiest to break it down into it's component parts. A **Markov Chain** is a *chain*, or sequence of events, that follow the Markov Property. So, then, what's the Markov Property? It's actually quite intutive: The **Markov Property** says that the next state in a sequence (chain) is only dependent on the current state. Statisticians would call this "memorylessness," and we can write out the property in its true mathematical form below, where $ X $ is a random variable and $ x\_{t} $ is the probability distribution that $ X $ takes on at time $ t $.
 
-`$$p(x_{t+1} | x_{t}, x_{t-1}, x_{t-2}, .. x_{0}) = p(x_{t+1} | x_{t})$$`
+$$
+p(x_{t+1} | x_{t}, x_{t-1}, x_{t-2}, .. x_{0}) = p(x_{t+1} | x_{t})
+$$
 
 In plain English, all this definition is saying is that if you are following the Markov Property, then where you go next is only determined by where you are now, and how you got to where you are has no impact. At the end of my talk, one of my coworkers commented that this property is actually quite beautiful in a real-world sense, and I feel the same way. It certainly could have been the example of a guiding principle that I choose to follow that I used in my personal presentation.
 
@@ -75,16 +77,16 @@ randomly_walk <- function(.ix = c(), n_steps = 100) {
 ## # A tibble: 100 x 1
 ##    position
 ##       <dbl>
-##  1   0     
-##  2   0.0704
-##  3  -0.764 
-##  4  -3.67  
-##  5  -3.18  
-##  6  -2.74  
-##  7  -3.34  
-##  8  -2.79  
-##  9  -3.14  
-## 10  -3.95  
+##  1    0    
+##  2    0.812
+##  3    1.17 
+##  4    0.981
+##  5    1.70 
+##  6    2.36 
+##  7    3.00 
+##  8    2.32 
+##  9    3.13 
+## 10    4.23 
 ## # … with 90 more rows
 ```
 
@@ -102,7 +104,7 @@ random_walk %>%
 
 <img src="static/rmarkdown-libsunnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" />
 
-Cool! The walk starts at `\(0\)`, and then jumps around randomly a bunch until `\(t=100\)`. It'll be more interesting once we simulate 20 random walks.
+Cool! The walk starts at $ 0 $, and then jumps around randomly a bunch until $ t=100 $. It'll be more interesting once we simulate 20 random walks.
 
 
 ```r
@@ -123,9 +125,9 @@ twenty_walks %>%
 
 <img src="static/rmarkdown-libsunnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" />
 
-So, what's going on here? It basically looks how we'd expect. At any given time point, the mean position of the `\(20\)` is about zero, but the standard deviation of those positions goes up over time. Specifically, at any given time `\(t\)`, the standard deviation of the positions should be roughly equal to `\(sqrt(t)\)`, because of how the variance is compounding. Remember, these random walks are Markov Chains because at every time `\(t\)`, I defined the position `\(y_{t+1}\)` to be `\(y_{t} + \mathcal{N}(0, 1)\)`, or the the next position is the current position plus a standard normal noise (i.e. zero-centered with unit variance).
+So, what's going on here? It basically looks how we'd expect. At any given time point, the mean position of the $ 20 $ is about zero, but the standard deviation of those positions goes up over time. Specifically, at any given time $ t $, the standard deviation of the positions should be roughly equal to $ \sqrt t $, because of how the variance is compounding. Remember, these random walks are Markov Chains because at every time $ t $, I defined the position $ y\_{t+1} $ to be $ y\_{t} + \mathcal{N}(0, 1) $, or the the next position is the current position plus a standard normal noise (i.e. zero-centered with unit variance).
 
-Cool, so now we have an idea of what a Markov Chain is and how a random walk is an example of one. Now, why do we care? What kinds of problems can we solve with Markov Chains? It turns out that one thing we can use them to do is to calculate intractable integrals. What does this mean? Well, remembering back to a calculus class once upon a time, we know if we have some function `\(f(x) = 2x\)`, we can integrate that function by following a one of a couple of rules. In this case, that rule is to raise the coefficient in front of the `\(x\)` to turn it into a power, such that the new exponent equals the old one plus one, and the new coefficient equals the old one divided by the new exponent. For `\(f(x)\)`, we find `\(F(x) = \int f(x) = x^{2} + c\)`, where `\(c\)` is a constant. However, in many applications, such as Bayesian statistics, we run into functions of hundreds or thousands of parameters that are intractable to integrate. In other words, even really, really powerful calculators can't integrate them: there are just too many parameters. So, we're stuck. How do we integrate a function that even a super powerful calculator can't? In steps Markov Chain Monte Carlo, coming to the rescue. 
+Cool, so now we have an idea of what a Markov Chain is and how a random walk is an example of one. Now, why do we care? What kinds of problems can we solve with Markov Chains? It turns out that one thing we can use them to do is to calculate intractable integrals. What does this mean? Well, remembering back to a calculus class once upon a time, we know if we have some function $ f(x) = 2x $, we can integrate that function by following a one of a couple of rules. In this case, that rule is to raise the coefficient in front of the $ x $ to turn it into a power, such that the new exponent equals the old one plus one, and the new coefficient equals the old one divided by the new exponent. For $ f(x) $, we find $ F(x) = \int f(x) = x\^{2} + c $, where $ c $ is a constant. However, in many applications, such as Bayesian statistics, we run into functions of hundreds or thousands of parameters that are intractable to integrate. In other words, even really, really powerful calculators can't integrate them: there are just too many parameters. So, we're stuck. How do we integrate a function that even a super powerful calculator can't? In steps Markov Chain Monte Carlo, coming to the rescue. 
 
 # Markov Chain Monte Carlo
 
@@ -191,13 +193,13 @@ run_rwmh(n_iters = 10) %>%
 ## # A tibble: 4 x 3
 ##   island days_spent day_proportion
 ##    <dbl>      <int>          <dbl>
-## 1      1          1            0.1
-## 2      2          2            0.2
-## 3      3          6            0.6
-## 4      4          1            0.1
+## 1      1          2            0.2
+## 2      2          3            0.3
+## 3      3          3            0.3
+## 4      4          2            0.2
 ```
 
-Unsurprisingly, with only `\(10\)` iterations the algorithm does not perform particularly well. But what about if we give it a lot more time? Let's try `\(10,000\)` iterations.
+Unsurprisingly, with only $ 10 $ iterations the algorithm does not perform particularly well. But what about if we give it a lot more time? Let's try $ 10,000 $ iterations.
 
 
 ```r
@@ -217,13 +219,13 @@ some_islands
 ## # A tibble: 4 x 4
 ##   island days_spent day_proportion error_margin
 ##    <dbl>      <int>          <dbl>        <dbl>
-## 1      1        966         0.0966     -0.034  
-## 2      2       1960         0.196      -0.02   
-## 3      3       3004         0.300       0.00133
-## 4      4       4070         0.407       0.0175
+## 1      1        982         0.0982      -0.018 
+## 2      2       2000         0.2          0     
+## 3      3       3065         0.306        0.0217
+## 4      4       3953         0.395       -0.0118
 ```
 
-Much better! After `\(10,000\)` iterations, we're spending almost the exact proportion of time on each island that we want to be, as evidenced by the tiny error margins. In addition, the standard deviation of the error margins is 0.02277, which is tiny. That's awesome! But what about if the system is more complex? Like, what if we had 100 islands?
+Much better! After $ 10,000 $ iterations, we're spending almost the exact proportion of time on each island that we want to be, as evidenced by the tiny error margins. In addition, the standard deviation of the error margins is 0.01747, which is tiny. That's awesome! But what about if the system is more complex? Like, what if we had 100 islands?
 
 
 ```r
@@ -244,19 +246,19 @@ more_islands
 ##    island days_spent day_proportion error_margin
 ##     <dbl>      <int>          <dbl>        <dbl>
 ##  1      1          3       0.000300       0.515 
-##  2      2          5       0.0005         0.262 
-##  3      3          1       0.0001        -0.832 
-##  4      4         10       0.001          0.262 
-##  5      5          7       0.0007        -0.293 
-##  6      6         13       0.0013         0.0942
-##  7      7         12       0.00120       -0.134 
-##  8      8         15       0.0015        -0.0531
-##  9      9         18       0.0018         0.01  
-## 10     10         21       0.0021         0.0605
+##  2      2          7       0.0007         0.767 
+##  3      3          4       0.0004        -0.327 
+##  4      4          7       0.0007        -0.116 
+##  5      5         12       0.00120        0.212 
+##  6      6         11       0.0011        -0.0742
+##  7      7         14       0.0014         0.01  
+##  8      8         10       0.001         -0.369 
+##  9      9         24       0.00240        0.347 
+## 10     10         25       0.0025         0.262 
 ## # … with 90 more rows
 ```
 
-No problem! Even with the extra islands, the mean error margin is still zero, and the standard deviation of the error margins is 0.16398, which is also small, but not as small as the simpler system. It's true that a more complex system (i.e. more islands) would mean that we need more iterations to converge in probability to the proportions we're shooting for, but the algorithm will still work with enough time. Let's try running it one more time on the complex system, but this time with a million iterations.
+No problem! Even with the extra islands, the mean error margin is still zero, and the standard deviation of the error margins is 0.18211, which is also small, but not as small as the simpler system. It's true that a more complex system (i.e. more islands) would mean that we need more iterations to converge in probability to the proportions we're shooting for, but the algorithm will still work with enough time. Let's try running it one more time on the complex system, but this time with a million iterations.
 
 
 ```r
@@ -276,20 +278,20 @@ more_iters
 ## # A tibble: 100 x 4
 ##    island days_spent day_proportion error_margin
 ##     <dbl>      <int>          <dbl>        <dbl>
-##  1      1        237       0.000237      0.197  
-##  2      2        368       0.000368     -0.0708 
-##  3      3        591       0.000591     -0.00515
-##  4      4        742       0.000742     -0.0632 
-##  5      5        958       0.000958     -0.0324 
-##  6      6       1209       0.00121       0.0176 
-##  7      7       1372       0.00137      -0.0102 
-##  8      8       1506       0.00151      -0.0493 
-##  9      9       1797       0.00180       0.00832
-## 10     10       2036       0.00204       0.0282 
+##  1      1        207       0.000207      0.0453 
+##  2      2        411       0.000411      0.0378 
+##  3      3        609       0.000609      0.0252 
+##  4      4        809       0.000809      0.0214 
+##  5      5       1017       0.00102       0.0272 
+##  6      6       1194       0.00119       0.00495
+##  7      7       1427       0.00143       0.0295 
+##  8      8       1616       0.00162       0.0201 
+##  9      9       1769       0.00177      -0.00739
+## 10     10       1986       0.00199       0.00293
 ## # … with 90 more rows
 ```
 
-Looks like that did the trick! The standard deviation of the error margins fell to 0.02582, just as we expected.
+Looks like that did the trick! The standard deviation of the error margins fell to 0.01485, just as we expected.
 
 This algorithm is called the Metropolis-Hastings Algorithm, and it's one of many in the class of Markov Chain Monte Carlo algorithms. Some others are the Gibbs Sampler and Hamiltonian Monte Carlo, both of which are frequently used in Bayesian statistics for estimating the parameters of regression models with hundreds of thousands of parameters. In short, these algorithms allow us to solve problems that were literally impossible to solve only two decades ago or so, which is an amazing feat! 
 
