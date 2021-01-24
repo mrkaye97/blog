@@ -301,7 +301,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">## numbers: 0.005 sec elapsed
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## numbers: 0.024 sec elapsed
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -327,7 +327,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">## numbers2: 0.005 sec elapsed
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## numbers2: 0.01 sec elapsed
 </code></pre></td></tr></table>
 </div>
 </div><p>About a tenth of a second. That&rsquo;s pretty slow. But before, I claimed that for loops in R are slow and that FP lets us get around that, right? Let&rsquo;s see how we can use vectors and functions in R to solve this problem.</p>
@@ -350,7 +350,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">## 0.002 sec elapsed
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## 0.007 sec elapsed
 </code></pre></td></tr></table>
 </div>
 </div><p>That approach is an order of magnitude faster. What about if we want to do something more complicated, like adding a column to each dataframe in a list of dataframes based on a couple of other values? Let&rsquo;s try it!</p>
@@ -389,7 +389,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">## 20.294 sec elapsed
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## 19.22 sec elapsed
 </code></pre></td></tr></table>
 </div>
 </div><p>Not great. So, what about the FP approach?</p>
@@ -424,7 +424,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">## 8.097 sec elapsed
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## 10.766 sec elapsed
 </code></pre></td></tr></table>
 </div>
 </div><p>Cool, so what happened here? Two things, really. First, my code got cleaner. Writing <code>map()</code> instead of <code>for ...</code> with a bunch of junk is a great way to be able to apply a function to everything inside of a list. Second, it got faster. That&rsquo;s because I&rsquo;m parallelizing across cores, which I can do super easily when using <code>map()</code>, since I&rsquo;m not explicitly relying on an index like I am with <code>df_list[[i]]</code> in the for loop.</p>
@@ -541,7 +541,7 @@ here are a few things going on here. First, we&rsquo;re grouping the Gapminder d
   <span class="nf">theme</span><span class="p">(</span><span class="n">axis.title</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">())</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><img src="https://mrkaye97.github.io/blog/post/2021-01-14-why-i-write-r-and-why-you-should-too/index_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div><p><img src="static/rmarkdown-libsunnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>And just like that, in only a few lines, I have an awesome chart that&rsquo;s themed, has colors, has varying point sizes, and has multiple panes for different years. <code>ggplot</code> is extremely powerful and flexible, and there are other awesome <code>ggplot</code>-adjacent packages like <code>ggthemes</code> and <code>patchwork</code> for customizing your plots even farther.</p>
 <h3 id="tidymodels">Tidymodels</h3>
 <p>Finally, <code>Tidymodels</code> is a suite of R packages much like the <code>Tidyverse</code> that seek to make building models a breeze. The idea is that instead of needing to rely on a bunch of different packages to do your modeling (like <code>ranger</code> for random forests, <code>xgboost</code> for tree boosting, <code>glm</code> or <code>brms</code> for linear models, <code>knn</code> for nearest neighbor algorithms, and <code>keras</code> or <code>nnet</code> for fitting neural nets), you can simply let <code>Tidymodels</code> do those function calls for you. You can specify a model like this:</p>
