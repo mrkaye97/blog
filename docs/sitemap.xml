@@ -2,6 +2,76 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mrkaye97.github.io/blog/categories/</loc>
+    <lastmod>2021-01-14T17:41:14-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mrkaye97.github.io/blog/tags/data-science/</loc>
+    <lastmod>2021-01-14T17:41:14-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mrkaye97.github.io/blog/categories/data-science/</loc>
+    <lastmod>2021-01-14T17:41:14-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mrkaye97.github.io/blog/</loc>
+    <lastmod>2021-01-14T17:41:14-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mrkaye97.github.io/blog/post/</loc>
+    <lastmod>2021-01-14T17:41:14-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mrkaye97.github.io/blog/tags/programming/</loc>
+    <lastmod>2021-01-14T17:41:14-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mrkaye97.github.io/blog/tags/r/</loc>
+    <lastmod>2021-01-14T17:41:14-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mrkaye97.github.io/blog/tags/statistics/</loc>
+    <lastmod>2021-01-14T17:41:14-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mrkaye97.github.io/blog/tags/</loc>
+    <lastmod>2021-01-14T17:41:14-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mrkaye97.github.io/blog/post/2021-01-14-why-i-write-r-and-why-you-should-too/</loc>
+    <lastmod>2021-01-14T17:41:14-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://mrkaye97.github.io/blog/post/2021-01-13-a-gentle-introduction-to-markov-chains-and-mcmc/</loc>
     <lastmod>2021-01-13T18:53:40-07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -17,55 +87,6 @@
   
   <url>
     <loc>https://mrkaye97.github.io/blog/tags/bayesian/</loc>
-    <lastmod>2021-01-13T18:53:40-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://mrkaye97.github.io/blog/categories/</loc>
-    <lastmod>2021-01-13T18:53:40-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://mrkaye97.github.io/blog/tags/data-science/</loc>
-    <lastmod>2021-01-13T18:53:40-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://mrkaye97.github.io/blog/categories/data-science/</loc>
-    <lastmod>2021-01-13T18:53:40-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://mrkaye97.github.io/blog/</loc>
-    <lastmod>2021-01-13T18:53:40-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://mrkaye97.github.io/blog/post/</loc>
-    <lastmod>2021-01-13T18:53:40-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://mrkaye97.github.io/blog/tags/statistics/</loc>
-    <lastmod>2021-01-13T18:53:40-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://mrkaye97.github.io/blog/tags/</loc>
     <lastmod>2021-01-13T18:53:40-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

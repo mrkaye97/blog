@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Musings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 13 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrkaye97.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrkaye97.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why I Write R, and Why You Should Too</title>
+      <link>https://mrkaye97.github.io/blog/post/2021-01-14-why-i-write-r-and-why-you-should-too/</link>
+      <pubDate>Thu, 14 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrkaye97.github.io/blog/post/2021-01-14-why-i-write-r-and-why-you-should-too/</guid>
+      <description>Introduction I write R all the time. All of my work is done in R (yes, that includes productionizing models), I write R for fun, I maintain an R package and am the author of another, and I wrote this post in R Markdown. But, why? If you peruse blogs on Towards Data Science or r/datascience, you&amp;rsquo;ll find person after person telling new data scientists or data scientists-in-training to learn python instead of R.</description>
+    </item>
+    
     <item>
       <title>A Gentle Introduction to Markov Chains and MCMC</title>
       <link>https://mrkaye97.github.io/blog/post/2021-01-13-a-gentle-introduction-to-markov-chains-and-mcmc/</link>

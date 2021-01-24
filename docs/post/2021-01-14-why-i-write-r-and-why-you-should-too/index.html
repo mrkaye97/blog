@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Why I Write R, and Why You Should Too - Musings</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Matt Kaye" /><meta name="description" content="Introduction I write R all the time. All of my work is done in R (yes, that includes productionizing models), I write R for fun, I maintain an R package and am the author of another, and I wrote this post in R Markdown. But, why? If you peruse blogs on Towards Data Science or r/datascience, you&amp;rsquo;ll find person after person telling new data scientists or data scientists-in-training to learn python instead of R." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
+
+
+<link rel="canonical" href="https://mrkaye97.github.io/blog/post/2021-01-14-why-i-write-r-and-why-you-should-too/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png">
+<link rel="manifest" href="/blog/manifest.json">
+<link rel="mask-icon" href="/blog/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/blog/sass/main.min.931eb87b26ffb882f56d8c3e0e784540443c5e475bf69a5ada9cd38ed7457217.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Why I Write R, and Why You Should Too" />
+<meta property="og:description" content="Introduction I write R all the time. All of my work is done in R (yes, that includes productionizing models), I write R for fun, I maintain an R package and am the author of another, and I wrote this post in R Markdown. But, why? If you peruse blogs on Towards Data Science or r/datascience, you&rsquo;ll find person after person telling new data scientists or data scientists-in-training to learn python instead of R." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mrkaye97.github.io/blog/post/2021-01-14-why-i-write-r-and-why-you-should-too/" />
+<meta property="article:published_time" content="2021-01-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-01-14T17:41:14-07:00" />
+<meta itemprop="name" content="Why I Write R, and Why You Should Too">
+<meta itemprop="description" content="Introduction I write R all the time. All of my work is done in R (yes, that includes productionizing models), I write R for fun, I maintain an R package and am the author of another, and I wrote this post in R Markdown. But, why? If you peruse blogs on Towards Data Science or r/datascience, you&rsquo;ll find person after person telling new data scientists or data scientists-in-training to learn python instead of R.">
+<meta itemprop="datePublished" content="2021-01-14T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-01-14T17:41:14-07:00" />
+<meta itemprop="wordCount" content="2437">
+
+
+
+<meta itemprop="keywords" content="R,data science,programming,statistics," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Why I Write R, and Why You Should Too"/>
+<meta name="twitter:description" content="Introduction I write R all the time. All of my work is done in R (yes, that includes productionizing models), I write R for fun, I maintain an R package and am the author of another, and I wrote this post in R Markdown. But, why? If you peruse blogs on Towards Data Science or r/datascience, you&rsquo;ll find person after person telling new data scientists or data scientists-in-training to learn python instead of R."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/" class="logo">Musings</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="https://mrkaye97.github.io">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/blog/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/blog/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/blog/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/blog/" class="logo">Musings</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="https://mrkaye97.github.io">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Why I Write R, and Why You Should Too</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-01-14 </span>
+        <div class="post-category">
+            <a href="/blog/categories/data-science/"> data science </a>
+            </div>
+          <span class="more-meta"> 2437 words </span>
+          <span class="more-meta"> 12 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#things-i-love-about-r">Things I love about R</a>
+          <ul>
+            <li><a href="#functional-programming">Functional Programming</a></li>
+            <li><a href="#data-wrangling">Data Wrangling</a></li>
+            <li><a href="#data-visualization">Data Visualization</a></li>
+            <li><a href="#tidymodels">Tidymodels</a></li>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#rstudio--the-rstudio-team">RStudio + the RStudio Team</a></li>
+          </ul>
+        </li>
+        <li><a href="#wrapping-up">Wrapping Up</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="introduction">Introduction</h2>
+<p>I write R all the time. All of my work is done in R (yes, that includes productionizing models), I write R for fun, I maintain an R package and am the author of another, and I wrote this post in R Markdown. But, why? If you peruse blogs on <a href="towardsdatascience.com">Towards Data Science</a> or <a href="reddit.com/r/datascience">r/datascience</a>, you&rsquo;ll find person after person telling new data scientists or data scientists-in-training to learn python instead of R. The reasons are numerous: Python is easier to learn, Python is a programming language while R is just statistical software, Python is better for machine learning while R is better for statistical learning (yes, that&rsquo;s a real quote from <a href="https://medium.com/@datadrivenscience/python-vs-r-for-data-science-and-the-winner-is-3ebb1a968197">this Medium post</a>), R is dying as more people switch to Python, and, most importantly, Python is just, way, way easier to productionize. Are any of those arguments true? Well, it depends who you ask, but certainly not if you ask an R zealot like me. I&rsquo;m not going to spend time discussing these points (I&rsquo;ll save the production one for another post). Instead, I&rsquo;ll take this post to try to convince you that R is awesome and worth learning and using, and isn&rsquo;t just that pesky software package you needed to use to pass Stat 101.</p>
+<h2 id="things-i-love-about-r">Things I love about R</h2>
+<p>There are a whole bunch of things that I love about R. Here are a few of them:</p>
+<h3 id="functional-programming">Functional Programming</h3>
+<p>At its core, R is a <em>functional programming</em> language. If that is jibberish to you, taking a deep dive in FP is worth the time. Learn some Haskell or F# to see why FP is so cool. The benefit of R being <em>mostly</em> functional is that we can get around one of R&rsquo;s biggest weaknesses: loops in R are slow. Like, really, really slow. Fortunately, there are some awesome R packages and functions that let us replace loops with much sexier approaches to solving problems wholesale. So much so that I rarely, if ever, find myself using loops in R. Maybe once every month or two, at the absolute most. Here&rsquo;s an example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">N</span> <span class="o">&lt;-</span> <span class="m">100</span>
+<span class="n">numbers</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">N</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">numbers[[i]]</span> <span class="o">&lt;-</span> <span class="n">i</span>
+<span class="p">}</span>
+
+<span class="n">numbers[1</span><span class="o">:</span><span class="m">5</span><span class="n">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] 2
+## 
+## [[3]]
+## [1] 3
+## 
+## [[4]]
+## [1] 4
+## 
+## [[5]]
+## [1] 5
+</code></pre></td></tr></table>
+</div>
+</div><p>There&rsquo;s some really, really naive R to make a list of numbers from 1 to 100. Now, let&rsquo;s square all the numbers in that list.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">numbers2</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">numbers</span><span class="p">))</span> <span class="p">{</span>
+  <span class="n">numbers2[[i]]</span> <span class="o">&lt;-</span> <span class="n">numbers[[i]]</span><span class="o">**</span><span class="m">2</span>
+<span class="p">}</span>
+
+<span class="n">numbers2[1</span><span class="o">:</span><span class="m">5</span><span class="n">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] 4
+## 
+## [[3]]
+## [1] 9
+## 
+## [[4]]
+## [1] 16
+## 
+## [[5]]
+## [1] 25
+</code></pre></td></tr></table>
+</div>
+</div><p>And we&rsquo;ve done it. Now <code>numbers2</code> contains the squares of the numbers in <code>numbers</code>. Just for kicks, let&rsquo;s time it to see how long those two loops took. There&rsquo;s a cool package called <code>tictoc</code> that lets us do this easily.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">tictoc</span><span class="p">)</span>
+
+<span class="nf">tic</span><span class="p">(</span><span class="n">msg</span> <span class="o">=</span> <span class="s">&#39;numbers&#39;</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">&lt;-</span> <span class="m">100</span>
+<span class="n">numbers</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">N</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">numbers[[i]]</span> <span class="o">&lt;-</span> <span class="n">i</span>
+<span class="p">}</span>
+<span class="nf">toc</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## numbers: 0.005 sec elapsed
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">tic</span><span class="p">(</span><span class="n">msg</span> <span class="o">=</span> <span class="s">&#39;numbers2&#39;</span><span class="p">)</span>
+<span class="n">numbers2</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">numbers</span><span class="p">))</span> <span class="p">{</span>
+  <span class="n">numbers2[[i]]</span> <span class="o">&lt;-</span> <span class="n">numbers[[i]]</span><span class="o">**</span><span class="m">2</span>
+<span class="p">}</span>
+<span class="nf">toc</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## numbers2: 0.005 sec elapsed
+</code></pre></td></tr></table>
+</div>
+</div><p>About a tenth of a second. That&rsquo;s pretty slow. But before, I claimed that for loops in R are slow and that FP lets us get around that, right? Let&rsquo;s see how we can use vectors and functions in R to solve this problem.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">tic</span><span class="p">()</span>
+<span class="n">numbers</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">100</span>
+<span class="n">numbers2</span> <span class="o">&lt;-</span> <span class="n">numbers</span><span class="o">**</span><span class="m">2</span>
+<span class="nf">toc</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## 0.002 sec elapsed
+</code></pre></td></tr></table>
+</div>
+</div><p>That approach is an order of magnitude faster. What about if we want to do something more complicated, like adding a column to each dataframe in a list of dataframes based on a couple of other values? Let&rsquo;s try it!</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">df_list</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="o">**</span><span class="m">4</span> <span class="o">%&gt;%</span> <span class="nf">as.numeric</span><span class="p">(),</span> <span class="n">b</span> <span class="o">=</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">10</span><span class="o">**</span><span class="m">4</span><span class="p">,</span> <span class="kc">pi</span> <span class="o">*</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="o">**</span><span class="m">4</span><span class="p">,</span> <span class="m">10</span><span class="p">))</span> <span class="o">%&gt;%</span>
+  <span class="nf">group_by</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">group_split</span><span class="p">()</span>
+
+<span class="n">df_list_2</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">()</span>
+
+<span class="nf">tic</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">df_list</span><span class="p">))</span> <span class="p">{</span>
+  <span class="n">df_list_2[[i]]</span> <span class="o">&lt;-</span> <span class="n">df_list[[i]]</span> <span class="o">%&gt;%</span>
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">toc</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## 20.294 sec elapsed
+</code></pre></td></tr></table>
+</div>
+</div><p>Not great. So, what about the FP approach?</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># library(furrr)</span>
+<span class="n">df_list</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="o">**</span><span class="m">4</span> <span class="o">%&gt;%</span> <span class="nf">as.numeric</span><span class="p">(),</span> <span class="n">b</span> <span class="o">=</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">10</span><span class="o">**</span><span class="m">4</span><span class="p">,</span> <span class="kc">pi</span> <span class="o">*</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="o">**</span><span class="m">4</span><span class="p">,</span> <span class="m">10</span><span class="p">))</span> <span class="o">%&gt;%</span>
+  <span class="nf">group_by</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">group_split</span><span class="p">()</span>
+
+<span class="nf">plan</span><span class="p">(</span><span class="n">multisession</span><span class="p">,</span> <span class="n">workers</span> <span class="o">=</span> <span class="m">8</span><span class="p">)</span>
+<span class="nf">tic</span><span class="p">()</span>
+<span class="n">df_list</span> <span class="o">&lt;-</span> <span class="n">df_list</span> <span class="o">%&gt;%</span>
+  <span class="nf">future_map</span><span class="p">(</span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">x</span> <span class="o">%&gt;%</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">))</span>
+<span class="nf">toc</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## 8.097 sec elapsed
+</code></pre></td></tr></table>
+</div>
+</div><p>Cool, so what happened here? Two things, really. First, my code got cleaner. Writing <code>map()</code> instead of <code>for ...</code> with a bunch of junk is a great way to be able to apply a function to everything inside of a list. Second, it got faster. That&rsquo;s because I&rsquo;m parallelizing across cores, which I can do super easily when using <code>map()</code>, since I&rsquo;m not explicitly relying on an index like I am with <code>df_list[[i]]</code> in the for loop.</p>
+<p>In my view, this is awesome. I use FP functions like <code>map()</code>, <code>reduce()</code>, <code>walk()</code>, etc. every day, because they&rsquo;re so much cleaner and more intuitive than looping. You can do FP in Python too, with <code>map()</code> + <code>lambda</code> (i.e. <code>map(lambda x: x ** 2, my_list)</code>) will square all of the elements of <code>my_list</code>. It&rsquo;s just that the code that I use every day in R to do things like data wrangling is all FP at it&rsquo;s core. All of the <code>Tidyverse</code> functions (i.e. lots of stuff in <code>dplyr</code>, <code>stringr</code>, <code>tidyr</code>, etc.) let you perform common data wrangling tasks with simple calls like <code>select()</code> to pick some columns to keep or <code>mutate()</code> to add new columns. These functions are, well, functional (because they&rsquo;re functions), and they add new columns or select columns by name and by using operations as opposed to indexing. So now, more on data wrangling.</p>
+<h3 id="data-wrangling">Data Wrangling</h3>
+<p>So, now to one of R&rsquo;s biggest strengths: data wrangling. Simply put, the <code>Tidyverse</code> is in a class of it&rsquo;s own. It&rsquo;s what <code>pandas</code> was built to emulate, and makes data wrangling a breeze. This is especially important to data scientists, since, as the cliche goes, we spend <code>insert_large_number_here</code> (usually 90%) percent of our time data wrangling. What does this look like? Here&rsquo;s something that&rsquo;s easy to do in R:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">gapminder</span><span class="p">)</span>
+
+<span class="n">gapminder</span> <span class="o">%&gt;%</span>
+  <span class="nf">group_by</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">continent</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">summarize</span><span class="p">(</span><span class="n">lifeExp</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">lifeExp</span><span class="p">),</span> <span class="n">.groups</span> <span class="o">=</span> <span class="s">&#39;drop_last&#39;</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">mutate</span><span class="p">(</span><span class="n">worldwideLifeExp</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">lifeExp</span><span class="p">),</span>
+         <span class="n">relativeToAvg</span> <span class="o">=</span> <span class="n">lifeExp</span> <span class="o">-</span> <span class="n">worldwideLifeExp</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## # A tibble: 60 x 5
+## # Groups:   year [12]
+##     year continent lifeExp worldwideLifeExp relativeToAvg
+##    &lt;int&gt; &lt;fct&gt;       &lt;dbl&gt;            &lt;dbl&gt;         &lt;dbl&gt;
+##  1  1952 Africa       39.1             54.5       -15.3  
+##  2  1952 Americas     53.3             54.5        -1.20 
+##  3  1952 Asia         46.3             54.5        -8.16 
+##  4  1952 Europe       64.4             54.5         9.93 
+##  5  1952 Oceania      69.3             54.5        14.8  
+##  6  1957 Africa       41.3             56.7       -15.4  
+##  7  1957 Americas     56.0             56.7        -0.748
+##  8  1957 Asia         49.3             56.7        -7.39 
+##  9  1957 Europe       66.7             56.7         9.99 
+## 10  1957 Oceania      70.3             56.7        13.6  
+## # … with 50 more rows
+</code></pre></td></tr></table>
+</div>
+</div><p>T
+here are a few things going on here. First, we&rsquo;re grouping the Gapminder data by continent and year, and calculating the mean life expectancy by group. Then, we remove the last grouping factor in one swoop by using <code>.groups = 'drop_last'</code>, and add two new columns: one with the worldwide mean life expectancy in that year, and one with the difference between the continent and the mean, within year. The fact that all of this work can be done in four lines is fantastic, since it saves tons of programming time, but it also makes reading the code simple. In <code>dplyr</code>, fist, you take the <code>gapminder</code> data, then, you group it by <code>year</code> and <code>continent</code>, then, you calculate the mean life expectancy within each group, and so on. The lines of code read like how you would explain the steps to someone.</p>
+<p>Another bonus here is that <code>dplyr</code> and <code>dbplyr</code> allow to seamless database connection, meaning that not only can you run <code>dplyr</code> commands on local data frames, but you can also run them against tables in a database, and then collect the query result when you choose to. For example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">my_gapminder_database</span> <span class="o">%&gt;%</span>
+  <span class="nf">group_by</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">continent</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">summarize</span><span class="p">(</span><span class="n">lifeExp</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">lifeExp</span><span class="p">),</span> <span class="n">.groups</span> <span class="o">=</span> <span class="s">&#39;drop_last&#39;</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">mutate</span><span class="p">(</span><span class="n">worldwideLifeExp</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">lifeExp</span><span class="p">),</span>
+         <span class="n">relativeToAvg</span> <span class="o">=</span> <span class="n">lifeExp</span> <span class="o">-</span> <span class="n">worldwideLifeExp</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>This code performs the exact same function as before, but <code>dbplyr</code> translates it to a SQL query, which is then executed and the result of which is returned to you. In my experience, the one line of code required to connect to a database in R is dramatically easier than, say, connecting with a Django model where you need to make a whole <code>models.py</code> file that specifies all of the columns in the database table and their data types before you can actually grab any data. Using <code>dbplyr</code> lets me pull data and work with it on the fly with almost no downtime, which saves me time and effort, and also lets me ship code much, much more quickly.</p>
+<h3 id="data-visualization">Data Visualization</h3>
+<p>Another winner for R: <code>ggplot2</code>. <code>ggplot2</code> is another <code>Tidyverse</code> package that&rsquo;s far and away the best data visualization package that you can get out of the box that&rsquo;s easy to use and free. D3 is also free, but the learning curve is far steeper. Tableau is another fantastic paid option.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">ggthemes</span><span class="p">)</span>
+<span class="n">gapminder</span> <span class="o">%&gt;%</span>
+  <span class="nf">filter</span><span class="p">(</span><span class="n">year</span> <span class="o">%in%</span> <span class="nf">c</span><span class="p">(</span><span class="m">1967</span><span class="p">,</span> <span class="m">2007</span><span class="p">))</span> <span class="o">%&gt;%</span>
+  <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">gdpPercap</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">lifeExp</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">pop</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">continent</span><span class="p">))</span> <span class="o">+</span>
+  <span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span> 
+  <span class="nf">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">scale_x_log10</span><span class="p">()</span> <span class="o">+</span>
+  <span class="nf">theme_fivethirtyeight</span><span class="p">()</span> <span class="o">+</span>
+  <span class="nf">labs</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s">&#39;GDP Per Capita&#39;</span><span class="p">,</span>
+       <span class="n">y</span> <span class="o">=</span> <span class="s">&#39;Life Expectancy&#39;</span><span class="p">,</span>
+       <span class="n">color</span> <span class="o">=</span> <span class="s">&#39;Continent&#39;</span><span class="p">,</span>
+       <span class="n">size</span> <span class="o">=</span> <span class="s">&#39;Population&#39;</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">theme</span><span class="p">(</span><span class="n">axis.title</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">())</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://mrkaye97.github.io/blog/post/2021-01-14-why-i-write-r-and-why-you-should-too/index_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>And just like that, in only a few lines, I have an awesome chart that&rsquo;s themed, has colors, has varying point sizes, and has multiple panes for different years. <code>ggplot</code> is extremely powerful and flexible, and there are other awesome <code>ggplot</code>-adjacent packages like <code>ggthemes</code> and <code>patchwork</code> for customizing your plots even farther.</p>
+<h3 id="tidymodels">Tidymodels</h3>
+<p>Finally, <code>Tidymodels</code> is a suite of R packages much like the <code>Tidyverse</code> that seek to make building models a breeze. The idea is that instead of needing to rely on a bunch of different packages to do your modeling (like <code>ranger</code> for random forests, <code>xgboost</code> for tree boosting, <code>glm</code> or <code>brms</code> for linear models, <code>knn</code> for nearest neighbor algorithms, and <code>keras</code> or <code>nnet</code> for fitting neural nets), you can simply let <code>Tidymodels</code> do those function calls for you. You can specify a model like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">logistic_reg</span><span class="p">()</span> <span class="o">%&gt;%</span>
+  <span class="nf">set_engine</span><span class="p">(</span><span class="s">&#39;glm&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>This code sets up a logistic regression model using <code>glm</code> as the backend. You can also use <code>keras</code> or <code>glmnet</code> for logistic regression:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">logistic_reg</span><span class="p">()</span> <span class="o">%&gt;%</span>
+  <span class="nf">set_engine</span><span class="p">(</span><span class="s">&#39;keras&#39;</span><span class="p">)</span>
+
+<span class="nf">logistic_reg</span><span class="p">()</span> <span class="o">%&gt;%</span>
+  <span class="nf">set_engine</span><span class="p">(</span><span class="s">&#39;glmnet&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>And the syntax is exactly the same. From there, you can use a bunch of other <code>Tidymodels</code> functions and packages like <code>tune</code> to tune your model, <code>recipes</code> to build a &ldquo;recipe&rdquo;, which helps you set up data cleaning and preprocessing steps, and <code>parsnip</code> to fit the model object. The <code>Tidymodels</code> umbrella simplifies modeling a ton, full stop.</p>
+<h3 id="packages">Packages</h3>
+<p>Finally, packages. In short, there are a <em>ton</em> of awesome R packages for literally anything you could imagine doing. I&rsquo;m an author and maintainer of <code>slackr</code>, which lets you send messages (text, plots, regression output, rendered LaTeX, etc.) to Slack directly from R. At work, I use this for error logging and notifying myself about issues in production, keeping myself posted on how cron jobs I have set up are doing, and giving our eng team simple heads-ups when a new model is deployed. It also makes it easy to make a <code>ggplot</code> and send it straight to Slack, or send some regression output to a channel in a nicely-formatted way. There are a zillion R packages that I rely on all the time. Many of them have already been mentioned here, but are worth mentioning again. Many, many thanks to the team at RStudio for their work maintaining, authoring, and constantly adding awesome features to amazing packages like <code>dplyr</code>, <code>ggplot2</code>, <code>tidyr</code>, <code>lubridate</code>, <code>parsnip</code>, etc. etc. etc. The list goes on and on.</p>
+<h3 id="rstudio--the-rstudio-team">RStudio + the RStudio Team</h3>
+<p>Speaking of the RStudio team, they (and RStudio itself) are the last reason I&rsquo;ll discuss for why I love R. RStudio is an amazing data science IDE. It makes writing code, exploring tabular data, and making plots perfectly straightforward. There are also a zillion plugins (like being able to run D3, python, etc. directly from RStudio) that make life as a data scientist in R even easier. I could go on and on about RStudio as an IDE, but just take my word for it being awesome.</p>
+<p>The RStudio <em>team</em> is equally amazing, and the work that they do is fantastic. It probably starts at the top with Hadley Wickham, who, at least as far as I can see, is the mad scientist responsible for conceptualizing, cooking up, and maintaining basically the entire Tidyverse. I can&rsquo;t go on enough about all of the amazing work that the team at RStudio does, though. From building awesome packages like the ones I mentioned earlier, to integrating R with other resources like Hugo to make <code>blogdown</code> possible (which is how I write my blog), to doing an amazing job of responding to issues and questions, to organizing awesome conferences, they really do so much great work, and the R community wouldn&rsquo;t be the same without them.</p>
+<h2 id="wrapping-up">Wrapping Up</h2>
+<p>Hopefully there was at least something interesting to you in this post, whether it be a package you hadn&rsquo;t seen before, or maybe functional programming tidbits, or anything else. This is not an exhaustive list of the reasons I love writing R, but it&rsquo;s a fairly good start. As promised, I&rsquo;ll also write a post about productionizing R (or at least how we do it at Collegevine), so those who are R-wary because of hiccups in production can rest easy: it&rsquo;s not as tough as people make it out to be! Until then, hopefully this was helpful or interesting,</p>
+
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/blog/tags/r/">R</a>
+          <a href="/blog/tags/data-science/">data science</a>
+          <a href="/blog/tags/programming/">programming</a>
+          <a href="/blog/tags/statistics/">statistics</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/blog/post/2021-01-13-a-gentle-introduction-to-markov-chains-and-mcmc/">
+            <span class="next-text nav-default">A Gentle Introduction to Markov Chains and MCMC</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/mrkaye97" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/kayem20/" class="iconfont icon-linkedin" title="linkedin"></a>
+  <a href="https://mrkaye97.github.io/blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Matt Kaye</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/blog/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-69391421-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>
