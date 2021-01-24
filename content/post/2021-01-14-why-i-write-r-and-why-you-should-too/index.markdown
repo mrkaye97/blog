@@ -32,6 +32,8 @@ sequenceDiagrams:
   options: ''
 ---
 
+
+
 ## Introduction
 
 I write R all the time. All of my work is done in R (yes, that includes productionizing models), I write R for fun, I maintain an R package and am the author of another, and I wrote this post in R Markdown. But, why? If you peruse blogs on [Towards Data Science](towardsdatascience.com) or [r/datascience](reddit.com/r/datascience), you'll find person after person telling new data scientists or data scientists-in-training to learn python instead of R. The reasons are numerous: Python is easier to learn, Python is a programming language while R is just statistical software, Python is better for machine learning while R is better for statistical learning (yes, that's a real quote from [this Medium post](https://medium.com/@datadrivenscience/python-vs-r-for-data-science-and-the-winner-is-3ebb1a968197)), R is dying as more people switch to Python, and, most importantly, Python is just, way, way easier to productionize. Are any of those arguments true? Well, it depends who you ask, but certainly not if you ask an R zealot like me. I'm not going to spend time discussing these points (I'll save the production one for another post). Instead, I'll take this post to try to convince you that R is awesome and worth learning and using, and isn't just that pesky software package you needed to use to pass Stat 101.
@@ -116,7 +118,7 @@ toc()
 ```
 
 ```
-## numbers: 0.005 sec elapsed
+## numbers: 0.024 sec elapsed
 ```
 
 ```r
@@ -129,7 +131,7 @@ toc()
 ```
 
 ```
-## numbers2: 0.005 sec elapsed
+## numbers2: 0.01 sec elapsed
 ```
 
 About a tenth of a second. That's pretty slow. But before, I claimed that for loops in R are slow and that FP lets us get around that, right? Let's see how we can use vectors and functions in R to solve this problem.
@@ -143,7 +145,7 @@ toc()
 ```
 
 ```
-## 0.002 sec elapsed
+## 0.007 sec elapsed
 ```
 
 That approach is an order of magnitude faster. What about if we want to do something more complicated, like adding a column to each dataframe in a list of dataframes based on a couple of other values? Let's try it!
@@ -167,7 +169,7 @@ toc()
 ```
 
 ```
-## 20.294 sec elapsed
+## 19.22 sec elapsed
 ```
 
 Not great. So, what about the FP approach?
@@ -187,7 +189,7 @@ toc()
 ```
 
 ```
-## 8.097 sec elapsed
+## 10.766 sec elapsed
 ```
 
 Cool, so what happened here? Two things, really. First, my code got cleaner. Writing `map()` instead of `for ...` with a bunch of junk is a great way to be able to apply a function to everything inside of a list. Second, it got faster. That's because I'm parallelizing across cores, which I can do super easily when using `map()`, since I'm not explicitly relying on an index like I am with `df_list[[i]]` in the for loop. 
@@ -262,7 +264,7 @@ gapminder %>%
   theme(axis.title = element_text())
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" />
+<img src="static/rmarkdown-libsunnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" />
 
 And just like that, in only a few lines, I have an awesome chart that's themed, has colors, has varying point sizes, and has multiple panes for different years. `ggplot` is extremely powerful and flexible, and there are other awesome `ggplot`-adjacent packages like `ggthemes` and `patchwork` for customizing your plots even farther. 
 

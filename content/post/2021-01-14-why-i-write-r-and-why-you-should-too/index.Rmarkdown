@@ -32,6 +32,11 @@ sequenceDiagrams:
   options: ''
 ---
 
+```{r, include = F}
+knitr::opts_chunk$set(echo = T, message = F, warning = F, fig.path = "static/rmarkdown-libs", fig.align = 'center')
+suppressPackageStartupMessages(library(tidyverse))
+```
+
 ## Introduction
 
 I write R all the time. All of my work is done in R (yes, that includes productionizing models), I write R for fun, I maintain an R package and am the author of another, and I wrote this post in R Markdown. But, why? If you peruse blogs on [Towards Data Science](towardsdatascience.com) or [r/datascience](reddit.com/r/datascience), you'll find person after person telling new data scientists or data scientists-in-training to learn python instead of R. The reasons are numerous: Python is easier to learn, Python is a programming language while R is just statistical software, Python is better for machine learning while R is better for statistical learning (yes, that's a real quote from [this Medium post](https://medium.com/@datadrivenscience/python-vs-r-for-data-science-and-the-winner-is-3ebb1a968197)), R is dying as more people switch to Python, and, most importantly, Python is just, way, way easier to productionize. Are any of those arguments true? Well, it depends who you ask, but certainly not if you ask an R zealot like me. I'm not going to spend time discussing these points (I'll save the production one for another post). Instead, I'll take this post to try to convince you that R is awesome and worth learning and using, and isn't just that pesky software package you needed to use to pass Stat 101.
@@ -167,7 +172,7 @@ This code performs the exact same function as before, but `dbplyr` translates it
 
 Another winner for R: `ggplot2`. `ggplot2` is another `Tidyverse` package that's far and away the best data visualization package that you can get out of the box that's easy to use and free. D3 is also free, but the learning curve is far steeper. Tableau is another fantastic paid option.
 
-```{r, fig.align='center'}
+```{r}
 library(ggthemes)
 gapminder %>%
   filter(year %in% c(1967, 2007)) %>%
