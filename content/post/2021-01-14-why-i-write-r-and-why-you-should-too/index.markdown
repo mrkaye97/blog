@@ -118,7 +118,7 @@ toc()
 ```
 
 ```
-## numbers: 0.024 sec elapsed
+## numbers: 0.006 sec elapsed
 ```
 
 ```r
@@ -131,10 +131,10 @@ toc()
 ```
 
 ```
-## numbers2: 0.01 sec elapsed
+## numbers2: 0.009 sec elapsed
 ```
 
-About a tenth of a second. That's pretty slow. But before, I claimed that for loops in R are slow and that FP lets us get around that, right? Let's see how we can use vectors and functions in R to solve this problem.
+That's pretty slow. But before, I claimed that for loops in R are slow and that FP lets us get around that, right? Let's see how we can use vectors and functions in R to solve this problem.
 
 
 ```r
@@ -145,10 +145,10 @@ toc()
 ```
 
 ```
-## 0.007 sec elapsed
+## 0.004 sec elapsed
 ```
 
-That approach is an order of magnitude faster. What about if we want to do something more complicated, like adding a column to each dataframe in a list of dataframes based on a couple of other values? Let's try it!
+That approach is dramatically faster. What about if we want to do something more complicated, like adding a column to each dataframe in a list of dataframes based on a couple of other values? Let's try it!
 
 
 
@@ -169,7 +169,7 @@ toc()
 ```
 
 ```
-## 19.22 sec elapsed
+## 15.866 sec elapsed
 ```
 
 Not great. So, what about the FP approach?
@@ -189,7 +189,7 @@ toc()
 ```
 
 ```
-## 10.766 sec elapsed
+## 7.578 sec elapsed
 ```
 
 Cool, so what happened here? Two things, really. First, my code got cleaner. Writing `map()` instead of `for ...` with a bunch of junk is a great way to be able to apply a function to everything inside of a list. Second, it got faster. That's because I'm parallelizing across cores, which I can do super easily when using `map()`, since I'm not explicitly relying on an index like I am with `df_list[[i]]` in the for loop. 

@@ -49,7 +49,7 @@
 <meta itemprop="description" content="Introduction I write R all the time. All of my work is done in R (yes, that includes productionizing models), I write R for fun, I maintain an R package and am the author of another, and I wrote this post in R Markdown. But, why? If you peruse blogs on Towards Data Science or r/datascience, you&rsquo;ll find person after person telling new data scientists or data scientists-in-training to learn python instead of R.">
 <meta itemprop="datePublished" content="2021-01-14T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-14T17:41:14-07:00" />
-<meta itemprop="wordCount" content="2437">
+<meta itemprop="wordCount" content="2428">
 
 
 
@@ -126,7 +126,7 @@
         <div class="post-category">
             <a href="/blog/categories/data-science/"> data science </a>
             </div>
-          <span class="more-meta"> 2437 words </span>
+          <span class="more-meta"> 2428 words </span>
           <span class="more-meta"> 12 mins read </span>
         
       </div>
@@ -301,7 +301,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">## numbers: 0.024 sec elapsed
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## numbers: 0.006 sec elapsed
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -327,10 +327,10 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">## numbers2: 0.01 sec elapsed
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## numbers2: 0.009 sec elapsed
 </code></pre></td></tr></table>
 </div>
-</div><p>About a tenth of a second. That&rsquo;s pretty slow. But before, I claimed that for loops in R are slow and that FP lets us get around that, right? Let&rsquo;s see how we can use vectors and functions in R to solve this problem.</p>
+</div><p>That&rsquo;s pretty slow. But before, I claimed that for loops in R are slow and that FP lets us get around that, right? Let&rsquo;s see how we can use vectors and functions in R to solve this problem.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -350,10 +350,10 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">## 0.007 sec elapsed
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## 0.004 sec elapsed
 </code></pre></td></tr></table>
 </div>
-</div><p>That approach is an order of magnitude faster. What about if we want to do something more complicated, like adding a column to each dataframe in a list of dataframes based on a couple of other values? Let&rsquo;s try it!</p>
+</div><p>That approach is dramatically faster. What about if we want to do something more complicated, like adding a column to each dataframe in a list of dataframes based on a couple of other values? Let&rsquo;s try it!</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -389,7 +389,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">## 19.22 sec elapsed
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## 15.866 sec elapsed
 </code></pre></td></tr></table>
 </div>
 </div><p>Not great. So, what about the FP approach?</p>
@@ -424,7 +424,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">## 10.766 sec elapsed
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## 7.578 sec elapsed
 </code></pre></td></tr></table>
 </div>
 </div><p>Cool, so what happened here? Two things, really. First, my code got cleaner. Writing <code>map()</code> instead of <code>for ...</code> with a bunch of junk is a great way to be able to apply a function to everything inside of a list. Second, it got faster. That&rsquo;s because I&rsquo;m parallelizing across cores, which I can do super easily when using <code>map()</code>, since I&rsquo;m not explicitly relying on an index like I am with <code>df_list[[i]]</code> in the for loop.</p>

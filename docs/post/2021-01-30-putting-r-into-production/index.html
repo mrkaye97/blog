@@ -147,10 +147,10 @@ Building a Modeling Pipeline What I&rsquo;ve found to be the most important piec
         <li><a href="#building-a-modeling-pipeline">Building a Modeling Pipeline</a>
           <ul>
             <li><a href="#an-internal-r-package">An Internal R Package</a></li>
+            <li><a href="#shiny">Shiny</a></li>
+            <li><a href="#containers">Containers</a></li>
           </ul>
         </li>
-        <li><a href="#shiny">Shiny</a></li>
-        <li><a href="#containers">Containers</a></li>
         <li><a href="#tying-it-all-together">Tying It All Together</a></li>
       </ul>
     </li>
@@ -171,9 +171,9 @@ Building a Modeling Pipeline What I&rsquo;ve found to be the most important piec
 <li><code>list_all_***(bucket = '')</code> lists all of the data, models, etc. in a bucket.</li>
 <li><code>load_from_s3(objname, bucket = '')</code> loads a specific object from S3, so we can have more flexibility than always loading the most recent one.</li>
 </ul>
-<h2 id="shiny">Shiny</h2>
+<h3 id="shiny">Shiny</h3>
 <p>The next key piece that we use is <code>Shiny</code>, which is a fantastic R package for building dashboard and applications directly from R. At CV, we use Shiny in production to load a model, run some pre-determined diagnostics, and then deploy it to production when we&rsquo;re happy with how the model is performing. For example, if we&rsquo;ve fit a Bayesian linear regression model to predict the house prices in Ames, Iowa, we&rsquo;d have a tab in our model deployment Shiny app that has some marginal effects plots, some diagnostic scores (on aggregate or broken down by arbitrary groups) like MSE, etc. The idea here is that we call <code>get_latest_model()</code> to get a model, run a bunch of diagnostics, and then, if everything looks okay, we&rsquo;ve just set up a button that says <code>Verify!</code> that pops up a modal saying &ldquo;Are you sure you want to verify this model?&rdquo; with some other info. Once you verify the model, it calls <code>save_to_production()</code>, which saves the model to production and sends a Slack message alerting us that a new model was just deployed.</p>
-<h2 id="containers">Containers</h2>
+<h3 id="containers">Containers</h3>
 <p>So now, another question. I&rsquo;ve mentioned how <code>save_to_production()</code> puts a finalized, verified model into S3, but how do we actually deploy it? For that, we rely on containers. We use containers for a big chunk of our data science work at CV, but most importantly for deploying Shiny apps and APIs to production. For Shiny, we build our apps with the help of <code>{golem}</code>, which is an awesome R package that makes it easy to spin up production-ready Shiny applications. For deploying APIs, we use <code>Plumber</code>, which is another great R package that makes building APIs super easy in R. Once  we have a <code>{golem}</code> or <code>Plumber</code> set up, we containerize it with Docker and deploy it to Heroku, and which point it exists on the internet and can be accessed by anyone on the team.</p>
 <h2 id="tying-it-all-together">Tying It All Together</h2>
 <p>To tie it all together, here is the list of steps that my R productionization workflow consists of:</p>

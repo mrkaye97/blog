@@ -47,11 +47,11 @@ The most important step is making an internal R package to speed up your workflo
 * `list_all_***(bucket = '')` lists all of the data, models, etc. in a bucket.
 * `load_from_s3(objname, bucket = '')` loads a specific object from S3, so we can have more flexibility than always loading the most recent one.
 
-## Shiny
+### Shiny
 
 The next key piece that we use is `Shiny`, which is a fantastic R package for building dashboard and applications directly from R. At CV, we use Shiny in production to load a model, run some pre-determined diagnostics, and then deploy it to production when we're happy with how the model is performing. For example, if we've fit a Bayesian linear regression model to predict the house prices in Ames, Iowa, we'd have a tab in our model deployment Shiny app that has some marginal effects plots, some diagnostic scores (on aggregate or broken down by arbitrary groups) like MSE, etc. The idea here is that we call `get_latest_model()` to get a model, run a bunch of diagnostics, and then, if everything looks okay, we've just set up a button that says `Verify!` that pops up a modal saying "Are you sure you want to verify this model?" with some other info. Once you verify the model, it calls `save_to_production()`, which saves the model to production and sends a Slack message alerting us that a new model was just deployed.
 
-## Containers
+### Containers
 
 So now, another question. I've mentioned how `save_to_production()` puts a finalized, verified model into S3, but how do we actually deploy it? For that, we rely on containers. We use containers for a big chunk of our data science work at CV, but most importantly for deploying Shiny apps and APIs to production. For Shiny, we build our apps with the help of `{golem}`, which is an awesome R package that makes it easy to spin up production-ready Shiny applications. For deploying APIs, we use `Plumber`, which is another great R package that makes building APIs super easy in R. Once  we have a `{golem}` or `Plumber` set up, we containerize it with Docker and deploy it to Heroku, and which point it exists on the internet and can be accessed by anyone on the team.
 

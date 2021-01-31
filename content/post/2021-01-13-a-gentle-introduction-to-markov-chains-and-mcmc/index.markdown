@@ -78,15 +78,15 @@ randomly_walk <- function(.ix = c(), n_steps = 100) {
 ##    position
 ##       <dbl>
 ##  1    0    
-##  2    0.812
-##  3    1.17 
-##  4    0.981
-##  5    1.70 
-##  6    2.36 
-##  7    3.00 
-##  8    2.32 
-##  9    3.13 
-## 10    4.23 
+##  2    0.500
+##  3    2.16 
+##  4    3.86 
+##  5    5.41 
+##  6    4.40 
+##  7    4.06 
+##  8    5.54 
+##  9    5.29 
+## 10    6.64 
 ## # … with 90 more rows
 ```
 
@@ -190,13 +190,12 @@ run_rwmh(n_iters = 10) %>%
 ```
 
 ```
-## # A tibble: 4 x 3
+## # A tibble: 3 x 3
 ##   island days_spent day_proportion
-##    <dbl>      <int>          <dbl>
+## *  <dbl>      <int>          <dbl>
 ## 1      1          2            0.2
-## 2      2          3            0.3
-## 3      3          3            0.3
-## 4      4          2            0.2
+## 2      3          4            0.4
+## 3      4          4            0.4
 ```
 
 Unsurprisingly, with only $ 10 $ iterations the algorithm does not perform particularly well. But what about if we give it a lot more time? Let's try $ 10,000 $ iterations.
@@ -218,14 +217,14 @@ some_islands
 ```
 ## # A tibble: 4 x 4
 ##   island days_spent day_proportion error_margin
-##    <dbl>      <int>          <dbl>        <dbl>
-## 1      1        982         0.0982      -0.018 
-## 2      2       2000         0.2          0     
-## 3      3       3065         0.306        0.0217
-## 4      4       3953         0.395       -0.0118
+## *  <dbl>      <int>          <dbl>        <dbl>
+## 1      1        999         0.0999     -0.001  
+## 2      2       1955         0.196      -0.0225 
+## 3      3       3019         0.302       0.00633
+## 4      4       4027         0.403       0.00675
 ```
 
-Much better! After $ 10,000 $ iterations, we're spending almost the exact proportion of time on each island that we want to be, as evidenced by the tiny error margins. In addition, the standard deviation of the error margins is 0.01747, which is tiny. That's awesome! But what about if the system is more complex? Like, what if we had 100 islands?
+Much better! After $ 10,000 $ iterations, we're spending almost the exact proportion of time on each island that we want to be, as evidenced by the tiny error margins. In addition, the standard deviation of the error margins is 0.01373, which is tiny. That's awesome! But what about if the system is more complex? Like, what if we had 100 islands?
 
 
 ```r
@@ -242,23 +241,23 @@ more_islands
 ```
 
 ```
-## # A tibble: 100 x 4
+## # A tibble: 99 x 4
 ##    island days_spent day_proportion error_margin
-##     <dbl>      <int>          <dbl>        <dbl>
-##  1      1          3       0.000300       0.515 
-##  2      2          7       0.0007         0.767 
-##  3      3          4       0.0004        -0.327 
-##  4      4          7       0.0007        -0.116 
-##  5      5         12       0.00120        0.212 
-##  6      6         11       0.0011        -0.0742
-##  7      7         14       0.0014         0.01  
-##  8      8         10       0.001         -0.369 
-##  9      9         24       0.00240        0.347 
-## 10     10         25       0.0025         0.262 
-## # … with 90 more rows
+##  *  <dbl>      <int>          <dbl>        <dbl>
+##  1      2          3       0.000300     -0.243  
+##  2      3          9       0.0009        0.515  
+##  3      4         10       0.001         0.262  
+##  4      5          7       0.0007       -0.293  
+##  5      6         12       0.00120       0.00980
+##  6      7         11       0.0011       -0.207  
+##  7      8         17       0.0017        0.0729 
+##  8      9          8       0.0008       -0.551  
+##  9     10         29       0.00290       0.464  
+## 10     11         15       0.0015       -0.312  
+## # … with 89 more rows
 ```
 
-No problem! Even with the extra islands, the mean error margin is still zero, and the standard deviation of the error margins is 0.18211, which is also small, but not as small as the simpler system. It's true that a more complex system (i.e. more islands) would mean that we need more iterations to converge in probability to the proportions we're shooting for, but the algorithm will still work with enough time. Let's try running it one more time on the complex system, but this time with a million iterations.
+No problem! Even with the extra islands, the mean error margin is still zero, and the standard deviation of the error margins is 0.1786, which is also small, but not as small as the simpler system. It's true that a more complex system (i.e. more islands) would mean that we need more iterations to converge in probability to the proportions we're shooting for, but the algorithm will still work with enough time. Let's try running it one more time on the complex system, but this time with a million iterations.
 
 
 ```r
@@ -277,21 +276,21 @@ more_iters
 ```
 ## # A tibble: 100 x 4
 ##    island days_spent day_proportion error_margin
-##     <dbl>      <int>          <dbl>        <dbl>
-##  1      1        207       0.000207      0.0453 
-##  2      2        411       0.000411      0.0378 
-##  3      3        609       0.000609      0.0252 
-##  4      4        809       0.000809      0.0214 
-##  5      5       1017       0.00102       0.0272 
-##  6      6       1194       0.00119       0.00495
-##  7      7       1427       0.00143       0.0295 
-##  8      8       1616       0.00162       0.0201 
-##  9      9       1769       0.00177      -0.00739
-## 10     10       1986       0.00199       0.00293
+##  *  <dbl>      <int>          <dbl>        <dbl>
+##  1      1        184       0.000184    -0.0708  
+##  2      2        390       0.00039     -0.0153  
+##  3      3        611       0.000611     0.0285  
+##  4      4        748       0.000748    -0.0557  
+##  5      5        999       0.000999     0.00899 
+##  6      6       1201       0.00120      0.0108  
+##  7      7       1386       0.00139     -0.000100
+##  8      8       1562       0.00156     -0.0140  
+##  9      9       1815       0.00182      0.0184  
+## 10     10       2019       0.00202      0.0196  
 ## # … with 90 more rows
 ```
 
-Looks like that did the trick! The standard deviation of the error margins fell to 0.01485, just as we expected.
+Looks like that did the trick! The standard deviation of the error margins fell to 0.01742, just as we expected.
 
 This algorithm is called the Metropolis-Hastings Algorithm, and it's one of many in the class of Markov Chain Monte Carlo algorithms. Some others are the Gibbs Sampler and Hamiltonian Monte Carlo, both of which are frequently used in Bayesian statistics for estimating the parameters of regression models with hundreds of thousands of parameters. In short, these algorithms allow us to solve problems that were literally impossible to solve only two decades ago or so, which is an amazing feat! 
 
