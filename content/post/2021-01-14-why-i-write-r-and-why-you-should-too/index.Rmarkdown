@@ -90,7 +90,7 @@ for (i in 1:length(numbers)) {
 toc()
 ```
 
-About a tenth of a second. That's pretty slow. But before, I claimed that for loops in R are slow and that FP lets us get around that, right? Let's see how we can use vectors and functions in R to solve this problem.
+That's pretty slow. But before, I claimed that for loops in R are slow and that FP lets us get around that, right? Let's see how we can use vectors and functions in R to solve this problem.
 
 ```{r}
 tic()
@@ -99,7 +99,7 @@ numbers2 <- numbers**2
 toc()
 ```
 
-That approach is an order of magnitude faster. What about if we want to do something more complicated, like adding a column to each dataframe in a list of dataframes based on a couple of other values? Let's try it!
+That approach is dramatically faster. What about if we want to do something more complicated, like adding a column to each dataframe in a list of dataframes based on a couple of other values? Let's try it!
 
 ```{r, include=F}
 suppressPackageStartupMessages(library(tidyverse))
