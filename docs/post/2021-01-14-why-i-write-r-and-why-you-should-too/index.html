@@ -301,7 +301,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">## numbers: 0.006 sec elapsed
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## numbers: 0.005 sec elapsed
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -327,7 +327,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">## numbers2: 0.009 sec elapsed
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## numbers2: 0.004 sec elapsed
 </code></pre></td></tr></table>
 </div>
 </div><p>That&rsquo;s pretty slow. But before, I claimed that for loops in R are slow and that FP lets us get around that, right? Let&rsquo;s see how we can use vectors and functions in R to solve this problem.</p>
@@ -350,7 +350,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">## 0.004 sec elapsed
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## 0.003 sec elapsed
 </code></pre></td></tr></table>
 </div>
 </div><p>That approach is dramatically faster. What about if we want to do something more complicated, like adding a column to each dataframe in a list of dataframes based on a couple of other values? Let&rsquo;s try it!</p>
@@ -389,7 +389,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">## 15.866 sec elapsed
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## 19.649 sec elapsed
 </code></pre></td></tr></table>
 </div>
 </div><p>Not great. So, what about the FP approach?</p>
@@ -424,7 +424,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">## 7.578 sec elapsed
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## 9.339 sec elapsed
 </code></pre></td></tr></table>
 </div>
 </div><p>Cool, so what happened here? Two things, really. First, my code got cleaner. Writing <code>map()</code> instead of <code>for ...</code> with a bunch of junk is a great way to be able to apply a function to everything inside of a list. Second, it got faster. That&rsquo;s because I&rsquo;m parallelizing across cores, which I can do super easily when using <code>map()</code>, since I&rsquo;m not explicitly relying on an index like I am with <code>df_list[[i]]</code> in the for loop.</p>
