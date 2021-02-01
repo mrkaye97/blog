@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Putting R Into Production - Musings</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Matt Kaye" /><meta name="description" content="Introduction As promised, this post is going to cover how we productionize R at CollegeVine. As I said before, I&amp;rsquo;m exclusively using R for my data science work at CV, which means that we needed to come up with a way to get over the &amp;ldquo;R is hard to productionize!&amp;rdquo; obstacle. Here&amp;rsquo;s how we do it.
+Building a Modeling Pipeline What I&amp;rsquo;ve found to be the most important piece of productionizing the work that I do is having a rock-solid pipeline set up to make everyone&amp;rsquo;s life easier." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
+
+
+<link rel="canonical" href="https://mrkaye97.github.io/blog/post/2021-01-30-putting-r-into-production/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png">
+<link rel="manifest" href="/blog/manifest.json">
+<link rel="mask-icon" href="/blog/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/blog/sass/main.min.931eb87b26ffb882f56d8c3e0e784540443c5e475bf69a5ada9cd38ed7457217.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Putting R Into Production" />
+<meta property="og:description" content="Introduction As promised, this post is going to cover how we productionize R at CollegeVine. As I said before, I&rsquo;m exclusively using R for my data science work at CV, which means that we needed to come up with a way to get over the &ldquo;R is hard to productionize!&rdquo; obstacle. Here&rsquo;s how we do it.
+Building a Modeling Pipeline What I&rsquo;ve found to be the most important piece of productionizing the work that I do is having a rock-solid pipeline set up to make everyone&rsquo;s life easier." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mrkaye97.github.io/blog/post/2021-01-30-putting-r-into-production/" />
+<meta property="article:published_time" content="2021-01-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-01-30T17:30:34-07:00" />
+<meta itemprop="name" content="Putting R Into Production">
+<meta itemprop="description" content="Introduction As promised, this post is going to cover how we productionize R at CollegeVine. As I said before, I&rsquo;m exclusively using R for my data science work at CV, which means that we needed to come up with a way to get over the &ldquo;R is hard to productionize!&rdquo; obstacle. Here&rsquo;s how we do it.
+Building a Modeling Pipeline What I&rsquo;ve found to be the most important piece of productionizing the work that I do is having a rock-solid pipeline set up to make everyone&rsquo;s life easier.">
+<meta itemprop="datePublished" content="2021-01-30T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-01-30T17:30:34-07:00" />
+<meta itemprop="wordCount" content="981">
+
+
+
+<meta itemprop="keywords" content="R,data science," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Putting R Into Production"/>
+<meta name="twitter:description" content="Introduction As promised, this post is going to cover how we productionize R at CollegeVine. As I said before, I&rsquo;m exclusively using R for my data science work at CV, which means that we needed to come up with a way to get over the &ldquo;R is hard to productionize!&rdquo; obstacle. Here&rsquo;s how we do it.
+Building a Modeling Pipeline What I&rsquo;ve found to be the most important piece of productionizing the work that I do is having a rock-solid pipeline set up to make everyone&rsquo;s life easier."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/" class="logo">Musings</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="https://mrkaye97.github.io">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/blog/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/blog/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/blog/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/blog/" class="logo">Musings</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="https://mrkaye97.github.io">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Putting R Into Production</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-01-30 </span>
+        <div class="post-category">
+            <a href="/blog/categories/data-science/"> data-science </a>
+            </div>
+          <span class="more-meta"> 981 words </span>
+          <span class="more-meta"> 5 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#building-a-modeling-pipeline">Building a Modeling Pipeline</a>
+          <ul>
+            <li><a href="#an-internal-r-package">An Internal R Package</a></li>
+            <li><a href="#shiny">Shiny</a></li>
+            <li><a href="#containers">Containers</a></li>
+          </ul>
+        </li>
+        <li><a href="#tying-it-all-together">Tying It All Together</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="introduction">Introduction</h2>
+<p>As promised, this post is going to cover how we productionize R at CollegeVine. As I said before, I&rsquo;m exclusively using R for my data science work at CV, which means that we needed to come up with a way to get over the &ldquo;R is hard to productionize!&rdquo; obstacle. Here&rsquo;s how we do it.</p>
+<h2 id="building-a-modeling-pipeline">Building a Modeling Pipeline</h2>
+<p>What I&rsquo;ve found to be the most important piece of productionizing the work that I do is having a rock-solid pipeline set up to make everyone&rsquo;s life easier. At CollegeVine, this requires a few simple steps.</p>
+<h3 id="an-internal-r-package">An Internal R Package</h3>
+<p>The most important step is making an internal R package to speed up your workflow. I got this idea from a Baltimore Orioles co-worker, and ran with it on my first day at CV. Initially, <code>collegeviner</code>, our R package for data science at CV, contained a few functions like <code>connect_to_***_db()</code>, which would return a connection to one of a few CV databases. Since the, it&rsquo;s grown enormously. Now, we have functions to common data cleaning steps, setting up a connection to Slack from R with <code>slackr</code>, common queries that we run all the time, implementations of statistical tests, and, most importantly, a whole bunch of functions for productionizing models. Those productionizing functions include:</p>
+<ul>
+<li><code>save_to_production(..., stage = '', bucket = '')</code>, which takes some R objects like data, cross validation results, a finalized model, etc. and saves it to an S3 bucket by calling <code>aws.s3::s3save()</code> on the back end. The most important piece of this function aside from not needing to directly call anything in <code>aws.s3</code> is that it enforces some strict naming conventions so that the objects being saved are always saved in a specified format. For us, that format looks like this: <code>final_model_timestamp_validated.Rdata</code>. This means that every model we have in production is stamped exactly like that, meaning there&rsquo;s no room for confusion around how objects are named and we can use this strict naming convention for other helpful functions, such as:</li>
+<li><code>get_latest_***(bucket = '')</code>, which loads the latest data, tuning results, validated model, etc. from the specified S3 bucket. Again, this means that we&rsquo;re keeping our naming conventions consistent and making it super easy to load data, models, etc. from S3.</li>
+<li><code>list_all_***(bucket = '')</code> lists all of the data, models, etc. in a bucket.</li>
+<li><code>load_from_s3(objname, bucket = '')</code> loads a specific object from S3, so we can have more flexibility than always loading the most recent one.</li>
+</ul>
+<h3 id="shiny">Shiny</h3>
+<p>The next key piece that we use is <code>Shiny</code>, which is a fantastic R package for building dashboards and applications directly from R. At CV, we use Shiny in production to load a model, run some pre-determined diagnostics, and then deploy it to production when we&rsquo;re happy with how the model is performing. For example, if we&rsquo;ve fit a Bayesian linear regression model to predict the house prices in Ames, Iowa, we&rsquo;d have a tab in our model deployment Shiny app that has some marginal effects plots, some diagnostic scores (on aggregate or broken down by arbitrary groups) like MSE, etc. The idea here is that we call <code>get_latest_model()</code> to get a model, run a bunch of diagnostics, and then, if everything looks okay, we&rsquo;ve just set up a button that says <code>Verify!</code> that pops up a modal saying &ldquo;Are you sure you want to verify this model?&rdquo; with some other info. Once you verify the model, it calls <code>save_to_production()</code>, which saves the model to production and sends a Slack message alerting us that a new model was just deployed.</p>
+<h3 id="containers">Containers</h3>
+<p>So now, another question. I&rsquo;ve mentioned how <code>save_to_production()</code> puts a finalized, verified model into S3, but how do we actually deploy it? For that, we rely on containers. We use containers for a big chunk of our data science work at CV, but most importantly for deploying Shiny apps and APIs to production. For Shiny, we build our apps with the help of <code>{golem}</code>, which is an awesome R package that makes it easy to spin up production-ready Shiny applications. For deploying APIs, we use <code>Plumber</code>, which is another great R package that makes building APIs super easy in R. Once  we have a <code>{golem}</code> or <code>Plumber</code> set up, we containerize it with Docker and deploy it to Heroku, and which point it exists on the internet and can be accessed by anyone on the team, as well as by the back end of our site.</p>
+<p>Spinning up an app in Heroku is easy. All you need to do is build a Docker image for whatever you want to deploy (a job, a Shiny app, an API, etc.) and push the container to the Heroku Container Registry. To do this, you just need to run <code>heroku container:push web -a your_app_name</code> and then <code>heroku container:release web -a your_app_name</code>, and your image will build and deploy to Heroku! Once it&rsquo;s there, you can monitor it in the Heroku logs.</p>
+<h2 id="tying-it-all-together">Tying It All Together</h2>
+<p>To tie it all together, here is the list of steps that my R productionization workflow consists of:</p>
+<ol>
+<li>Cleaning data / feature engineering, and saving the cleaned data to production</li>
+<li>Loading the cleaned data from production and using it to tune a model</li>
+<li>Saving the results of the tuning process to production and loading them to fit a final model</li>
+<li>Loading the data and the final model into our productionization Shiny app to run some diagnostics and to verify it, so that it&rsquo;s finally sent to production.</li>
+<li>Loading the model into a <code>plumber.R</code> file that sets up an API to run predictions through the model</li>
+<li>Deploying the Plumber API with Heroku.</li>
+</ol>
+<p>And that&rsquo;s it! As it turns out, productionizing R is not so complicated after all, and there are lots of amazing tools like <code>Shiny</code> and <code>Plumber</code> at your disposal to make it easy, which work seamlessly with S3 and Heroku to make deploying R to production a breeze.</p>
+
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/blog/tags/r/">R</a>
+          <a href="/blog/tags/data-science/">data science</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/blog/post/2021-01-14-why-i-write-r-and-why-you-should-too/">
+            <span class="next-text nav-default">Why I Write R, and Why You Should Too</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/mrkaye97" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/kayem20/" class="iconfont icon-linkedin" title="linkedin"></a>
+  <a href="https://mrkaye97.github.io/blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Matt Kaye</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/blog/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-69391421-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

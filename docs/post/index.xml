@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Musings</title>
+    <link>https://mrkaye97.github.io/blog/post/</link>
+    <description>Recent content in Posts on Musings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 30 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrkaye97.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Putting R Into Production</title>
+      <link>https://mrkaye97.github.io/blog/post/2021-01-30-putting-r-into-production/</link>
+      <pubDate>Sat, 30 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrkaye97.github.io/blog/post/2021-01-30-putting-r-into-production/</guid>
+      <description>Introduction As promised, this post is going to cover how we productionize R at CollegeVine. As I said before, I&amp;rsquo;m exclusively using R for my data science work at CV, which means that we needed to come up with a way to get over the &amp;ldquo;R is hard to productionize!&amp;rdquo; obstacle. Here&amp;rsquo;s how we do it.
+Building a Modeling Pipeline What I&amp;rsquo;ve found to be the most important piece of productionizing the work that I do is having a rock-solid pipeline set up to make everyone&amp;rsquo;s life easier.</description>
+    </item>
+    
+    <item>
+      <title>Why I Write R, and Why You Should Too</title>
+      <link>https://mrkaye97.github.io/blog/post/2021-01-14-why-i-write-r-and-why-you-should-too/</link>
+      <pubDate>Thu, 14 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrkaye97.github.io/blog/post/2021-01-14-why-i-write-r-and-why-you-should-too/</guid>
+      <description>Introduction I write R all the time. All of my work is done in R (yes, that includes productionizing models), I write R for fun, I maintain an R package and am the author of another, and I wrote this post in R Markdown. But, why? If you peruse blogs on Towards Data Science or r/datascience, you&amp;rsquo;ll find person after person telling new data scientists or data scientists-in-training to learn python instead of R.</description>
+    </item>
+    
+    <item>
+      <title>A Gentle Introduction to Markov Chains and MCMC</title>
+      <link>https://mrkaye97.github.io/blog/post/2021-01-13-a-gentle-introduction-to-markov-chains-and-mcmc/</link>
+      <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrkaye97.github.io/blog/post/2021-01-13-a-gentle-introduction-to-markov-chains-and-mcmc/</guid>
+      <description>Introduction Every other Friday at work, we have a meeting called All Hands, during the first half of which a member of the team gives a presentation. The presentation is split up into two pieces: A personal presentation &amp;ndash; your favorite food, TV shows, books, etc. &amp;ndash; and a mini-lesson, which can be about any topic of interest that&amp;rsquo;s unrelated to work. Yesterday it was my turn, and I gave my mini-lesson on Markov Chains and Markov Chain Monte Carlo.</description>
+    </item>
+    
+    <item>
+      <title>What I&#39;ve Been Drinking in Quarantine (Plus a Cocktail Lesson)</title>
+      <link>https://mrkaye97.github.io/blog/post/2021-01-10-what-i-ve-been-drinking-in-quarantine/</link>
+      <pubDate>Sun, 10 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrkaye97.github.io/blog/post/2021-01-10-what-i-ve-been-drinking-in-quarantine/</guid>
+      <description>Introduction The past ten-or-so months of limited activity due to Covid-19 have been a slog for everyone, to say the least. I&amp;rsquo;ve been fortunate to have avoided the worst of it, having spent much of the past ten months living in rural northwestern Connecticut.
+Many of us have had lots of time to explore hobbies over this time, and something that has gained lots of popularity &amp;ndash; editor&amp;rsquo;s note: unsurprisingly &amp;ndash; is drinking!</description>
+    </item>
+    
+    <item>
+      <title>Our 2021 Big Data Bowl Submission</title>
+      <link>https://mrkaye97.github.io/blog/post/our-2021-big-data-bowl-submission/</link>
+      <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrkaye97.github.io/blog/post/our-2021-big-data-bowl-submission/</guid>
+      <description>Meta This post is my team&amp;rsquo;s 2021 NFL Big Data Bowl submission. My team was made up of me, Hugh McCreery (Baltimore Orioles), John Edwards (Seattle Mariners), and Owen McGrattan (DS student at Berkeley). I&amp;rsquo;m proud of what we&amp;rsquo;ve put forth here, and hopefully you find it interesting. At the end (after the Appendix), I&amp;rsquo;ve added some overall thoughs on things we were curious about or feel like we could have done better, as well as what we view as the biggest strengths and weaknesses of our submission.</description>
+    </item>
+    
+    <item>
+      <title>Host Family Q&amp;A</title>
+      <link>https://mrkaye97.github.io/blog/post/host-family-q-a/</link>
+      <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrkaye97.github.io/blog/post/host-family-q-a/</guid>
+      <description>This is a blog post Q&amp;amp;A I wrote for the Swedish Program blog. You can find the original post here.
+Housing is a big part of your study abroad experience. At The Swedish Program, we offer students the choice of an apartment or host family, both of which provide opportunities for cultural integration. It can be tough to decide which option is right for you, so we asked Fall 2019 student Matt Kaye (Carleton College ‘19) to describe his experience living with a host family.</description>
+    </item>
+    
+    <item>
+      <title>Reflecting on My First Solo Trip: Europe 2018</title>
+      <link>https://mrkaye97.github.io/blog/post/2019-01-03-reflecting-on-my-first-solo-trip-europe-2018/</link>
+      <pubDate>Thu, 03 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrkaye97.github.io/blog/post/2019-01-03-reflecting-on-my-first-solo-trip-europe-2018/</guid>
+      <description>I just got back from a two and a half week solo trip to Europe. I did a circuit from Vienna, to Prague, Olomouc, Krakow, Budapest, and back to Vienna. These are some of my reflections on the experience.
+Pre-Trip Pre-trip I was planning on, well, planning. I had all of my hostels booked, some activities planned, transporation figured out, etc. In hindsight, I planned too much, but more on that later.</description>
+    </item>
+    
+  </channel>
+</rss>
