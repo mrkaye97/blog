@@ -53,7 +53,9 @@ The next key piece that we use is `Shiny`, which is a fantastic R package for bu
 
 ### Containers
 
-So now, another question. I've mentioned how `save_to_production()` puts a finalized, verified model into S3, but how do we actually deploy it? For that, we rely on containers. We use containers for a big chunk of our data science work at CV, but most importantly for deploying Shiny apps and APIs to production. For Shiny, we build our apps with the help of `{golem}`, which is an awesome R package that makes it easy to spin up production-ready Shiny applications. For deploying APIs, we use `Plumber`, which is another great R package that makes building APIs super easy in R. Once  we have a `{golem}` or `Plumber` set up, we containerize it with Docker and deploy it to Heroku, and which point it exists on the internet and can be accessed by anyone on the team.
+So now, another question. I've mentioned how `save_to_production()` puts a finalized, verified model into S3, but how do we actually deploy it? For that, we rely on containers. We use containers for a big chunk of our data science work at CV, but most importantly for deploying Shiny apps and APIs to production. For Shiny, we build our apps with the help of `{golem}`, which is an awesome R package that makes it easy to spin up production-ready Shiny applications. For deploying APIs, we use `Plumber`, which is another great R package that makes building APIs super easy in R. Once  we have a `{golem}` or `Plumber` set up, we containerize it with Docker and deploy it to Heroku, and which point it exists on the internet and can be accessed by anyone on the team, as well as by the back end of our site.
+
+Spinning up an app in Heroku is easy. All you need to do is build a Docker image for whatever you want to deploy (a job, a Shiny app, an API, etc.) and push the container to the Heroku Container Registry. To do this, you just need to run `heroku container:push web -a your_app_name` and then `heroku container:release web -a your_app_name`, and your image will build and deploy to Heroku! Once it's there, you can monitor it in the Heroku logs.
 
 ## Tying It All Together
 
@@ -64,5 +66,6 @@ To tie it all together, here is the list of steps that my R productionization wo
 3. Saving the results of the tuning process to production and loading them to fit a final model
 4. Loading the data and the final model into our productionization Shiny app to run some diagnostics and to verify it, so that it's finally sent to production.
 5. Loading the model into a `plumber.R` file that sets up an API to run predictions through the model
+6. Deploying the Plumber API with Heroku. 
 
 And that's it! As it turns out, productionizing R is not so complicated after all, and there are lots of amazing tools like `Shiny` and `Plumber` at your disposal to make it easy, which work seamlessly with S3 and Heroku to make deploying R to production a breeze.
