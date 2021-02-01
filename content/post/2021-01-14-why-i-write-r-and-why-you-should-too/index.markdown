@@ -118,7 +118,7 @@ toc()
 ```
 
 ```
-## numbers: 0.004 sec elapsed
+## numbers: 0.005 sec elapsed
 ```
 
 ```r
@@ -145,7 +145,7 @@ toc()
 ```
 
 ```
-## 0.002 sec elapsed
+## 0.003 sec elapsed
 ```
 
 That approach is dramatically faster. What about if we want to do something more complicated, like adding a column to each dataframe in a list of dataframes based on a couple of other values? Let's try it!
@@ -169,7 +169,7 @@ toc()
 ```
 
 ```
-## 17.299 sec elapsed
+## 20.183 sec elapsed
 ```
 
 Not great. So, what about the FP approach?
@@ -189,7 +189,7 @@ toc()
 ```
 
 ```
-## 9.609 sec elapsed
+## 9.581 sec elapsed
 ```
 
 Cool, so what happened here? Two things, really. First, my code got cleaner. Writing `map()` instead of `for ...` with a bunch of junk is a great way to be able to apply a function to everything inside of a list. Second, it got faster. That's because I'm parallelizing across cores, which I can do super easily when using `map()`, since I'm not explicitly relying on an index like I am with `df_list[[i]]` in the for loop. 

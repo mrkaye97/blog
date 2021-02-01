@@ -1,2 +1,0 @@
-User-agent: *
-Sitemap: https://mrkaye97.github.io/blog/sitemap.xml
