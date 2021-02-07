@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>What&#39;s New in slackr 2.1.0 - Musings</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Matt Kaye" /><meta name="description" content="Introduction slackr 2.1.0&#43; is live! There are a whole bunch of exciting changes that we (mostly Andrie de Vries and I) have made to improve the package a bunch.
+Changes Here are some of the things that are new in slackr 2.1.0&#43;. For more info on the package, check out the Github repo and the pkgdown site.
+Ease of Use Improvements  We&amp;rsquo;ve dramatically improved error messaging, so long gone are the days of errors like No &#39;id&#39; column found in &#39;x&#39;!" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
+
+
+<link rel="canonical" href="https://mrkaye97.github.io/blog/post/2021-02-07-what-s-new-in-slackr-2-1-0/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png">
+<link rel="manifest" href="/blog/manifest.json">
+<link rel="mask-icon" href="/blog/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/blog/sass/main.min.931eb87b26ffb882f56d8c3e0e784540443c5e475bf69a5ada9cd38ed7457217.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="What&#39;s New in slackr 2.1.0" />
+<meta property="og:description" content="Introduction slackr 2.1.0&#43; is live! There are a whole bunch of exciting changes that we (mostly Andrie de Vries and I) have made to improve the package a bunch.
+Changes Here are some of the things that are new in slackr 2.1.0&#43;. For more info on the package, check out the Github repo and the pkgdown site.
+Ease of Use Improvements  We&rsquo;ve dramatically improved error messaging, so long gone are the days of errors like No &#39;id&#39; column found in &#39;x&#39;!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mrkaye97.github.io/blog/post/2021-02-07-what-s-new-in-slackr-2-1-0/" />
+<meta property="article:published_time" content="2021-02-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-07T13:07:49-07:00" />
+<meta itemprop="name" content="What&#39;s New in slackr 2.1.0">
+<meta itemprop="description" content="Introduction slackr 2.1.0&#43; is live! There are a whole bunch of exciting changes that we (mostly Andrie de Vries and I) have made to improve the package a bunch.
+Changes Here are some of the things that are new in slackr 2.1.0&#43;. For more info on the package, check out the Github repo and the pkgdown site.
+Ease of Use Improvements  We&rsquo;ve dramatically improved error messaging, so long gone are the days of errors like No &#39;id&#39; column found in &#39;x&#39;!">
+<meta itemprop="datePublished" content="2021-02-07T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-02-07T13:07:49-07:00" />
+<meta itemprop="wordCount" content="375">
+
+
+
+<meta itemprop="keywords" content="R,Data Science," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="What&#39;s New in slackr 2.1.0"/>
+<meta name="twitter:description" content="Introduction slackr 2.1.0&#43; is live! There are a whole bunch of exciting changes that we (mostly Andrie de Vries and I) have made to improve the package a bunch.
+Changes Here are some of the things that are new in slackr 2.1.0&#43;. For more info on the package, check out the Github repo and the pkgdown site.
+Ease of Use Improvements  We&rsquo;ve dramatically improved error messaging, so long gone are the days of errors like No &#39;id&#39; column found in &#39;x&#39;!"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/" class="logo">Musings</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="https://mrkaye97.github.io">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/blog/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/blog/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/blog/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/blog/" class="logo">Musings</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="https://mrkaye97.github.io">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">What&#39;s New in slackr 2.1.0</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-02-07 </span>
+        
+          <span class="more-meta"> 375 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#changes">Changes</a>
+          <ul>
+            <li><a href="#ease-of-use-improvements">Ease of Use Improvements</a></li>
+            <li><a href="#new-features">New Features</a></li>
+            <li><a href="#back-end-changes">Back-End Changes</a></li>
+            <li><a href="#deprecations">Deprecations</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="introduction">Introduction</h2>
+<p><code>slackr 2.1.0+</code> is live! There are a whole bunch of exciting changes that we (mostly <a href="https://github.com/andrie">Andrie de Vries</a> and I) have made to improve the package a bunch.</p>
+<h2 id="changes">Changes</h2>
+<p>Here are some of the things that are new in <code>slackr 2.1.0+</code>. For more info on the package, check out the <a href="https://github.com/mrkaye97/slackr">Github repo</a> and the <a href="https://mrkaye97.github.io/slackr/index.html">pkgdown site</a>.</p>
+<h3 id="ease-of-use-improvements">Ease of Use Improvements</h3>
+<ul>
+<li>We&rsquo;ve dramatically improved error messaging, so long gone are the days of errors like <code>No 'id' column found in 'x'</code>! Now, error messages should be far more helpful, with some hints about what might be going wrong.</li>
+<li>We&rsquo;ve updated the package documentation significantly, so now there&rsquo;s a far more informative <a href="https://github.com/mrkaye97/slackr">README</a>, some vignettes, and a <a href="https://mrkaye97.github.io/slackr/index.html">pkgdown site</a>.</li>
+<li>We&rsquo;ve more clearly described the different use cases for <code>slackr</code>, in order to better help users set up <code>slackr</code> in a way that makes sense for them.</li>
+</ul>
+<h3 id="new-features">New Features</h3>
+<ul>
+<li>We&rsquo;ve fixed a bunch of bugs that were preventing things like <code>icon_emoji</code> and <code>username</code> from working, so those are fixed now!</li>
+<li>We&rsquo;ve brought back some old functions that were removed in <code>slackr 2.0.0</code>: <code>slackr_history()</code> and <code>slackr_delete()</code>. See the docs for descriptions of what these functions can do.</li>
+</ul>
+<h3 id="back-end-changes">Back-End Changes</h3>
+<p>We&rsquo;ve made a ton of changes for how <code>slackr</code> interacts with the Slack API:</p>
+<ul>
+<li>We now allow paging, which is especially helpful when you have a workspace of more than 1000 channels.</li>
+<li>We cache requests to get lists of channels and users so that we don&rsquo;t need to repeat common API calls. This speeds up calls to <code>slackr_***()</code> and limits how often you need to actually hit the API.</li>
+<li>We&rsquo;ve gotten rid of a really nasty implementation of channel caching (writing a local cache to the disk) in favor of the method described above.</li>
+<li>We&rsquo;ve factored out API calls into a separate function, which makes the package easier to understand and test.</li>
+<li>Speaking of testing, we&rsquo;ve implemented a whole bunch of unit tests, and will be working on more.</li>
+</ul>
+<h3 id="deprecations">Deprecations</h3>
+<ul>
+<li>We&rsquo;ve deprecated a bunch of camel case functions in favor of their snake case counterparts for simplicity. Don&rsquo;t worry! These are soft-deprecated for now. They won&rsquo;t go away fully until a future version of <code>slackr</code></li>
+<li>We&rsquo;ve deprecated <code>text_slackr</code> in favor of <code>slackr_msg</code>, since they do basically the same thing.</li>
+</ul>
+
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/blog/tags/r/">R</a>
+          <a href="/blog/tags/data-science/">Data Science</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/blog/post/2021-01-30-putting-r-into-production/">
+            <span class="next-text nav-default">Putting R Into Production</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/mrkaye97" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/kayem20/" class="iconfont icon-linkedin" title="linkedin"></a>
+  <a href="https://mrkaye97.github.io/blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Matt Kaye</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/blog/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-69391421-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

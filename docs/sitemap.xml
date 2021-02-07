@@ -2,14 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://mrkaye97.github.io/blog/categories/</loc>
-    <lastmod>2021-01-30T17:30:34-07:00</lastmod>
+    <loc>https://mrkaye97.github.io/blog/tags/data-science/</loc>
+    <lastmod>2021-02-07T13:07:49-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/blog/tags/data-science/</loc>
+    <loc>https://mrkaye97.github.io/blog/</loc>
+    <lastmod>2021-02-07T13:07:49-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mrkaye97.github.io/blog/post/</loc>
+    <lastmod>2021-02-07T13:07:49-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mrkaye97.github.io/blog/tags/r/</loc>
+    <lastmod>2021-02-07T13:07:49-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mrkaye97.github.io/blog/tags/</loc>
+    <lastmod>2021-02-07T13:07:49-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mrkaye97.github.io/blog/post/2021-02-07-what-s-new-in-slackr-2-1-0/</loc>
+    <lastmod>2021-02-07T13:07:49-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mrkaye97.github.io/blog/categories/</loc>
     <lastmod>2021-01-30T17:30:34-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -23,35 +58,7 @@
   </url>
   
   <url>
-    <loc>https://mrkaye97.github.io/blog/</loc>
-    <lastmod>2021-01-30T17:30:34-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://mrkaye97.github.io/blog/post/</loc>
-    <lastmod>2021-01-30T17:30:34-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://mrkaye97.github.io/blog/post/2021-01-30-putting-r-into-production/</loc>
-    <lastmod>2021-01-30T17:30:34-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://mrkaye97.github.io/blog/tags/r/</loc>
-    <lastmod>2021-01-30T17:30:34-07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://mrkaye97.github.io/blog/tags/</loc>
     <lastmod>2021-01-30T17:30:34-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

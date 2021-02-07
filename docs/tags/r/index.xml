@@ -6,7 +6,18 @@
     <description>Recent content in R on Musings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 30 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrkaye97.github.io/blog/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrkaye97.github.io/blog/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What&#39;s New in slackr 2.1.0</title>
+      <link>https://mrkaye97.github.io/blog/post/2021-02-07-what-s-new-in-slackr-2-1-0/</link>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrkaye97.github.io/blog/post/2021-02-07-what-s-new-in-slackr-2-1-0/</guid>
+      <description>Introduction slackr 2.1.0+ is live! There are a whole bunch of exciting changes that we (mostly Andrie de Vries and I) have made to improve the package a bunch.
+Changes Here are some of the things that are new in slackr 2.1.0+. For more info on the package, check out the Github repo and the pkgdown site.
+Ease of Use Improvements  We&amp;rsquo;ve dramatically improved error messaging, so long gone are the days of errors like No &#39;id&#39; column found in &#39;x&#39;!</description>
+    </item>
+    
     <item>
       <title>Putting R Into Production</title>
       <link>https://mrkaye97.github.io/blog/post/2021-01-30-putting-r-into-production/</link>
