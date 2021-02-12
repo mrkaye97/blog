@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Musings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 07 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrkaye97.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrkaye97.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Highlights From rstudio::global</title>
+      <link>https://mrkaye97.github.io/blog/post/2021-02-11-highlights-from-rstudio-global/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrkaye97.github.io/blog/post/2021-02-11-highlights-from-rstudio-global/</guid>
+      <description>rstudio::global, this year&amp;rsquo;s iteration of the annual RStudio conference, was a few weeks ago. Here were some highlights:
+Talks There were a few talks I really loved:
+ Using R to Up Your Experimentation Game, by Shirbi Ish-Shalom. On experimentation, sequential testing, taking big swings, and being statistically rigorous Maintaining the House the Tidyverse Built, by Hadley Wickham. On building and maintaining the Tidyverse, and what package maintenance in the real world is like when you have millions of downloads.</description>
+    </item>
+    
     <item>
       <title>What&#39;s New in slackr 2.1.0</title>
       <link>https://mrkaye97.github.io/blog/post/2021-02-07-what-s-new-in-slackr-2-1-0/</link>
