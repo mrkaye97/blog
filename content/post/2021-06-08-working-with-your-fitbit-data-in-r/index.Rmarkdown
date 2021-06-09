@@ -8,19 +8,19 @@ categories:
 tags:
   - R
   - data science
-lastmod: '2021-06-08T21:16:59-04:00'
+lastmod: '2021-06-08T21:26:23-04:00'
 keywords: []
 description: ''
 comment: no
-toc: yes
-autoCollapseToc: yes
+toc: no
+autoCollapseToc: no
 postMetaInFooter: no
 hiddenFromHomePage: no
 contentCopyright: no
 reward: no
-mathjax: yes
-mathjaxEnableSingleDollar: yes
-mathjaxEnableAutoNumber: yes
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
 hideHeaderAndFooter: no
 flowchartDiagrams:
   enable: no
@@ -30,8 +30,9 @@ sequenceDiagrams:
   options: ''
 ---
 
-```{r, include = F}
-knitr::opts_chunk$set(message = F, warning = F)
+
+```{r, include = F, echo = F}
+knitr::opts_chunk$set(echo = T, message = F, warning = F, fig.path = "static/rmarkdown-libs", fig.align = 'center')
 ```
 
 ## Introduction
@@ -74,7 +75,7 @@ library(tidyverse)
 
 And then you can start pulling your data!
 
-```{r}
+```{r, cache = T}
 sleep <- sleep_summary(
   start_date = today() - months(3),
   end_date = today()
@@ -129,7 +130,7 @@ sleep %>%
 
 This bit of code makes a nicely formatted plot of the times you went to sleep and woke up over the past three months. You can also use `fitbitr` to expand the time window with a little help from `purrr` (the Fitbit API rate limits you, so you can't request data for infinitely long windows in a single request).
 
-```{r}
+```{r, cache = T}
 ## this will pull the past 15 months of data
 
 start_months <- c(3, 6, 9, 12, 15)
@@ -188,10 +189,7 @@ sleep %>%
 
 You can also pull your heart rate data with `fitbitr`. Maybe we're curious about seeing how the number of minutes spent in the "fat burn," "cardio," and "peak" zones correlates with the number of steps taken that day. Let's find out!
 
-```{r}
-start_months <- c(3, 6, 9, 12, 15)
-end_months <- c(0, 3, 6, 9, 12)
-
+```{r, cache = T}
 hr <- map2_dfr(
   start_months,
   end_months,
