@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Working With Your Fitbit Data in R - Musings</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Matt Kaye" /><meta name="description" content="knitr::opts_chunk$set(message = F, warning = F) Introduction fitbitr 0.1.0 is now available on CRAN! You can install it with
+install.packages(&amp;quot;fitbitr&amp;quot;) or you can get the latest dev version with
+## install.packages(&amp;quot;devtools&amp;quot;) devtools::install_github(&amp;quot;mrkaye97/fitbitr&amp;quot;) fitbitr makes it easy to pull your Fitbit data into R and use it for whatever interests you: personal projects, visualization, medical purposes, etc.
+This post shows how you might use fitbitr to pull and visualize some of your data." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
+
+
+<link rel="canonical" href="https://mrkaye97.github.io/blog/post/2021-06-08-working-with-your-fitbit-data-in-r/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png">
+<link rel="manifest" href="/blog/manifest.json">
+<link rel="mask-icon" href="/blog/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/blog/sass/main.min.931eb87b26ffb882f56d8c3e0e784540443c5e475bf69a5ada9cd38ed7457217.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Working With Your Fitbit Data in R" />
+<meta property="og:description" content="knitr::opts_chunk$set(message = F, warning = F) Introduction fitbitr 0.1.0 is now available on CRAN! You can install it with
+install.packages(&quot;fitbitr&quot;) or you can get the latest dev version with
+## install.packages(&quot;devtools&quot;) devtools::install_github(&quot;mrkaye97/fitbitr&quot;) fitbitr makes it easy to pull your Fitbit data into R and use it for whatever interests you: personal projects, visualization, medical purposes, etc.
+This post shows how you might use fitbitr to pull and visualize some of your data." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mrkaye97.github.io/blog/post/2021-06-08-working-with-your-fitbit-data-in-r/" />
+<meta property="article:published_time" content="2021-06-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-06-08T21:16:59-04:00" />
+<meta itemprop="name" content="Working With Your Fitbit Data in R">
+<meta itemprop="description" content="knitr::opts_chunk$set(message = F, warning = F) Introduction fitbitr 0.1.0 is now available on CRAN! You can install it with
+install.packages(&quot;fitbitr&quot;) or you can get the latest dev version with
+## install.packages(&quot;devtools&quot;) devtools::install_github(&quot;mrkaye97/fitbitr&quot;) fitbitr makes it easy to pull your Fitbit data into R and use it for whatever interests you: personal projects, visualization, medical purposes, etc.
+This post shows how you might use fitbitr to pull and visualize some of your data.">
+<meta itemprop="datePublished" content="2021-06-08T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-06-08T21:16:59-04:00" />
+<meta itemprop="wordCount" content="1097">
+
+
+
+<meta itemprop="keywords" content="R,data science," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Working With Your Fitbit Data in R"/>
+<meta name="twitter:description" content="knitr::opts_chunk$set(message = F, warning = F) Introduction fitbitr 0.1.0 is now available on CRAN! You can install it with
+install.packages(&quot;fitbitr&quot;) or you can get the latest dev version with
+## install.packages(&quot;devtools&quot;) devtools::install_github(&quot;mrkaye97/fitbitr&quot;) fitbitr makes it easy to pull your Fitbit data into R and use it for whatever interests you: personal projects, visualization, medical purposes, etc.
+This post shows how you might use fitbitr to pull and visualize some of your data."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/" class="logo">Musings</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="https://mrkaye97.github.io">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/blog/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/blog/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/blog/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/blog/" class="logo">Musings</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="https://mrkaye97.github.io">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/blog/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Working With Your Fitbit Data in R</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-06-08 </span>
+        <div class="post-category">
+            <a href="/blog/categories/data-science/"> data science </a>
+            </div>
+          <span class="more-meta"> 1097 words </span>
+          <span class="more-meta"> 6 mins read </span>
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      
+<script src="https://mrkaye97.github.io/blog/post/2021-06-08-working-with-your-fitbit-data-in-r/index_files/header-attrs/header-attrs.js"></script>
+
+<div id="TOC">
+
+</div>
+
+<pre class="r"><code>knitr::opts_chunk$set(message = F, warning = F)</code></pre>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p><code>fitbitr 0.1.0</code> is now available on CRAN! You can install it with</p>
+<pre class="r"><code>install.packages(&quot;fitbitr&quot;)</code></pre>
+<p>or you can get the latest dev version with</p>
+<pre class="r"><code>## install.packages(&quot;devtools&quot;)
+devtools::install_github(&quot;mrkaye97/fitbitr&quot;)</code></pre>
+<p><code>fitbitr</code> makes it easy to pull your Fitbit data into R and use it for whatever interests you: personal projects, visualization, medical purposes, etc.</p>
+<p>This post shows how you might use <code>fitbitr</code> to pull and visualize some of your data.</p>
+</div>
+<div id="sleep" class="section level2">
+<h2>Sleep</h2>
+<p>First, you should either generate a new token with <code>generate_token()</code> or load a cached token with <code>load_cached_token()</code>.</p>
+<pre class="r"><code>library(fitbitr)
+library(lubridate)
+library(tidyverse)
+
+# load_cached_token(&quot;.httr-oauth&quot;)</code></pre>
+<p>And then you can start pulling your data!</p>
+<pre class="r"><code>sleep &lt;- sleep_summary(
+  start_date = today() - months(3),
+  end_date = today()
+)
+
+sleep %&gt;% 
+  head()</code></pre>
+<pre><code>## # A tibble: 6 x 11
+##    log_id date       start_time          end_time            duration efficiency
+##     &lt;dbl&gt; &lt;date&gt;     &lt;dttm&gt;              &lt;dttm&gt;                 &lt;int&gt;      &lt;int&gt;
+## 1 3.12e10 2021-03-08 2021-03-07 20:49:00 2021-03-08 07:10:30 37260000         97
+## 2 3.12e10 2021-03-09 2021-03-08 22:28:30 2021-03-09 07:23:30 32100000         96
+## 3 3.13e10 2021-03-10 2021-03-09 22:35:30 2021-03-10 07:19:30 31440000         98
+## 4 3.13e10 2021-03-11 2021-03-10 23:48:00 2021-03-11 06:51:00 25380000         95
+## 5 3.13e10 2021-03-12 2021-03-11 23:08:00 2021-03-12 06:28:00 26400000         96
+## 6 3.13e10 2021-03-13 2021-03-12 23:16:00 2021-03-13 07:42:30 30360000         96
+## # … with 5 more variables: minutes_to_fall_asleep &lt;int&gt;, minutes_asleep &lt;int&gt;,
+## #   minutes_awake &lt;int&gt;, minutes_after_wakeup &lt;int&gt;, time_in_bed &lt;int&gt;</code></pre>
+<p>Once you’ve loaded some data, you can visualize it!</p>
+<pre class="r"><code>library(zoo)
+library(scales)
+library(ggthemes)
+
+sleep &lt;- sleep %&gt;%
+  mutate(
+   date = as_date(date),
+   start_time = as_datetime(start_time),
+   end_time = as_datetime(end_time),
+   sh = ifelse(hour(start_time) &lt; 8, hour(start_time) + 24, hour(start_time)), #create numeric times
+   sm = minute(start_time),
+   st = sh + sm/60,
+   eh = hour(end_time),
+   em = minute(end_time),
+   et = eh + em/60,
+   mst = rollmean(st, 7, fill = NA), #create moving averages
+   met = rollmean(et, 7, fill = NA),
+   year = year(start_time)
+)
+
+sleep %&gt;%
+    ggplot(aes(x = date))+
+    geom_line(aes(y = et), color = &#39;coral&#39;, alpha = .3, na.rm = T)+
+    geom_line(aes(y = st), color = &#39;dodgerblue&#39;, alpha = .3, na.rm = T)+
+    geom_line(aes(y = met), color = &#39;coral&#39;, na.rm=T)+
+    geom_line(aes(y = mst), color = &#39;dodgerblue&#39;, na.rm=T)+
+    scale_y_continuous(breaks = seq(0, 30, 2),
+                       labels = trans_format(function(x) ifelse(x &gt; 23, x - 24, x), 
+                                             format = scales::comma_format(suffix = &quot;:00&quot;, accuracy = 1))
+    )+
+    labs(x = &quot;Date&quot;,
+         y = &#39;Time&#39;)+
+    theme_fivethirtyeight()+
+  scale_x_date(date_breaks = &#39;1 month&#39;, date_labels = &#39;%b&#39;, expand = c(0, 0))+
+  facet_grid(. ~ year, space = &#39;free&#39;, scales = &#39;free_x&#39;, switch = &#39;x&#39;) +
+  theme(panel.spacing.x = unit(0,&quot;line&quot;), 
+        strip.placement = &quot;outside&quot;)</code></pre>
+<p><img src="https://mrkaye97.github.io/blog/post/2021-06-08-working-with-your-fitbit-data-in-r/index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>This bit of code makes a nicely formatted plot of the times you went to sleep and woke up over the past three months. You can also use <code>fitbitr</code> to expand the time window with a little help from <code>purrr</code> (the Fitbit API rate limits you, so you can’t request data for infinitely long windows in a single request).</p>
+<pre class="r"><code>## this will pull the past 15 months of data
+
+start_months &lt;- c(3, 6, 9, 12, 15)
+end_months &lt;- c(0, 3, 6, 9, 12)
+
+sleep &lt;- map2_dfr(
+  start_months,
+  end_months,
+  function(x, y) sleep_summary(
+    today() - months(x), 
+    today() - months(y)
+  )
+)</code></pre>
+<p>After pulling the data, we can use the same code again to visualize it.</p>
+<pre class="r"><code>sleep &lt;- sleep %&gt;%
+  mutate(
+   date = as_date(date),
+   start_time = as_datetime(start_time),
+   end_time = as_datetime(end_time),
+   sh = ifelse(hour(start_time) &lt; 8, hour(start_time) + 24, hour(start_time)), #create numeric times
+   sm = minute(start_time),
+   st = sh + sm/60,
+   eh = hour(end_time),
+   em = minute(end_time),
+   et = eh + em/60,
+   mst = rollmean(st, 7, fill = NA), #create moving averages
+   met = rollmean(et, 7, fill = NA),
+   year = year(start_time)
+) %&gt;%
+  distinct()
+
+sleep %&gt;%
+    ggplot(aes(x = date))+
+    geom_line(aes(y = et), color = &#39;coral&#39;, alpha = .3, na.rm = T)+
+    geom_line(aes(y = st), color = &#39;dodgerblue&#39;, alpha = .3, na.rm = T)+
+    geom_line(aes(y = met), color = &#39;coral&#39;, na.rm=T)+
+    geom_line(aes(y = mst), color = &#39;dodgerblue&#39;, na.rm=T)+
+    scale_y_continuous(breaks = seq(0, 30, 2),
+                       labels = trans_format(function(x) ifelse(x &gt; 23, x - 24, x), 
+                                             format = scales::comma_format(suffix = &quot;:00&quot;, accuracy = 1))
+    )+
+    labs(x = &quot;Date&quot;,
+         y = &#39;Time&#39;)+
+    theme_fivethirtyeight()+
+  scale_x_date(date_breaks = &#39;1 month&#39;, date_labels = &#39;%b&#39;, expand = c(0, 0))+
+  facet_grid(. ~ year, space = &#39;free&#39;, scales = &#39;free_x&#39;, switch = &#39;x&#39;) +
+  theme(panel.spacing.x = unit(0,&quot;line&quot;), 
+        strip.placement = &quot;outside&quot;)</code></pre>
+<p><img src="https://mrkaye97.github.io/blog/post/2021-06-08-working-with-your-fitbit-data-in-r/index_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+<div id="heart-rate-and-steps" class="section level2">
+<h2>Heart Rate and Steps</h2>
+<p>You can also pull your heart rate data with <code>fitbitr</code>. Maybe we’re curious about seeing how the number of minutes spent in the “fat burn,” “cardio,” and “peak” zones correlates with the number of steps taken that day. Let’s find out!</p>
+<pre class="r"><code>start_months &lt;- c(3, 6, 9, 12, 15)
+end_months &lt;- c(0, 3, 6, 9, 12)
+
+hr &lt;- map2_dfr(
+  start_months,
+  end_months,
+  function(x, y) heart_rate_zones(
+    today() - months(x), 
+    today() - months(y)
+  )
+) %&gt;%
+  distinct()
+
+steps &lt;- map2_dfr(
+  start_months,
+  end_months,
+  function(x, y) steps(
+    today() - months(x), 
+    today() - months(y)
+  )
+) %&gt;%
+  distinct()</code></pre>
+<p>First, we can examine the heart rate data:</p>
+<pre class="r"><code>hr %&gt;%
+  head()</code></pre>
+<pre><code>## # A tibble: 6 x 6
+##   date       zone         min_hr max_hr minutes_in_zone calories_out
+##   &lt;date&gt;     &lt;chr&gt;         &lt;int&gt;  &lt;int&gt;           &lt;int&gt;        &lt;dbl&gt;
+## 1 2021-03-08 Out of Range     30    119            1440      2336.  
+## 2 2021-03-08 Fat Burn        119    145               0         0   
+## 3 2021-03-08 Cardio          145    177               0         0   
+## 4 2021-03-08 Peak            177    220               0         0   
+## 5 2021-03-09 Out of Range     30    118            1439      2294.  
+## 6 2021-03-09 Fat Burn        118    144               1         9.55</code></pre>
+<p>and the steps data:</p>
+<pre class="r"><code>steps %&gt;%
+  head()</code></pre>
+<pre><code>## # A tibble: 6 x 2
+##   date       steps
+##   &lt;date&gt;     &lt;dbl&gt;
+## 1 2021-03-08  2805
+## 2 2021-03-09  2258
+## 3 2021-03-10  3368
+## 4 2021-03-11  5236
+## 5 2021-03-12 13964
+## 6 2021-03-13 12653</code></pre>
+<p>Now, let’s plot them against each other.</p>
+<pre class="r"><code>df &lt;- hr %&gt;%
+  filter(zone != &quot;Out of Range&quot;) %&gt;%
+  group_by(date) %&gt;%
+  summarize(total_minutes = sum(minutes_in_zone), .groups = &quot;drop&quot;) %&gt;%
+  inner_join(steps, by = &quot;date&quot;)
+  
+df %&gt;%
+  mutate(steps = as.numeric(steps)) %&gt;%
+  filter(log(total_minutes) &gt; 1) %&gt;%
+  ggplot(
+    aes(
+      steps,
+      total_minutes
+    )
+  ) +
+  geom_point() +
+  geom_smooth(method = &quot;lm&quot;, se = F) +
+  scale_x_log10() +
+  scale_y_log10()</code></pre>
+<p><img src="https://mrkaye97.github.io/blog/post/2021-06-08-working-with-your-fitbit-data-in-r/index_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>Or maybe it’d be interesting to predict your zone minutes from your steps:</p>
+<pre class="r"><code>df %&gt;%
+  mutate(steps = as.numeric(steps)) %&gt;%
+  lm(total_minutes ~ steps, data = .) %&gt;%
+  broom::tidy() %&gt;%
+  mutate(across(where(is.numeric), round, 5))</code></pre>
+<pre><code>## # A tibble: 2 x 5
+##   term        estimate std.error statistic p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+## 1 (Intercept)  3.79      3.38         1.12   0.262
+## 2 steps        0.00468   0.00042     11.1    0</code></pre>
+</div>
+<div id="wrapping-up" class="section level2">
+<h2>Wrapping Up</h2>
+<p>And that’s it! Hopefully this helped show how <code>fitbitr</code> makes pulling your data easy, and gets you curious about the insights you can glean from your own data. The Fitbit API gives you access to so much interesting information about yourself, your habits, your fitness, and so much more, and <code>fitbitr</code> is just meant to be a door into that gold mine.</p>
+</div>
+
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/blog/tags/r/">R</a>
+          <a href="/blog/tags/data-science/">data science</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/blog/post/2021-04-16-collegevine/">
+            <span class="next-text nav-default">CollegeVine</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/mrkaye97" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.linkedin.com/in/kayem20/" class="iconfont icon-linkedin" title="linkedin"></a>
+  <a href="https://mrkaye97.github.io/blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Matt Kaye</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/blog/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-129880587-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

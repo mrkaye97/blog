@@ -6,7 +6,19 @@
     <description>Recent content in data science on Musings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrkaye97.github.io/blog/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mrkaye97.github.io/blog/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Working With Your Fitbit Data in R</title>
+      <link>https://mrkaye97.github.io/blog/post/2021-06-08-working-with-your-fitbit-data-in-r/</link>
+      <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mrkaye97.github.io/blog/post/2021-06-08-working-with-your-fitbit-data-in-r/</guid>
+      <description>knitr::opts_chunk$set(message = F, warning = F) Introduction fitbitr 0.1.0 is now available on CRAN! You can install it with
+install.packages(&amp;quot;fitbitr&amp;quot;) or you can get the latest dev version with
+## install.packages(&amp;quot;devtools&amp;quot;) devtools::install_github(&amp;quot;mrkaye97/fitbitr&amp;quot;) fitbitr makes it easy to pull your Fitbit data into R and use it for whatever interests you: personal projects, visualization, medical purposes, etc.
+This post shows how you might use fitbitr to pull and visualize some of your data.</description>
+    </item>
+    
     <item>
       <title>Highlights From rstudio::global</title>
       <link>https://mrkaye97.github.io/blog/post/2021-02-11-highlights-from-rstudio-global/</link>
