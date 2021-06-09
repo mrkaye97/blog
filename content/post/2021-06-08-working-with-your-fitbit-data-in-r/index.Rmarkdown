@@ -12,15 +12,15 @@ lastmod: '2021-06-08T21:16:59-04:00'
 keywords: []
 description: ''
 comment: no
-toc: no
-autoCollapseToc: no
+toc: yes
+autoCollapseToc: yes
 postMetaInFooter: no
 hiddenFromHomePage: no
 contentCopyright: no
 reward: no
-mathjax: no
-mathjaxEnableSingleDollar: no
-mathjaxEnableAutoNumber: no
+mathjax: yes
+mathjaxEnableSingleDollar: yes
+mathjaxEnableAutoNumber: yes
 hideHeaderAndFooter: no
 flowchartDiagrams:
   enable: no
@@ -28,13 +28,9 @@ flowchartDiagrams:
 sequenceDiagrams:
   enable: no
   options: ''
-markup:
-  goldmark:
-    renderer:
-      unsafe: true
 ---
 
-```{r, include  =F}
+```{r, include = F}
 knitr::opts_chunk$set(message = F, warning = F)
 ```
 
